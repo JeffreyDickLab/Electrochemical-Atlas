@@ -4,7 +4,7 @@
 
 **Project authors:** Azaria A. Wagner and Jeffrey E. Dick.
 
-The repository **does not include the textbook PDF, extracted page images, saved equation graphics, or figure thumbnails**. It includes only indexing and reviewed figure/equation geometry metadata. The reader supplies the original PDF, which stays on their computer.
+The repository **does not include the textbook PDF, extracted page images, saved equation graphics, or figure thumbnails**. It includes only indexing and reviewed figure/equation coordinate locations for cropping. The reader supplies the original PDF, which stays on their computer.
 
 **Figures:** For the supplied third-edition PDF, Atlas uses individually reviewed figure boundaries in the Figures catalog and on each figure detail page. Previews preserve panel letters, axes, legends and labels, and exclude surrounding body text and printed captions. The original caption remains separate below the preview. Figures are rendered from your local PDF in memory; image data is not saved or shipped. Preview boundaries are maintained in the source code, with no user crop editor or saved crop overrides. Other PDFs use conservative detection; when the figure cannot be isolated, **Open in PDF** provides the source. See [Figure previews](docs/FIGURE_PREVIEWS.md) for the coordinate format and maintenance workflow.
 
