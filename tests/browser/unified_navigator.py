@@ -265,11 +265,23 @@ def main():
             page.locator('#mainNav [data-view="figures"]').click()
             page.locator('#collectionChapter').select_option('chapter-2')
             expect(page.locator('#content .toolbar .badge')).to_have_text('115 results')
-            page.locator('#collectionFilter').fill('229.1')
+            # Select all immediately after filtering to exercise any queued
+            # focus restoration from the catalog re-render.
+            page.evaluate('''() => {
+              const filter = document.querySelector('#collectionFilter');
+              filter.focus();
+              filter.value = '229.1';
+              filter.dispatchEvent(new Event('input', {bubbles: true}));
+              const updatedFilter = document.querySelector('#collectionFilter');
+              updatedFilter.focus();
+              updatedFilter.select();
+              return new Promise(requestAnimationFrame);
+            }''')
             assert page.locator('#content [data-collection="figures"]').count()==1
             assert page.locator('#content [data-collection="figures"]').get_attribute('data-index')=='228'
             assert page.locator('.collection-toolbar').evaluate('(el)=>el.scrollWidth<=el.clientWidth+1')
-            page.locator('#collectionFilter').fill('')
+            page.locator('#collectionFilter').press('Delete')
+            expect(page.locator('#content .toolbar .badge')).to_have_text('115 results')
             page.locator('#collectionChapter').select_option('')
             expect(page.locator('#content .toolbar .badge')).to_have_text('230 results')
 
