@@ -1,0 +1,39 @@
+node_modules/
+.npm/
+__pycache__/
+.pytest_cache/
+*.log
+*.tmp
+.DS_Store
+tests/browser/_artifacts/
+tests/browser/*.png
+release/
+dist/
+*.pdf
+*.zip
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.sqlite
+*.db
+*personal*backup*
+*_notes_export*
+__MACOSX/
+Thumbs.db
+
+# Generated from npm-installed Apache-2.0 PDF.js dependency
+app/vendor/
+
+# Local project/export artifacts (do not commit)
+*local-equation-review*.json
+*source-equation-audit*.json
+*original-pdf-path*.json
+private/
+backups/
+
+# Compiled native launchers belong in release assets, not in Git history
+runtime/atlas-*
