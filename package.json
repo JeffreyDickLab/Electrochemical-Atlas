@@ -1,7 +1,7 @@
 {
   "name": "electrochemical-atlas",
   "private": true,
-  "version": "6.30",
+  "version": "6.31",
   "description": "Local-first, MIT-licensed open-source electrochemical study software.",
   "engines": {
     "node": ">=22.13.0"

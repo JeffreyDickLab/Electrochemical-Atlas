@@ -216,22 +216,26 @@ def assert_pdf_click_away(page):
     expect(child).to_have_attribute('data-presses', '1')
 
 
+def open_fixture(ctx, errors):
+    page = ctx.new_page()
+    page.on('pageerror', lambda error: errors.append(str(error)))
+    page.set_content(HTML)
+    page.add_script_tag(content=STUBS)
+    page.add_script_tag(content=ROUTING_FIXTURE)
+    for name in ('layout-controller.js', 'navigation.js', 'catalog-rail.js', 'toolbar.js'):
+        page.add_script_tag(content=(ROOT / 'app' / name).read_text())
+    page.locator('#atlasMenuButton').wait_for()
+    return page
+
+
 def main():
     with sync_playwright() as pw:
         browser=launch_chromium(pw)
         for width, height in ((1440,900),(1000,740),(790,680),(390,650),(320,480)):
             ctx=browser.new_context(viewport={'width':width,'height':height})
-            page=ctx.new_page()
             errors=[]
-            page.on('pageerror',lambda error: errors.append(str(error)))
-            page.set_content(HTML)
-            page.add_script_tag(content=STUBS)
-            page.add_script_tag(content=ROUTING_FIXTURE)
-            for name in ('layout-controller.js','navigation.js','catalog-rail.js','toolbar.js'):
-                page.add_script_tag(content=(ROOT/'app'/name).read_text())
-            page.locator('#atlasMenuButton').wait_for()
+            page = open_fixture(ctx, errors)
             assert page.locator('#toggleCatalogRail').count()==0
-            assert_toolbar_modes(page, width)
             open_menu(page)
             menu=snapshot(page)
             assert menu['navShown'] and not menu['listShown'],(width,menu)
@@ -260,14 +264,14 @@ def main():
             open_menu(page)
             page.locator('#mainNav [data-view="figures"]').click()
             page.locator('#collectionChapter').select_option('chapter-2')
-            assert page.locator('#content .toolbar .badge').inner_text()=='115 results'
+            expect(page.locator('#content .toolbar .badge')).to_have_text('115 results')
             page.locator('#collectionFilter').fill('229.1')
             assert page.locator('#content [data-collection="figures"]').count()==1
             assert page.locator('#content [data-collection="figures"]').get_attribute('data-index')=='228'
             assert page.locator('.collection-toolbar').evaluate('(el)=>el.scrollWidth<=el.clientWidth+1')
             page.locator('#collectionFilter').fill('')
             page.locator('#collectionChapter').select_option('')
-            assert page.locator('#content .toolbar .badge').inner_text()=='230 results'
+            expect(page.locator('#content .toolbar .badge')).to_have_text('230 results')
 
             # A catalog destination also exits PDF-only Read mode through the
             # real atlasView hook, retaining the PDF beside Atlas on desktop.
@@ -326,7 +330,6 @@ def main():
                 same(grown,snapshot(page))
             if width == 1440:
                 assert_pdf_click_away(page)
-            assert not errors,(width,errors)
             if width in (1000,390):
                 page.keyboard.press('Shift+L')
                 page.locator('#catalogRailType').select_option('equations')
@@ -336,6 +339,11 @@ def main():
                 page.screenshot(path=screenshot_path(f'Atlas_Navigator_Menu_{width}.png'))
             assert page.evaluate("window.__savedStorage.get('ea_list_type')")=='equations'
             assert 'ea_list_enabled' not in page.evaluate('window.__storageWrites')
+            # The toolbar check opens Figures and updates the saved category.
+            # Give it a fresh page so it starts with the original menu state.
+            page.close()
+            assert_toolbar_modes(open_fixture(ctx, errors), width)
+            assert not errors,(width,errors)
             print(f'{width}×{height}: toolbar modes, direct catalogs, Shift+L, filtering, focus and shared geometry OK')
             ctx.close()
         browser.close()

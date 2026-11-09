@@ -70,8 +70,10 @@
   // Sidebar destinations are static and always available in index.html.
   // At a narrow manually resized width, icons remain keyboard accessible.
   const side = $('sidebar');
-  const updateCompactNav = () =>
-    side.classList.toggle('atlas-sidebar-compact', side.getBoundingClientRect().width < 160);
+  const updateCompactNav = () => {
+    const width = side.getBoundingClientRect().width;
+    side.classList.toggle('atlas-sidebar-compact', width > 0 && width < 160);
+  };
   new ResizeObserver(updateCompactNav).observe(side);
   updateCompactNav();
   // The unified toolbar is assembled from live, existing elements.

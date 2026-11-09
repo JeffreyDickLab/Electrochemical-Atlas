@@ -81,7 +81,10 @@ with sync_playwright() as pw:
     # Exercise the Firefox branch with a synthetic viewer that records hash
     # changes. The iframe document and its state must survive both jumps.
     firefox = browser.new_page(user_agent='Mozilla/5.0 Firefox/159.0')
-    firefox.set_content(MARKUP)
+    # Give the blob viewer the same HTTP origin it has in the local Atlas.
+    fixture_url = 'http://127.0.0.1/atlas-reader-fixture'
+    firefox.route(fixture_url, lambda route: route.fulfill(content_type='text/html', body=MARKUP))
+    firefox.goto(fixture_url)
     firefox.add_script_tag(content=INIT)
     firefox.evaluate('''() => {
       const html = `<!doctype html><body>Test viewer<script>

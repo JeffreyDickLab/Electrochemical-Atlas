@@ -1,2 +1,13 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+# Keep startup scripts portable across platforms.
+*.bat text eol=crlf
+*.sh text eol=lf
+*.command text eol=lf
+*.go text eol=lf
+*.mjs text eol=lf
+*.cjs text eol=lf
+*.js text eol=lf
+*.css text eol=lf
+*.md text eol=lf
+*.svg text eol=lf
+*.exe binary
+runtime/atlas-* -text
