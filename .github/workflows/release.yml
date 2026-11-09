@@ -1,0 +1,86 @@
+name: Build and publish platform releases
+on:
+  push:
+    tags:
+      - 'v*'
+permissions:
+  contents: read
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  release:
+    name: Release ${{ matrix.label }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - platform: windows
+            label: Windows
+          - platform: macos
+            label: macOS
+          - platform: linux
+            label: Linux
+    env:
+      ATLAS_PLATFORM: ${{ matrix.platform }}
+      ATLAS_RELEASE_ZIP: dist/Electrochemical_Atlas_${{ matrix.label }}.zip
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.23'
+          cache: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependency and create the offline bundle
+        run: |
+          npm ci --ignore-scripts --omit=optional --no-audit --no-fund
+          npm run release -- --platform "$ATLAS_PLATFORM"
+      - name: Verify the PDF renderer and responsive UI before publishing
+        run: |
+          python -m pip install playwright
+          python -m playwright install --with-deps chromium
+          python tests/browser/pdfjs_equation_smoke.py
+          npm run test:browser
+      - name: Publish this platform's offline ZIP
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          test -s "$ATLAS_RELEASE_ZIP"
+          release_endpoint="repos/$GH_REPO/releases/tags/$GITHUB_REF_NAME"
+          if ! release_id=$(gh api "$release_endpoint" --jq .id 2>/dev/null); then
+            gh release create "$GITHUB_REF_NAME" --verify-tag \
+              --title "Electrochemical Atlas $GITHUB_REF_NAME" --generate-notes \
+              || echo 'Checking whether another platform created the release.'
+            release_id=$(gh api "$release_endpoint" --jq .id)
+          fi
+
+          asset_name=$(basename "$ATLAS_RELEASE_ZIP")
+          find_asset() {
+            gh api --paginate "repos/$GH_REPO/releases/$release_id/assets?per_page=100" |
+              jq -cs --arg name "$asset_name" '[.[][] | select(.name == $name)] | first // {}'
+          }
+          asset=$(find_asset)
+          if jq -e '.state == "uploaded" and .size > 0' <<< "$asset" >/dev/null; then
+            echo "$asset_name is already published."
+            exit 0
+          fi
+          # A failed upload can leave an empty asset in the starter state.
+          if jq -e '.state == "starter" and .size == 0' <<< "$asset" >/dev/null; then
+            asset_id=$(jq -r .id <<< "$asset")
+            gh api --method DELETE "repos/$GH_REPO/releases/assets/$asset_id"
+          fi
+
+          gh release upload "$GITHUB_REF_NAME" "$ATLAS_RELEASE_ZIP"
