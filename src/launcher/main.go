@@ -18,7 +18,7 @@ import (
 
 const preferredPort = "43119"
 const appSignature = "Electrochemical-Atlas-Portable-v1"
-const appVersion = "6.31"
+const appVersion = "6.33"
 const appEntry = "/atlas/app/index.html"
 
 // Distinguish separate Atlas installations even if they use the same port.
