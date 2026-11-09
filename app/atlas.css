@@ -1,0 +1,7664 @@
+/* 00-foundation.css */
+:root {
+  --bg: #eef1ea;
+  --panel: #ffffff;
+  --panel-2: #f6f7f3;
+  --text: #172018;
+  --muted: #687069;
+  --line: #d8ddd5;
+  --accent: #365b3b;
+  --accent-2: #bfa24b;
+  --accent-soft: #e5eee4;
+  --danger: #9a3e38;
+  --shadow: 0 12px 32px rgba(31, 44, 33, 0.1);
+  --radius: 14px;
+  --topbar: 64px;
+  --sidebar: 244px;
+  --content: 510px;
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    sans-serif;
+}
+
+[data-theme='dark'] {
+  --bg: #121713;
+  --panel: #1a211b;
+  --panel-2: #202820;
+  --text: #edf3ec;
+  --muted: #a8b1a8;
+  --line: #354037;
+  --accent: #9bc19d;
+  --accent-2: #d2bb6c;
+  --accent-soft: #26392a;
+  --danger: #e18f87;
+  --shadow: 0 14px 36px rgba(0, 0, 0, 0.28);
+}
+
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+body {
+  overflow: hidden;
+  background: var(--bg);
+  color: var(--text);
+}
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+button {
+  cursor: pointer;
+}
+a {
+  color: var(--accent);
+}
+
+.topbar {
+  height: var(--topbar);
+  display: grid;
+  grid-template-columns: minmax(250px, var(--sidebar)) minmax(360px, 1fr) auto;
+  align-items: center;
+  gap: 18px;
+  padding: 8px 14px;
+  background: var(--panel);
+  border-bottom: 1px solid var(--line);
+  position: relative;
+  z-index: 20;
+}
+
+.brand {
+  border: 0;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-align: left;
+  padding: 2px;
+  min-width: 0;
+}
+.brand-mark {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  background: linear-gradient(145deg, #294a30, #6a7e41);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.18);
+}
+.brand strong,
+.brand small {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.brand strong {
+  font-size: 15px;
+}
+.brand small {
+  color: var(--muted);
+  font-size: 10px;
+  margin-top: 2px;
+}
+
+.search-wrap {
+  height: 44px;
+  border: 1px solid var(--line);
+  background: var(--panel-2);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 10px;
+  transition:
+    border-color 0.15s,
+    box-shadow 0.15s;
+}
+.search-wrap:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 18%, transparent);
+}
+.search-icon {
+  color: var(--muted);
+  font-size: 22px;
+}
+.search-wrap input {
+  flex: 1;
+  min-width: 120px;
+  border: 0;
+  outline: 0;
+  background: transparent;
+}
+.search-wrap select {
+  border: 0;
+  border-left: 1px solid var(--line);
+  background: transparent;
+  padding-left: 9px;
+  max-width: 120px;
+  outline: 0;
+  color: var(--muted);
+}
+kbd {
+  border: 1px solid var(--line);
+  background: var(--panel);
+  box-shadow: 0 1px 0 var(--line);
+  border-radius: 6px;
+  padding: 2px 6px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.top-actions {
+  display: flex;
+  gap: 7px;
+}
+.icon-button,
+.reader-toolbar button {
+  border: 1px solid var(--line);
+  background: var(--panel-2);
+  border-radius: 10px;
+  height: 38px;
+  min-width: 38px;
+  padding: 0 10px;
+}
+.icon-button:hover,
+.reader-toolbar button:hover {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.workspace {
+  height: calc(100% - var(--topbar));
+  display: grid;
+  grid-template-columns: var(--sidebar) var(--content) minmax(420px, 1fr);
+}
+.sidebar,
+.content,
+.reader {
+  min-width: 0;
+  min-height: 0;
+}
+.sidebar {
+  background: var(--panel);
+  border-right: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+}
+#mainNav {
+  padding: 12px 10px;
+  overflow: visible;
+}
+#mainNav button {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  align-items: center;
+  text-align: left;
+  gap: 4px;
+  border: 0;
+  background: transparent;
+  padding: 9px 10px;
+  border-radius: 10px;
+  color: var(--muted);
+}
+#mainNav button span {
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--accent);
+}
+#mainNav button:hover {
+  background: var(--panel-2);
+  color: var(--text);
+}
+#mainNav button.active {
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 700;
+}
+.progress-track {
+  height: 7px;
+  background: var(--panel-2);
+  border-radius: 99px;
+  margin: 8px 0 12px;
+  overflow: hidden;
+}
+.progress-track div {
+  height: 100%;
+  width: 0;
+  background: var(--accent);
+  transition: width 0.25s;
+}
+
+.content {
+  overflow: auto;
+  padding: 22px;
+  border-right: 1px solid var(--line);
+  background: var(--bg);
+  scroll-behavior: smooth;
+}
+.content:focus {
+  outline: none;
+}
+.reader {
+  background: #252525;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.reader-toolbar {
+  height: 46px;
+  background: var(--panel);
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 8px;
+  color: var(--text);
+}
+.reader-toolbar button {
+  height: 34px;
+  min-width: 34px;
+  padding: 0 8px;
+}
+.reader-toolbar label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  color: var(--muted);
+  margin-left: 3px;
+}
+.reader-toolbar input {
+  width: 58px;
+  height: 30px;
+  border: 1px solid var(--line);
+  background: var(--panel-2);
+  border-radius: 8px;
+  padding: 0 6px;
+}
+#readerPrinted {
+  color: var(--muted);
+  font-size: 12px;
+  margin-left: 3px;
+  white-space: nowrap;
+}
+#bookmarkPage {
+  margin-left: auto;
+}
+.reader-message {
+  height: 22px;
+  background: var(--panel-2);
+  color: var(--muted);
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid var(--line);
+}
+#pdfFrame {
+  flex: 1;
+  width: 100%;
+  border: 0;
+  background: #444;
+}
+.reader-fallback {
+  position: absolute;
+  inset: 68px 0 0;
+  background: var(--panel);
+  color: var(--text);
+  display: grid;
+  place-content: center;
+  text-align: center;
+  padding: 30px;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  margin-top: 0;
+}
+h1 {
+  font-size: 30px;
+  letter-spacing: -0.03em;
+}
+h2 {
+  font-size: 21px;
+}
+h3 {
+  font-size: 16px;
+}
+p {
+  line-height: 1.58;
+}
+.muted {
+  color: var(--muted);
+}
+.eyebrow {
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  font-weight: 800;
+  font-size: 11px;
+  margin-bottom: 8px;
+}
+
+.hero {
+  background: linear-gradient(145deg, var(--panel), var(--accent-soft));
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: var(--shadow);
+  display: grid;
+  grid-template-columns: 1fr 132px;
+  gap: 18px;
+  overflow: hidden;
+}
+.hero img {
+  width: 126px;
+  border-radius: 8px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.22);
+  align-self: end;
+}
+.hero p {
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.primary,
+.secondary,
+.text-button,
+.chip,
+.collection-card,
+.toc-link,
+.page-ref {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--panel);
+  padding: 8px 11px;
+}
+.primary {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+  font-weight: 700;
+}
+.secondary:hover,
+.text-button:hover,
+.chip:hover,
+.page-ref:hover {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+.full {
+  width: 100%;
+}
+.text-button {
+  padding: 4px 8px;
+  font-size: 12px;
+  color: var(--accent);
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 9px;
+  margin: 16px 0;
+}
+.stat-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 12px;
+}
+.stat-card strong {
+  display: block;
+  font-size: 21px;
+  color: var(--accent);
+}
+.stat-card span {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.section-block {
+  margin: 20px 0;
+}
+.section-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.section-heading h2 {
+  margin: 0;
+}
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+.info-card,
+.path-card,
+.calculator-card,
+.detail-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 14px;
+}
+.info-card button,
+.path-card button {
+  margin-top: 8px;
+}
+.info-card p,
+.path-card p {
+  color: var(--muted);
+  font-size: 13px;
+  margin: 6px 0;
+}
+.guide-only {
+  display: none;
+}
+body.guide-mode .guide-only {
+  display: block;
+}
+
+.view-header {
+  margin-bottom: 14px;
+}
+.view-header p {
+  color: var(--muted);
+}
+.toolbar {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin: 12px 0;
+  flex-wrap: wrap;
+}
+.toolbar input,
+.toolbar select,
+.note-box textarea,
+.calc-grid input,
+.calc-grid select {
+  border: 1px solid var(--line);
+  background: var(--panel);
+  border-radius: 9px;
+  padding: 8px 10px;
+  outline: none;
+}
+.toolbar input {
+  flex: 1;
+  min-width: 180px;
+}
+.toolbar input:focus,
+.note-box textarea:focus,
+.calc-grid input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 15%, transparent);
+}
+
+.result-list {
+  display: grid;
+  gap: 8px;
+}
+.result-card,
+.collection-card {
+  width: 100%;
+  text-align: left;
+  display: block;
+  background: var(--panel);
+  padding: 12px;
+  transition:
+    transform 0.12s,
+    border-color 0.12s,
+    box-shadow 0.12s;
+}
+.result-card:hover,
+.collection-card:hover {
+  transform: translateY(-1px);
+  border-color: var(--accent);
+  box-shadow: 0 8px 20px rgba(31, 44, 33, 0.08);
+}
+.result-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.result-title {
+  font-weight: 750;
+}
+.result-snippet {
+  color: var(--muted);
+  font-size: 12.5px;
+  line-height: 1.45;
+  margin-top: 5px;
+}
+.badge {
+  display: inline-flex;
+  align-items: center;
+  height: 22px;
+  border-radius: 99px;
+  padding: 0 8px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 800;
+  white-space: nowrap;
+}
+.page-label {
+  color: var(--muted);
+  font-size: 11px;
+  white-space: nowrap;
+}
+mark {
+  background: color-mix(in srgb, var(--accent-2) 48%, transparent);
+  color: inherit;
+  border-radius: 3px;
+  padding: 0 1px;
+}
+
+.toc-chapter {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  margin: 8px 0;
+  overflow: hidden;
+}
+.toc-chapter > summary {
+  cursor: pointer;
+  padding: 12px 14px;
+  font-weight: 750;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+.toc-chapter[open] > summary {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+.toc-children {
+  padding: 8px 10px 12px;
+}
+.toc-link {
+  width: 100%;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  text-align: left;
+  padding: 7px 8px;
+}
+.toc-link:hover {
+  background: var(--panel-2);
+}
+.toc-link.level-3 {
+  padding-left: 22px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.detail-header {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 16px;
+  margin-bottom: 10px;
+}
+.detail-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  align-items: center;
+  color: var(--muted);
+  font-size: 12px;
+  margin: 8px 0 12px;
+}
+.detail-text {
+  white-space: pre-wrap;
+  line-height: 1.62;
+}
+.related-row {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.chip {
+  font-size: 11px;
+  padding: 5px 8px;
+}
+.note-box {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+.note-box textarea {
+  width: 100%;
+  min-height: 95px;
+  resize: vertical;
+  margin: 6px 0;
+}
+.pager {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 14px 0;
+}
+
+/* All three symbol categories are visible at once. The source list formerly
+   used a horizontally scrolling tab strip that hid longer category names. */
+.symbol-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 7px;
+  width: 100%;
+  min-width: 0;
+  margin: 0 0 12px;
+}
+.symbol-tabs button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  width: 100%;
+  min-width: 0;
+  min-height: 56px;
+  padding: 8px 6px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--panel);
+  color: var(--text);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 650;
+  line-height: 1.25;
+  text-align: center;
+  white-space: normal;
+  cursor: pointer;
+}
+.symbol-tab-label {
+  min-width: 0;
+  overflow-wrap: break-word;
+  text-wrap: balance;
+}
+.symbol-tab-count {
+  font-size: 11px;
+  line-height: 1.2;
+  color: var(--muted);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+.symbol-tabs button:hover {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+.symbol-tabs button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+.symbol-tabs button.active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+.symbol-tabs button.active .symbol-tab-count {
+  color: inherit;
+  opacity: 0.85;
+}
+[data-theme='dark'] .symbol-tabs button.active {
+  color: #142318;
+}
+@container (max-width: 420px) {
+  .symbol-tabs {
+    gap: 4px;
+  }
+  .symbol-tabs button {
+    padding: 7px 3px;
+    font-size: 11px;
+  }
+  .symbol-tabs .symbol-tab-count {
+    font-size: 10px;
+  }
+}
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  font-size: 12px;
+}
+.data-table th,
+.data-table td {
+  border-bottom: 1px solid var(--line);
+  padding: 9px;
+  text-align: left;
+  vertical-align: top;
+}
+.data-table th {
+  position: sticky;
+  top: -22px;
+  background: var(--panel-2);
+  color: var(--muted);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.data-table tr:hover td {
+  background: var(--accent-soft);
+}
+.data-table button {
+  border: 0;
+  background: transparent;
+  color: var(--accent);
+  padding: 0;
+  text-align: left;
+  font-weight: 700;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 12px 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+.pagination button {
+  border: 1px solid var(--line);
+  background: var(--panel);
+  border-radius: 8px;
+  padding: 6px 9px;
+}
+
+.path-card {
+  margin: 10px 0;
+}
+.path-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+.path-steps {
+  display: grid;
+  gap: 6px;
+  margin-top: 10px;
+}
+.path-step {
+  display: grid;
+  grid-template-columns: 28px 1fr auto;
+  gap: 8px;
+  align-items: center;
+  border: 1px solid var(--line);
+  background: var(--panel-2);
+  border-radius: 10px;
+  padding: 8px;
+}
+.path-step.done {
+  opacity: 0.66;
+}
+.path-step-index {
+  width: 25px;
+  height: 25px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 800;
+  font-size: 11px;
+}
+
+.calculator-card {
+  margin: 10px 0;
+}
+.calculator-card h3 {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+.calc-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+.calc-grid label {
+  color: var(--muted);
+  font-size: 11px;
+}
+.calc-grid input,
+.calc-grid select {
+  display: block;
+  width: 100%;
+  margin-top: 4px;
+  color: var(--text);
+}
+.calc-output {
+  background: var(--accent-soft);
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 10px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  line-height: 1.55;
+}
+.calc-note {
+  color: var(--muted);
+  font-size: 11px;
+}
+.calc-canvas {
+  width: 100%;
+  height: 190px;
+  margin-top: 10px;
+  background: var(--panel-2);
+  border-radius: 10px;
+  border: 1px solid var(--line);
+}
+
+.empty {
+  border: 1px dashed var(--line);
+  border-radius: var(--radius);
+  padding: 28px;
+  text-align: center;
+  color: var(--muted);
+}
+.search-summary {
+  color: var(--muted);
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.bookmark-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+  align-items: center;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 9px;
+  margin: 6px 0;
+}
+.bookmark-row button {
+  border: 0;
+  background: transparent;
+  color: var(--danger);
+}
+
+#helpDialog {
+  border: 0;
+  padding: 0;
+  border-radius: 18px;
+  background: transparent;
+  color: var(--text);
+  max-width: 620px;
+}
+#helpDialog::backdrop {
+  background: rgba(0, 0, 0, 0.48);
+  backdrop-filter: blur(3px);
+}
+.dialog-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 22px;
+  box-shadow: var(--shadow);
+  position: relative;
+}
+.dialog-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: 0;
+  background: var(--panel-2);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 20px;
+}
+.shortcut-grid {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  gap: 8px;
+  align-items: center;
+}
+
+body.compact-reader .workspace {
+  grid-template-columns: var(--sidebar) minmax(440px, 1fr);
+}
+body.compact-reader .reader {
+  display: none;
+}
+
+@media (max-width: 1250px) {
+  :root {
+    --sidebar: 210px;
+    --content: 460px;
+  }
+  .brand small {
+    display: none;
+  }
+}
+@media (max-width: 980px) {
+  .workspace {
+    grid-template-columns: 200px 1fr;
+  }
+  .reader {
+    display: none;
+  }
+  .topbar {
+    grid-template-columns: 200px 1fr auto;
+  }
+}
+@media (max-width: 700px) {
+  body {
+    overflow: auto;
+  }
+  .topbar {
+    position: sticky;
+    top: 0;
+    grid-template-columns: 1fr auto;
+    height: auto;
+  }
+  .brand {
+    display: none;
+  }
+  .search-wrap {
+    grid-column: 1;
+  }
+  .workspace {
+    height: auto;
+    min-height: calc(100vh - 62px);
+    grid-template-columns: 1fr;
+  }
+  .sidebar {
+    display: none;
+  }
+  .content {
+    border: 0;
+    min-height: 100vh;
+    padding: 14px;
+  }
+  .hero {
+    grid-template-columns: 1fr;
+  }
+  .hero img {
+    display: none;
+  }
+  .stat-grid,
+  .card-grid,
+  .calc-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* v2: independent local vector reader, with selectable text and PDF link geometry. */
+[hidden] {
+  display: none !important;
+}
+.reader {
+  min-width: 0;
+}
+.reader-toolbar {
+  height: auto;
+  min-height: 46px;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+}
+.reader-message {
+  flex-shrink: 0;
+  min-height: 24px;
+  height: auto;
+  padding: 3px 8px;
+  text-align: center;
+}
+.book-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  align-items: center;
+  padding: 7px 8px;
+  background: var(--panel);
+  border-bottom: 1px solid var(--line);
+  flex-shrink: 0;
+  font-size: 12px;
+}
+.book-tools button,
+.book-error button {
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  padding: 5px 8px;
+  background: var(--panel-2);
+}
+.book-tools button:hover,
+.book-tools button[aria-pressed='true'] {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+}
+.book-tools label {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+.book-tools input {
+  width: 53px;
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  padding: 4px;
+}
+#zoomReadout {
+  min-width: 30px;
+  text-align: center;
+}
+#closeReader {
+  display: none;
+}
+.book-body {
+  min-height: 0;
+  flex: 1;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+.book-viewport {
+  min-height: 0;
+  min-width: 0;
+  flex: 1;
+  overflow: auto;
+  background: #363b36;
+  padding: 15px;
+  position: relative;
+  overscroll-behavior: contain;
+}
+.book-page {
+  position: relative;
+  background: white;
+  box-shadow: 0 3px 20px #0006;
+  margin: 0 auto;
+  flex-shrink: 0;
+}
+#bookImage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  pointer-events: none;
+  user-select: none;
+}
+.book-text-layer,
+.book-link-layer {
+  position: absolute;
+  inset: 0;
+}
+.book-text-layer {
+  z-index: 2;
+  overflow: hidden;
+}
+.book-text-layer span {
+  position: absolute;
+  color: transparent;
+  white-space: pre;
+  font-family: serif;
+  line-height: 1;
+  cursor: text;
+  user-select: text;
+}
+.book-text-layer span::selection {
+  background: rgba(76, 130, 230, 0.32);
+  color: transparent;
+}
+.book-link-layer {
+  z-index: 3;
+  pointer-events: none;
+}
+.book-link-layer a {
+  position: absolute;
+  display: block;
+  pointer-events: auto;
+  cursor: pointer;
+  border-radius: 1px;
+}
+.book-link-layer a:hover,
+.book-link-layer a:focus-visible {
+  background: rgba(50, 130, 70, 0.18);
+  outline: 1px solid rgba(40, 110, 55, 0.65);
+}
+.show-links .book-link-layer a {
+  background: rgba(50, 130, 70, 0.09);
+  outline: 1px solid rgba(40, 110, 55, 0.28);
+}
+.book-error {
+  padding: 24px;
+  border-radius: 10px;
+  background: var(--panel);
+  color: var(--text);
+  line-height: 1.6;
+}
+.outline-panel {
+  width: 260px;
+  min-width: 190px;
+  max-width: 45%;
+  background: var(--panel);
+  color: var(--text);
+  overflow: auto;
+  border-right: 1px solid var(--line);
+  padding: 10px 7px;
+}
+#outlineSearch {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: var(--panel-2);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+#outlineTree {
+  padding: 10px 0;
+  font-size: 12px;
+}
+#outlineTree details > div {
+  padding-left: 12px;
+  border-left: 1px solid var(--line);
+  margin-left: 5px;
+}
+#outlineTree summary {
+  display: flex;
+  cursor: pointer;
+  align-items: flex-start;
+  list-style: none;
+}
+#outlineTree summary::before {
+  content: '▸';
+  padding-top: 9px;
+}
+#outlineTree details[open] > summary::before {
+  content: '▾';
+}
+.outline-link {
+  display: flex;
+  text-align: left;
+  width: 100%;
+  gap: 8px;
+  justify-content: space-between;
+  background: transparent;
+  border: 0;
+  border-radius: 5px;
+  padding: 7px 5px;
+  font-size: 12px;
+  line-height: 1.4;
+}
+.outline-link small {
+  flex-shrink: 0;
+  color: var(--muted);
+}
+.outline-link:hover {
+  background: var(--accent-soft);
+}
+body.reader-expanded .workspace {
+  grid-template-columns: var(--sidebar) minmax(0, 1fr);
+}
+body.reader-expanded .content {
+  display: none;
+}
+body.reader-expanded #closeReader {
+  display: inline-block;
+}
+body.reader-expanded .reader {
+  display: flex;
+}
+@media (min-width: 1101px) and (max-width: 1500px) {
+  .workspace {
+    grid-template-columns: 190px minmax(330px, 0.8fr) minmax(480px, 1.2fr);
+  }
+  :root {
+    --sidebar: 190px;
+  }
+  .content {
+    padding: 17px;
+  }
+}
+@media (max-width: 1100px) {
+  .workspace {
+    grid-template-columns: 190px minmax(0, 1fr);
+  }
+  .reader {
+    display: none;
+  }
+  body.reader-open .reader {
+    display: flex;
+    position: fixed;
+    inset: var(--topbar) 0 0;
+    z-index: 20;
+  }
+  body.reader-open #closeReader {
+    display: inline-block;
+    margin-left: auto;
+  }
+  .topbar {
+    grid-template-columns: 180px 1fr auto;
+    gap: 8px;
+  }
+  .brand {
+    min-width: 0;
+  }
+  .brand strong {
+    font-size: 15px;
+  }
+}
+@media (max-width: 700px) {
+  :root {
+    --topbar: 62px;
+  }
+  .workspace {
+    display: block;
+  }
+  .topbar {
+    min-height: 62px;
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+  .top-actions {
+    gap: 3px;
+  }
+  .top-actions #beginnerToggle {
+    display: none;
+  }
+  .icon-button {
+    padding: 0 7px;
+    min-width: 30px;
+  }
+  .search-wrap kbd {
+    display: none;
+  }
+  #searchScope {
+    max-width: 95px;
+  }
+  #readerPrinted {
+    margin-left: auto;
+  }
+  .reader-toolbar {
+    gap: 3px;
+  }
+  .reader-toolbar button {
+    min-width: 29px;
+    padding: 0 5px;
+  }
+  .book-tools {
+    gap: 4px;
+    font-size: 11px;
+  }
+  .book-tools button {
+    padding: 5px 7px;
+  }
+  .book-jump-label {
+    display: none !important;
+  }
+  #printedGo {
+    display: none;
+  }
+  .outline-panel {
+    position: absolute;
+    inset: 0 auto 0 0;
+    z-index: 6;
+    max-width: 88%;
+    width: 300px;
+    box-shadow: 4px 0 20px #0004;
+  }
+  .book-viewport {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 700px) {
+  #searchScope {
+    display: none;
+  }
+  .search-wrap {
+    min-width: 0;
+    width: 100%;
+  }
+  #globalSearch {
+    min-width: 0;
+  }
+}
+
+/* 01-layout.css */
+/* Workspace controls, deliberately independent of the book renderer. */
+:root {
+  --layoutbar: 42px;
+  --nav-width: 232px;
+  --book-width: 55%;
+  --outline-width: 250px;
+  --topbar: 64px;
+}
+button:focus-visible,
+select:focus-visible,
+input:focus-visible,
+summary:focus-visible,
+[role='separator']:focus-visible {
+  outline: 3px solid var(--accent-2);
+  outline-offset: 2px;
+}
+.topbar {
+  grid-template-columns: 245px minmax(100px, 1fr) auto;
+  gap: 12px;
+  height: var(--topbar);
+}
+.search-wrap input {
+  min-width: 0;
+}
+.top-actions #beginnerToggle {
+  display: inline-block;
+}
+.layout-toolbar {
+  height: var(--layoutbar);
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 4px 12px;
+  background: var(--panel);
+  border-bottom: 1px solid var(--line);
+  font-size: 12px;
+  z-index: 21;
+  position: relative;
+}
+.layout-toolbar button,
+.layout-toolbar select,
+.reader-toolbar button {
+  border: 1px solid var(--line);
+  background: var(--panel-2);
+  border-radius: 7px;
+  padding: 5px 9px;
+  min-height: 30px;
+  white-space: nowrap;
+}
+.layout-toolbar button[aria-expanded='true'] {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+body .workspace,
+body.reader-expanded .workspace,
+body.compact-reader .workspace {
+  display: flex;
+  height: calc(100dvh - var(--topbar) - var(--layoutbar));
+  min-height: 0;
+  overflow: hidden;
+}
+body .sidebar {
+  width: var(--nav-width);
+  flex: 0 0 var(--nav-width);
+  display: flex;
+  border: 0;
+}
+body .content {
+  flex: 1 1 0;
+  min-width: 0;
+  min-height: 0;
+  display: block;
+  padding: 24px;
+  overflow: auto;
+  scroll-behavior: auto;
+  border: 0;
+  container-type: inline-size;
+}
+body .reader,
+body.reader-open .reader {
+  display: flex;
+  position: relative;
+  inset: auto;
+  flex: 0 0 var(--book-width);
+  width: var(--book-width);
+  z-index: 0;
+  min-width: 0;
+}
+body.layout-no-nav .sidebar,
+body.layout-no-nav #navDivider {
+  display: none;
+}
+body.layout-no-book .reader,
+body.layout-no-book #bookDivider {
+  display: none;
+}
+body.layout-no-atlas .content,
+body.layout-no-atlas #bookDivider {
+  display: none;
+}
+body.layout-no-atlas .reader {
+  flex: 1 1 0;
+  width: auto;
+}
+.panel-divider {
+  width: 10px;
+  flex: 0 0 10px;
+  position: relative;
+  background: var(--bg);
+  cursor: col-resize;
+  touch-action: none;
+  z-index: 4;
+  border-left: 1px solid var(--line);
+  border-right: 1px solid var(--line);
+}
+.panel-divider::after,
+.outline-divider::after {
+  content: '';
+  position: absolute;
+  top: 43%;
+  bottom: 43%;
+  left: 2px;
+  right: 2px;
+  border-radius: 9px;
+  background: var(--line);
+}
+.panel-divider:hover,
+.panel-divider:focus-visible,
+.outline-divider:hover {
+  background: var(--accent-soft);
+}
+body.resizing,
+body.resizing * {
+  user-select: none !important;
+  cursor: col-resize !important;
+}
+body.resizing #bookLinks,
+body.resizing #importedPdfFrame {
+  pointer-events: none !important;
+}
+#readerMore {
+  flex-shrink: 0;
+  max-height: 40%;
+  overflow: auto;
+}
+#closeReader {
+  display: inline-block;
+}
+.reader-message {
+  white-space: normal;
+  font-size: 11px;
+}
+.reader-toolbar {
+  padding: 6px;
+  gap: 4px;
+}
+.reader-toolbar label {
+  font-size: 11px;
+}
+#readerPrinted {
+  font-size: 10px;
+  white-space: normal;
+  max-width: 130px;
+}
+.reader-toolbar input {
+  width: 55px;
+}
+.book-viewport {
+  padding: 12px;
+}
+.outline-panel {
+  width: var(--outline-width);
+  flex: 0 1 var(--outline-width);
+  min-width: 0;
+  max-width: min(90%, calc(100% - 76px));
+  position: relative;
+  inset: auto;
+}
+.outline-divider {
+  width: 10px;
+  flex: 0 0 10px;
+  position: relative;
+  background: var(--panel-2);
+  cursor: col-resize;
+  touch-action: none;
+}
+.fold-panel {
+  border: 1px solid var(--line);
+  background: var(--panel);
+  border-radius: 12px;
+  margin: 14px 0;
+  overflow: hidden;
+}
+.fold-panel > summary {
+  padding: 13px 15px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.fold-panel > summary::before {
+  content: '▸';
+  color: var(--accent);
+  font-size: 16px;
+}
+.fold-panel[open] > summary::before {
+  content: '▾';
+}
+.fold-panel > summary small {
+  font-weight: 400;
+  font-size: 11px;
+  color: var(--muted);
+  margin-left: auto;
+}
+.fold-panel > .fold-body {
+  padding: 0 15px 15px;
+  min-height: 45px;
+  max-height: none;
+  overflow: auto;
+  resize: vertical;
+}
+.fold-body .section-block,
+.fold-body .path-card {
+  margin: 0;
+  border: 0;
+  box-shadow: none;
+}
+.fold-body .section-heading h2,
+.fold-body > .section-block > h3,
+.fold-body .path-head h2 {
+  display: none;
+}
+.fold-body .note-box {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+#content > header,
+#content > .hero,
+#content > .fold-panel,
+#content > .stat-grid {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.hero {
+  grid-template-columns: 1fr 100px;
+  box-shadow: none;
+  padding: 22px;
+}
+.hero img {
+  width: 100px;
+}
+.hero h1 {
+  font-size: clamp(23px, 3cqw, 34px);
+}
+.view-header h1 {
+  font-size: 27px;
+}
+.hero p {
+  font-size: 14px;
+}
+.view-header p {
+  color: var(--muted);
+  font-size: 14px;
+}
+.section-heading {
+  flex-wrap: wrap;
+}
+#guideDialog {
+  border: 1px solid var(--line);
+  padding: 0;
+  border-radius: 16px;
+  background: var(--panel);
+  color: var(--text);
+  width: min(800px, 94vw);
+  max-width: 94vw;
+  max-height: 88dvh;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+#guideDialog::backdrop {
+  background: #101d17a8;
+  backdrop-filter: blur(3px);
+}
+.guide-shell {
+  display: flex;
+  flex-direction: column;
+  max-height: 88dvh;
+}
+.guide-header {
+  padding: 20px 22px 8px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+.guide-header h2 {
+  margin: 0;
+  font-size: 25px;
+}
+.guide-tabs {
+  display: flex;
+  gap: 6px;
+  padding: 12px 20px;
+  overflow: auto;
+  border-bottom: 1px solid var(--line);
+  flex-shrink: 0;
+}
+.guide-tabs button {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 8px 10px;
+  white-space: nowrap;
+  background: var(--panel-2);
+  font-size: 13px;
+}
+.guide-tabs button[aria-selected='true'] {
+  background: var(--accent);
+  color: var(--panel);
+}
+#guideContent {
+  overflow: auto;
+  padding: 20px 24px;
+  line-height: 1.65;
+  min-height: 230px;
+  font-size: 14px;
+}
+#guideContent h3 {
+  font-size: 18px;
+  margin: 14px 0 7px;
+}
+#guideContent p {
+  margin: 8px 0 14px;
+}
+#guideContent .guide-step {
+  padding: 12px;
+  background: var(--panel-2);
+  border-radius: 10px;
+  margin: 8px 0;
+}
+#guideContent button {
+  margin: 3px;
+}
+.guide-shortcuts {
+  display: grid;
+  grid-template-columns: 125px 1fr;
+  gap: 9px;
+}
+.layout-notice {
+  position: fixed;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 16px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--panel);
+  box-shadow: var(--shadow);
+  z-index: 80;
+  font-size: 12px;
+  max-width: 90vw;
+}
+@container (max-width:470px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+  .hero img {
+    display: none;
+  }
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+  .stat-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .path-step {
+    grid-template-columns: 24px 1fr;
+  }
+  .path-step .page-label {
+    display: none;
+  }
+}
+@media (max-width: 1050px) {
+  .topbar {
+    grid-template-columns: 160px minmax(0, 1fr) auto;
+    gap: 8px;
+  }
+  .brand strong {
+    font-size: 13px;
+  }
+  .brand small {
+    display: none;
+  }
+  .layout-hint {
+    display: none;
+  }
+  .content {
+    padding: 18px !important;
+  }
+  .layout-toolbar {
+    gap: 5px;
+  }
+  .layout-toolbar button,
+  .layout-toolbar select {
+    padding: 5px 7px;
+  }
+}
+@media (max-width: 799px) {
+  :root {
+    --topbar: 58px;
+    --layoutbar: 42px;
+  }
+  body {
+    overflow: hidden;
+  }
+  .topbar {
+    grid-template-columns: minmax(0, 1fr) auto;
+    padding: 7px;
+    position: relative;
+  }
+  .brand {
+    display: none;
+  }
+  .search-wrap {
+    width: 100%;
+    height: 40px;
+  }
+  .search-wrap kbd,
+  .search-wrap select {
+    display: none;
+  }
+  .top-actions {
+    gap: 4px;
+  }
+  .top-actions .icon-button {
+    height: 36px;
+    min-width: 34px;
+  }
+  .layout-toolbar {
+    padding: 4px 7px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 5px;
+  }
+  .layout-toolbar button {
+    font-size: 11px;
+  }
+  body .sidebar {
+    position: fixed;
+    top: calc(var(--topbar) + var(--layoutbar));
+    bottom: 0;
+    left: 0;
+    width: min(280px, 85vw);
+    z-index: 30;
+    box-shadow: 8px 0 30px #0005;
+  }
+  body #navDivider,
+  body #bookDivider {
+    display: none !important;
+  }
+  body .content {
+    min-height: 0 !important;
+    padding: 14px !important;
+    flex: 1;
+  }
+  body .reader {
+    flex: 1 1 100% !important;
+    width: 100% !important;
+  }
+  .outline-panel {
+    position: absolute;
+    inset: 0 auto 0 0;
+    max-width: 90%;
+    width: min(var(--outline-width), 90vw);
+    z-index: 6;
+    box-shadow: 5px 0 15px #0005;
+  }
+  .outline-divider {
+    display: none !important;
+  }
+  .guide-tabs {
+    padding: 10px;
+    gap: 4px;
+  }
+  .guide-tabs button {
+    padding: 7px;
+    font-size: 11px;
+  }
+  .guide-header {
+    padding: 15px;
+  }
+  .guide-header h2 {
+    font-size: 20px;
+  }
+  #guideContent {
+    padding: 15px;
+  }
+  .reader-toolbar label {
+    font-size: 0;
+  }
+  .reader-toolbar label input {
+    font-size: 12px;
+  }
+  .reader-toolbar #readerPrinted {
+    max-width: 110px;
+  }
+  .hero {
+    padding: 15px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}
+
+.brand-mark {
+  flex-shrink: 0;
+}
+
+/* 02-calculators.css */
+.calc-header {
+  margin-bottom: 18px;
+}
+.calc-header p {
+  margin-bottom: 0;
+}
+.calc-picker {
+  max-width: 1200px;
+  margin: 0 auto 20px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  padding: 15px;
+}
+.calc-picker-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.calc-picker label {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--muted);
+}
+.calc-picker input,
+.calc-picker select {
+  display: block;
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 10px;
+  width: 100%;
+  min-width: 0;
+  margin-top: 5px;
+  font-size: 13px;
+  color: var(--text);
+}
+.calc-picker #calculatorSelect {
+  font-weight: 650;
+  font-size: 14px;
+}
+#calcTool {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.calc-title-row h2 {
+  margin: 0 0 7px;
+  font-size: 23px;
+}
+.calc-title-row p {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0;
+}
+.calc-actions {
+  display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
+  margin: 14px 0;
+}
+.calc-actions button {
+  font-size: 12px;
+}
+.calc-convention {
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.5;
+  border-left: 3px solid var(--accent-2);
+  padding: 0 10px;
+  margin: 15px 0;
+}
+.calc-work-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  align-items: start;
+}
+.calc-fold {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  margin: 14px 0;
+  overflow: hidden;
+}
+.calc-work-grid .calc-fold {
+  margin: 0;
+}
+.calc-fold > summary {
+  padding: 13px 15px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  list-style: none;
+}
+.calc-fold > summary:before {
+  content: '▸';
+  color: var(--accent);
+}
+.calc-fold[open] > summary:before {
+  content: '▾';
+}
+.calc-fold > summary small {
+  margin-left: auto;
+  font-size: 10px;
+  font-weight: 400;
+  color: var(--muted);
+}
+.calc-resize {
+  padding: 0 15px 16px;
+  resize: vertical;
+  overflow: auto;
+  min-height: 75px;
+  max-height: 70vh;
+}
+.calc-field-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px 12px;
+}
+.calc-field {
+  display: block;
+  min-width: 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+.calc-field label,
+.calc-field > span {
+  display: block;
+  font-weight: 650;
+  line-height: 1.4;
+  margin-bottom: 5px;
+}
+.calc-field > select {
+  display: block;
+  width: 100%;
+  font-size: 12px;
+  margin-top: 5px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 9px;
+  background: var(--panel-2);
+  color: var(--text);
+}
+.quantity-input {
+  display: flex;
+  align-items: stretch;
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.quantity-input:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent-soft);
+}
+.quantity-input input {
+  background: transparent;
+  border: 0;
+  min-width: 0;
+  width: 0;
+  flex: 1;
+  padding: 10px 8px;
+  color: var(--text);
+  font-size: 13px;
+  margin: 0;
+}
+.quantity-input select {
+  border: 0;
+  border-left: 1px solid var(--line);
+  background: var(--panel);
+  padding: 5px;
+  max-width: 110px;
+  font-size: 11px;
+  margin: 0;
+  border-radius: 0;
+  width: auto;
+}
+.fixed-unit {
+  display: flex;
+  align-items: center;
+  padding: 0 7px;
+  font-size: 10px;
+  max-width: 110px;
+}
+.calc-field small {
+  display: block;
+  font-size: 10px;
+  line-height: 1.5;
+  margin-top: 5px;
+}
+.calc-submit {
+  font-size: 12px;
+  margin-top: 16px;
+  padding: 8px 13px;
+}
+.calc-auto {
+  font-size: 10px;
+  color: var(--muted);
+  margin-left: 8px;
+}
+.calc-results {
+  border: 1px solid var(--line);
+  background: var(--panel);
+  padding: 16px;
+  border-radius: 12px;
+}
+.calc-results h3 {
+  font-size: 14px;
+  margin: 0 0 10px;
+}
+.calc-result-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(100px, auto);
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+  align-items: center;
+  font-size: 12px;
+}
+.calc-result-row:last-child {
+  border-bottom: 0;
+}
+.calc-result-row > span {
+  color: var(--muted);
+  line-height: 1.4;
+}
+.calc-result-row strong {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+.calc-result-row small {
+  font-size: 11px;
+  font-weight: 500;
+  white-space: normal;
+}
+#calcErrors {
+  background: color-mix(in srgb, var(--danger) 12%, var(--panel));
+  border-left: 3px solid var(--danger);
+  padding: 12px;
+  font-size: 13px;
+  color: var(--danger);
+  border-radius: 6px;
+  line-height: 1.5;
+}
+.calc-warning {
+  background: color-mix(in srgb, var(--accent-2) 16%, var(--panel));
+  border-left: 3px solid var(--accent-2);
+  padding: 10px;
+  font-size: 12px;
+  border-radius: 5px;
+  line-height: 1.5;
+  margin: 8px 0;
+}
+.calc-equation {
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  padding: 14px;
+  border-radius: 8px;
+  white-space: pre-wrap;
+  font-size: 13px;
+  line-height: 1.9;
+  overflow-wrap: anywhere;
+}
+.calc-resize > h3 {
+  margin: 18px 0 6px;
+  font-size: 14px;
+}
+.calc-resize > p {
+  font-size: 12px;
+}
+.calc-book-citation,
+.calc-constants,
+.calc-footer {
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.6;
+}
+.calc-footer {
+  margin: 14px 0;
+}
+.calc-curve-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 15px 10px;
+  flex-wrap: wrap;
+}
+.calc-curve-controls select {
+  min-width: 0;
+  flex: 1;
+  border: 1px solid var(--line);
+  background: var(--panel-2);
+  padding: 8px;
+  border-radius: 8px;
+  font-size: 12px;
+}
+.calc-curve-controls button {
+  font-size: 11px;
+}
+.calc-plot-shell {
+  position: relative;
+  min-height: 240px;
+  height: 330px;
+  max-height: 75vh;
+  resize: vertical;
+  overflow: hidden;
+  width: 100%;
+  padding: 0;
+}
+.calc-plot-shell canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.calc-plot-readout {
+  display: block;
+  font-size: 11px;
+  padding: 10px 15px;
+  min-height: 38px;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+.calc-data {
+  padding: 10px 15px;
+  font-size: 11px;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+}
+.calc-data > summary {
+  cursor: pointer;
+}
+.calc-data #calcDataTable {
+  overflow: auto;
+  max-height: 280px;
+}
+.calc-data table {
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+  width: 100%;
+}
+.calc-data th,
+.calc-data td {
+  padding: 7px;
+  border-bottom: 1px solid var(--line);
+  text-align: right;
+  white-space: nowrap;
+}
+.calc-data th {
+  font-size: 10px;
+}
+@container (min-width:850px) {
+  .calc-work-grid {
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  }
+}
+@container (max-width:450px) {
+  .calc-field-grid,
+  .calc-picker-top {
+    grid-template-columns: 1fr;
+  }
+  .calc-result-row {
+    grid-template-columns: minmax(0, 1fr) minmax(90px, 1fr);
+  }
+  .calc-result-row strong {
+    font-size: 12px;
+  }
+  .calc-plot-shell {
+    height: 280px;
+  }
+  .calc-fold > summary small {
+    display: none;
+  }
+  .calc-picker #calculatorSelect {
+    font-size: 12px;
+  }
+}
+
+/* 03-responsive-base.css */
+/* v3.1: card typography and responsive wrapping.
+   Scope to UI components: never change the book's page/text layers or inline math. */
+.path-step {
+  width: 100%;
+  min-width: 0;
+  grid-template-columns: 28px minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 10px;
+  padding: 12px;
+  text-align: left;
+  line-height: 1.5;
+}
+.path-card .path-step {
+  margin-top: 0;
+}
+.path-steps {
+  gap: 8px;
+}
+.path-step-copy {
+  display: block;
+  min-width: 0;
+}
+.path-step-title {
+  display: block;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+.path-step-description {
+  display: block;
+  margin-top: 6px;
+  font-size: 12.5px;
+  font-weight: 400;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+.path-step-index {
+  margin-top: 1px;
+  flex-shrink: 0;
+}
+.path-step > .page-label {
+  align-self: start;
+  padding-top: 2px;
+  line-height: 1.5;
+}
+.path-step:hover {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+.path-head {
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.path-head > div {
+  min-width: 0;
+  flex: 1 1 230px;
+}
+.path-head > .badge {
+  flex: 0 0 auto;
+}
+
+/* Keep header and body as distinct rows in search and catalog cards. */
+.result-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 5px 12px;
+}
+.result-title {
+  display: block;
+  flex: 1 1 180px;
+  min-width: 0;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+.result-top > .page-label,
+.result-top > .badge {
+  flex: 0 0 auto;
+}
+.result-snippet {
+  display: block;
+  margin-top: 7px;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+.result-card > .badge,
+.collection-card > .badge {
+  margin-top: 8px;
+}
+.result-card,
+.collection-card {
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+
+/* Scope headline wrapping to application cards, not bold inline values/units. */
+.view-header,
+.detail-header,
+.info-card,
+.path-card,
+.detail-card,
+.hero > div,
+.calc-title-row,
+.guide-header > div {
+  min-width: 0;
+}
+.view-header h1,
+.detail-header h1,
+.info-card h3,
+.path-head h2,
+.calc-title-row h2,
+.guide-header h2,
+.toc-chapter summary,
+.toc-link > span:first-child {
+  overflow-wrap: anywhere;
+}
+.info-card h3 {
+  line-height: 1.4;
+  margin: 0 0 6px;
+}
+.info-card p {
+  display: block;
+  line-height: 1.55;
+  margin: 6px 0 10px;
+}
+.detail-card > strong,
+.note-box > strong {
+  display: block;
+  line-height: 1.4;
+}
+.detail-card > strong + p {
+  margin-top: 7px;
+}
+#guideContent .guide-step > strong {
+  display: block;
+  margin-bottom: 5px;
+  line-height: 1.4;
+}
+.toc-chapter > summary,
+.toc-link {
+  align-items: flex-start;
+  line-height: 1.45;
+}
+.toc-chapter > summary > span:first-child,
+.toc-link > span:first-child {
+  min-width: 0;
+}
+.toc-chapter .page-label,
+.toc-link .page-label {
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+.fold-panel > summary {
+  align-items: flex-start;
+  line-height: 1.45;
+}
+.fold-panel > summary::before {
+  flex-shrink: 0;
+  line-height: 1.3;
+}
+.fold-summary-title {
+  flex: 1 1 0;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.fold-panel > summary > small {
+  flex: 0 0 auto;
+  padding-top: 2px;
+}
+.table-scroll {
+  max-width: 100%;
+  overflow: auto;
+  border-radius: var(--radius);
+}
+.data-table th,
+.data-table td {
+  overflow-wrap: anywhere;
+}
+.detail-text,
+.detail-card > p {
+  overflow-wrap: anywhere;
+}
+.toolbar > input {
+  min-width: 0;
+  flex: 1 1 160px;
+  max-width: 100%;
+}
+.pager {
+  flex-wrap: wrap;
+}
+.pager > button {
+  flex: 1 1 170px;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  text-align: left;
+  line-height: 1.45;
+}
+.bookmark-row {
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+.bookmark-row .toc-link {
+  min-width: 0;
+}
+.stat-card {
+  min-width: 0;
+}
+.stat-card > span {
+  display: block;
+  margin-top: 4px;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+.calc-title-row h2 {
+  line-height: 1.3;
+}
+
+/* Respond to the Atlas pane width, not merely the browser width. */
+@container (max-width:470px) {
+  .path-step {
+    grid-template-columns: 25px minmax(0, 1fr);
+    padding: 10px;
+    gap: 9px;
+  }
+  .path-step > .page-label {
+    display: none;
+  }
+  .fold-panel > summary > small {
+    display: none;
+  }
+  .fold-panel > summary {
+    padding: 12px;
+  }
+  .fold-panel > .fold-body {
+    padding: 0 10px 12px;
+  }
+  .fold-body .path-card {
+    padding: 4px 0 0;
+  }
+  .result-title {
+    flex-basis: 100%;
+  }
+  .result-top > .page-label {
+    font-size: 10px;
+  }
+  .path-head > div {
+    flex-basis: 100%;
+  }
+}
+
+/* Source excerpts keep their own spacing, without redundant provenance headings. */
+.source-note,
+.source-hint {
+  font-size: 12px;
+  line-height: 1.55;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+.source-note {
+  margin: 10px 0 0;
+}
+.source-section {
+  margin-top: 20px;
+  min-width: 0;
+}
+.source-section > h2 {
+  font-size: 15px;
+  line-height: 1.4;
+  margin: 0 0 8px;
+}
+.source-fold {
+  margin-top: 18px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  min-width: 0;
+}
+.source-fold > summary {
+  padding: 11px 12px;
+  cursor: pointer;
+  line-height: 1.45;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+.source-fold[open] > summary {
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 8px;
+}
+.source-fold > .source-previews {
+  padding: 0 12px 10px;
+}
+.source-preview {
+  margin: 12px 0;
+  min-width: 0;
+}
+.source-preview > figcaption {
+  display: block;
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--muted);
+  margin: 0 0 5px;
+}
+.source-crop {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: white;
+  cursor: zoom-in;
+}
+.source-crop:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+.source-page-image {
+  display: block;
+  position: absolute;
+  max-width: none;
+  height: auto;
+  margin: 0;
+  pointer-events: none;
+}
+.source-crop.source-missing {
+  aspect-ratio: auto !important;
+  min-height: 70px;
+  padding: 16px;
+  color: #16251c;
+  text-align: left;
+}
+.source-unavailable {
+  line-height: 1.5;
+  font-size: 13px;
+}
+.source-unavailable[hidden] {
+  display: none;
+}
+.source-hint {
+  margin: 10px 0 0;
+}
+
+/* A border on a percentage-offset crop changes its short viewport's ratio.
+   Use an inset ring so image coordinates stay exactly aligned with PDF points. */
+.source-crop {
+  border: 0;
+  box-shadow: 0 0 0 1px var(--line);
+  border-radius: 3px;
+}
+.brand {
+  min-width: 0;
+  overflow: hidden;
+}
+.brand > span:last-child {
+  min-width: 0;
+}
+
+/* 04-pdf-import.css */
+/* Self-contained importer and reader. All illustrations and colors below are original CSS. */
+.import-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: grid;
+  place-items: center;
+  overflow: auto;
+  padding: 28px;
+  background: radial-gradient(ellipse 90% 70% at 30% 0, #30594b, #12291f 62%, #0c1813 100%);
+  color: #f5f8f2;
+}
+.import-screen[hidden] {
+  display: none;
+}
+.import-shell {
+  width: min(100%, 610px);
+  margin: auto;
+  padding: clamp(26px, 4vw, 45px);
+  background: #f8faf6;
+  color: #1b3028;
+  border: 1px solid #dfe7dd;
+  border-radius: 22px;
+  box-shadow: 0 32px 100px #0007;
+  text-align: left;
+}
+.import-shell .eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: #547667;
+  font-weight: 800;
+  margin-top: 22px;
+}
+.import-shell h1 {
+  font-size: clamp(26px, 5vw, 36px);
+  margin: 10px 0 12px;
+  line-height: 1.13;
+  letter-spacing: -0.035em;
+}
+.import-shell p {
+  font-size: 14px;
+  line-height: 1.63;
+  color: #50665b;
+  margin: 0 0 22px;
+}
+.import-badge {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: #e0c35b;
+  color: #233527;
+  font-weight: 900;
+  font-size: 20px;
+  letter-spacing: 0.045em;
+}
+.pdf-dropzone {
+  display: grid;
+  gap: 8px;
+  position: relative;
+  padding: 19px 18px;
+  border-radius: 16px;
+  border: 2px dashed #9db8a7;
+  background: #eff5ee;
+  text-align: center;
+  cursor: pointer;
+  outline-offset: 4px;
+  transition:
+    background 0.12s,
+    border-color 0.12s;
+}
+.pdf-dropzone:hover,
+.pdf-dropzone.over,
+.pdf-dropzone:focus-within {
+  background: #e1eee3;
+  border-color: #316d50;
+}
+.pdf-dropzone strong {
+  font-size: 17px;
+  color: #234f38;
+}
+.pdf-dropzone span {
+  font-size: 12px;
+  color: #62756b;
+}
+#pdfDropZone input[type='file'] {
+  position: static;
+  display: block;
+  opacity: 1;
+  width: 100%;
+  max-width: 100%;
+  min-height: 42px;
+  height: auto;
+  margin-top: 5px;
+  cursor: pointer;
+  border: 1px solid #9db8a7;
+  border-radius: 10px;
+  padding: 6px;
+  background: #fff;
+  color: #233527;
+  font: 12px/1.5 system-ui;
+}
+#pdfDropZone input[type='file']::file-selector-button {
+  border: 0;
+  border-radius: 7px;
+  background: #285e44;
+  color: #fff;
+  padding: 9px 15px;
+  margin-right: 12px;
+  font: 600 12px system-ui;
+  cursor: pointer;
+}
+#pdfDropZone input[type='file']:focus-visible {
+  outline: 3px solid #64a57d;
+  outline-offset: 3px;
+}
+#pdfDropZone input[type='file']:disabled {
+  opacity: 0.6;
+}
+.pdf-dropzone input:disabled {
+  cursor: wait;
+}
+.import-shell #pdfSelectionName {
+  font-size: 12px;
+  margin: 10px 0 18px;
+  word-break: break-all;
+}
+.import-progress-area {
+  margin: 13px 0 18px;
+}
+.import-progress-area[hidden] {
+  display: none;
+}
+.import-progress-area strong {
+  font-size: 13px;
+  display: block;
+  margin-bottom: 12px;
+}
+.import-progress-area .progress-track {
+  height: 8px;
+  background: #dde9df;
+  border-radius: 16px;
+  overflow: hidden;
+}
+.import-progress-area .progress-track > div {
+  width: 0;
+  height: 100%;
+  background: #337755;
+  transition: width 0.2s;
+}
+.import-progress-area small {
+  display: block;
+  font-size: 11px;
+  color: #68796d;
+  margin-top: 9px;
+}
+.import-shell .import-error {
+  padding: 10px 12px;
+  color: #922e35;
+  background: #ffe5e6;
+  border-radius: 8px;
+}
+.import-shell .import-error[hidden] {
+  display: none;
+}
+.import-shell .import-footnote {
+  font-size: 11px;
+  margin: 20px 0 0;
+  padding-top: 15px;
+  border-top: 1px solid #e2e9e1;
+  color: #526359;
+  text-align: center;
+}
+.cover-graphic {
+  width: min(210px, 31%);
+  aspect-ratio: 3/4;
+  border-radius: 13px;
+  flex: none;
+  background: linear-gradient(160deg, #1b3326 0%, #1d3c30 68%, #091b12 100%);
+  box-shadow: 0 16px 35px #0004;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 23px 16px;
+  color: #ddc875;
+  overflow: hidden;
+  position: relative;
+}
+.cover-graphic:before,
+.cover-graphic:after {
+  content: '';
+  width: 170px;
+  height: 170px;
+  position: absolute;
+  border: 1.5px solid #c9b96d65;
+  border-radius: 50%;
+  transform: translate(45px, 45px);
+}
+.cover-graphic:after {
+  transform: translate(-45px, 90px);
+  width: 120px;
+  height: 120px;
+}
+.cover-graphic .cover-motif {
+  font-family: Georgia, serif;
+  font-size: clamp(30px, 6vw, 70px);
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  z-index: 1;
+  margin: auto;
+}
+.cover-graphic small {
+  text-align: center;
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  font-weight: 700;
+  z-index: 1;
+  line-height: 1.6;
+}
+@container (max-width:470px) {
+  .cover-graphic {
+    display: none;
+  }
+}
+#bookViewport {
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+#importedPdfFrame {
+  display: block;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #fefefe;
+  z-index: 1;
+}
+#importedPdfFrame[hidden] {
+  display: none;
+}
+@media (max-width: 600px) {
+  .import-screen {
+    padding: 14px;
+  }
+  .import-shell {
+    padding: 24px 20px;
+    border-radius: 16px;
+  }
+}
+
+/* The original layout reserved a narrow image column; the new glyph is not a book cover. */
+.hero {
+  grid-template-columns: minmax(0, 1fr) 110px !important;
+}
+.hero > .cover-graphic {
+  box-sizing: border-box;
+  width: 110px !important;
+  min-width: 110px;
+  max-width: 110px;
+  aspect-ratio: 3/4;
+  align-self: center;
+  padding: 13px 8px;
+  border-radius: 9px;
+}
+.hero > .cover-graphic:before {
+  width: 100px;
+  height: 100px;
+}
+.hero > .cover-graphic:after {
+  width: 75px;
+  height: 75px;
+}
+.hero > .cover-graphic .cover-motif {
+  font-size: 39px;
+}
+.hero > .cover-graphic small {
+  font-size: 6px;
+  letter-spacing: 0.08em;
+}
+@container (max-width:470px) {
+  .hero {
+    grid-template-columns: 1fr !important;
+  }
+  .hero > .cover-graphic {
+    display: none !important;
+  }
+}
+
+/* Portable source: optional one-time native path selection, no PDF storage. */
+.portable-source-panel {
+  display: grid;
+  gap: 12px;
+  align-items: start;
+}
+.portable-source-panel[hidden] {
+  display: none !important;
+}
+.portable-source-copy small {
+  display: block;
+  margin-top: 5px;
+  line-height: 1.45;
+}
+.portable-path-fallback {
+  width: 100%;
+  font-size: 12px;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+  padding-top: 9px;
+}
+.portable-path-fallback summary {
+  cursor: pointer;
+  line-height: 1.5;
+}
+.portable-path-fallback label {
+  display: grid;
+  gap: 5px;
+  margin: 10px 0;
+  font-weight: 600;
+}
+.portable-path-fallback input {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  color: var(--text);
+  font: inherit;
+}
+.portable-path-fallback button {
+  max-width: 100%;
+  white-space: normal;
+}
+
+/* 05-reader.css */
+/* Reader typography and legibility. */
+:root {
+  --topbar: 112px;
+  --layoutbar: 46px;
+}
+.topbar {
+  height: var(--topbar);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-rows: 42px 42px;
+  gap: 8px 20px;
+  padding: 9px 18px 10px;
+  align-items: center;
+}
+.topbar .brand {
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: start;
+  max-width: 100%;
+}
+.topbar .brand strong {
+  font-size: 15px;
+}
+.topbar .top-actions {
+  grid-column: 2;
+  grid-row: 1;
+  gap: 10px;
+  justify-self: end;
+}
+.topbar .search-wrap {
+  grid-column: 1/-1;
+  grid-row: 2;
+  width: 100%;
+  height: 44px;
+}
+.topbar .top-actions button {
+  height: 38px;
+  min-width: 38px;
+  padding: 0 13px;
+  white-space: nowrap;
+}
+.topbar .brand-mark {
+  height: 37px;
+  width: 37px;
+}
+.topbar .search-wrap input {
+  font-size: 14px;
+}
+.layout-toolbar {
+  height: var(--layoutbar);
+  min-height: var(--layoutbar);
+  padding: 6px 16px;
+  gap: 10px;
+}
+.layout-toolbar button,
+.layout-toolbar select {
+  min-height: 32px;
+}
+.layout-toggles {
+  gap: 7px;
+}
+.layout-presets {
+  gap: 9px;
+}
+.detail-header {
+  padding: 22px 22px 21px;
+  margin-bottom: 14px;
+}
+.detail-header .eyebrow {
+  margin-bottom: 11px;
+}
+.detail-header h1 {
+  font-size: clamp(24px, 3.2cqw, 32px);
+  line-height: 1.28;
+  margin: 0 0 18px;
+  letter-spacing: -0.025em;
+}
+.detail-header .detail-meta {
+  margin: 0 0 17px;
+  gap: 8px 12px;
+  line-height: 1.6;
+}
+.detail-header .button-row {
+  gap: 10px;
+}
+.detail-header .button-row button {
+  min-height: 39px;
+  padding: 9px 13px;
+}
+.detail-card {
+  padding: 20px 22px;
+}
+.problem-statement {
+  font-size: 15px;
+  line-height: 1.77;
+  letter-spacing: 0.002em;
+  max-width: 76ch;
+  overflow-wrap: break-word;
+  hyphens: none;
+}
+.problem-statement p {
+  margin: 0 0 15px;
+}
+.problem-statement p:last-child {
+  margin-bottom: 0;
+}
+.problem-parts {
+  counter-reset: problem-part;
+  list-style: none;
+  padding: 0;
+  margin: 19px 0 5px;
+  display: grid;
+  gap: 11px;
+}
+.problem-parts li {
+  counter-increment: problem-part;
+  display: grid;
+  grid-template-columns: 33px minmax(0, 1fr);
+  gap: 10px;
+  align-items: start;
+  padding: 12px 14px;
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  border-radius: 9px;
+}
+.problem-parts li::before {
+  content: counter(problem-part, lower-alpha) ')';
+  display: grid;
+  place-items: center;
+  width: 29px;
+  height: 29px;
+  border-radius: 8px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1;
+}
+.problem-parts li > div {
+  min-width: 0;
+  padding-top: 1px;
+  line-height: 1.75;
+}
+.equation-detail-preview,
+.equation-catalog-preview {
+  background: #fff;
+  color: #22342a;
+  border: 0;
+  border-radius: 10px;
+}
+.equation-detail-preview {
+  padding: 18px 20px;
+  min-height: 105px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow-x: auto;
+}
+.equation-context {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+  margin: 14px 0 0;
+}
+.equation-catalog-preview {
+  margin: 11px 0 8px;
+  padding: 9px 12px;
+  min-height: 67px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+.equation-catalog-preview.equation-unavailable {
+  background: var(--panel-2);
+  color: var(--muted);
+}
+.formula-status {
+  color: #65746b;
+  font-size: 12px;
+  line-height: 1.55;
+}
+.equation-unavailable .formula-status {
+  font-style: italic;
+}
+@container (max-width:480px) {
+  .detail-header {
+    padding: 17px;
+  }
+  .detail-header h1 {
+    font-size: 24px;
+    margin-bottom: 14px;
+  }
+  .detail-card {
+    padding: 16px;
+  }
+  .problem-statement {
+    font-size: 14px;
+    line-height: 1.72;
+  }
+  .problem-parts li {
+    padding: 10px;
+    grid-template-columns: 28px 1fr;
+    gap: 8px;
+  }
+  .problem-parts li::before {
+    width: 26px;
+    height: 26px;
+  }
+  .equation-detail-preview {
+    padding: 15px 12px;
+  }
+}
+@media (max-width: 799px) {
+  :root {
+    --topbar: 101px;
+    --layoutbar: 42px;
+  }
+  .topbar {
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-rows: 36px 40px;
+    gap: 7px 6px;
+    padding: 7px 9px 8px;
+  }
+  .topbar .brand {
+    display: flex;
+    min-width: 0;
+    max-width: 100%;
+    grid-row: 1;
+  }
+  .topbar .brand strong {
+    font-size: 13px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .topbar .brand small {
+    display: none;
+  }
+  .topbar .brand-mark {
+    width: 30px;
+    height: 30px;
+    border-radius: 9px;
+    font-size: 11px;
+  }
+  .topbar .top-actions {
+    gap: 5px;
+  }
+  .topbar .top-actions button {
+    height: 33px;
+    min-width: 33px;
+    padding: 0 8px;
+    font-size: 12px;
+  }
+  .topbar .search-wrap {
+    height: 40px;
+  }
+  .layout-toolbar {
+    padding: 4px 8px;
+  }
+  .detail-header .button-row button {
+    min-height: 36px;
+  }
+}
+@media (max-width: 405px) {
+  .topbar .brand strong {
+    font-size: 12px;
+  }
+  .topbar .brand-mark {
+    width: 28px;
+    height: 28px;
+  }
+  .topbar .top-actions #themeToggle {
+    display: none;
+  }
+}
+
+/* 06-reader-controls.css */
+/* Reader-only vertical space and toolbar controls.
+ * Place floating controls below native PDF buttons but clear of its scrollbar. */
+:root {
+  --atlas-pdf-overlay-top: 66px;
+  --atlas-pdf-overlay-right: 44px;
+}
+body.atlas-top-bars-hidden {
+  --topbar: 0px;
+  --layoutbar: 0px;
+}
+body.atlas-top-bars-hidden > .topbar,
+body.atlas-top-bars-hidden > .layout-toolbar,
+body.atlas-top-bars-hidden .reader > .reader-toolbar,
+body.atlas-top-bars-hidden .reader > #readerMore {
+  display: none !important;
+}
+/* Full viewport height while the application rows are collapsed. */
+body.atlas-top-bars-hidden .workspace {
+  height: 100dvh !important;
+}
+/* Ensure the PDF iframe itself grows, not just its surrounding panel. */
+body.atlas-top-bars-hidden .reader .book-body {
+  flex: 1 1 auto;
+  min-height: 0;
+}
+.restore-top-bars {
+  position: fixed;
+  z-index: 70;
+  top: var(--atlas-pdf-overlay-top);
+  right: var(--atlas-pdf-overlay-right);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px 8px;
+  min-height: 27px;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  color: var(--muted);
+  background: transparent;
+  box-shadow: none;
+  font-size: 10.5px;
+  font-weight: 600;
+  line-height: 1.4;
+  white-space: nowrap;
+  opacity: 0.45;
+  transition:
+    opacity 0.15s ease,
+    background-color 0.15s ease,
+    border-color 0.15s ease;
+}
+.restore-top-bars:hover,
+.restore-top-bars:focus-visible {
+  opacity: 1;
+  color: var(--text);
+  background: var(--panel);
+  border-color: var(--line);
+}
+.restore-top-bars:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+.restore-top-bars[hidden] {
+  display: none !important;
+}
+@media (max-width: 520px) {
+  .restore-top-bars {
+    right: 36px;
+  }
+}
+
+@media (hover: none) {
+  .restore-top-bars {
+    opacity: 0.8;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .restore-top-bars {
+    transition: none;
+  }
+}
+
+/* 07-navigation.css */
+/* Electrochemical Atlas v5: one clear navigation model. Zero book content. */
+/* Shared sidebar navigation tokens: Menu and Browse are two levels of one panel. */
+:root {
+  --atlas-ease: cubic-bezier(0.22, 0.8, 0.24, 1);
+  --atlas-side-primary: var(--accent);
+  --atlas-side-secondary: var(--muted);
+  --atlas-side-heading: var(--muted);
+  --atlas-side-text-size: 12.5px;
+  --atlas-side-detail-size: 11.5px;
+  --atlas-side-heading-size: 10px;
+  --atlas-side-radius: 9px;
+}
+/* Permanent destinations; Menu and Browse share one column and divider. */
+.layout-toolbar {
+  height: 46px;
+  min-height: 46px;
+  gap: 10px;
+  padding: 5px 13px;
+  overflow: visible;
+  isolation: isolate;
+}
+.atlas-history-buttons {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-shrink: 0;
+}
+.layout-toolbar .atlas-menu-button {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: transparent;
+  min-height: 33px;
+  padding: 5px 9px;
+  font-weight: 650;
+}
+.layout-toolbar .atlas-menu-button[aria-expanded='true'] {
+  background: var(--accent-soft);
+  color: var(--text);
+}
+.atlas-menu-button span:first-child {
+  font-size: 15px;
+  line-height: 1;
+}
+.atlas-menu-text {
+  font-size: 11.5px;
+}
+.layout-toolbar .atlas-history-button {
+  min-width: 34px;
+  height: 33px;
+  font-size: 19px;
+  line-height: 1;
+  padding: 1px 7px;
+  background: transparent;
+}
+.layout-toolbar .atlas-history-button:disabled {
+  opacity: 0.32;
+  cursor: not-allowed;
+}
+.atlas-location-text {
+  font-size: 12px;
+  color: var(--muted);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  min-width: 50px;
+  flex: 1 1 100px;
+  max-width: 100%;
+}
+.atlas-view-modes {
+  flex-shrink: 0;
+  display: flex;
+  gap: 3px;
+  padding: 3px;
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  border-radius: 11px;
+}
+.layout-toolbar .atlas-mode {
+  min-height: 27px;
+  padding: 4px 10px;
+  border: 0;
+  background: transparent;
+  border-radius: 7px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.layout-toolbar .atlas-mode.active {
+  background: var(--panel);
+  color: var(--text);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.12);
+}
+.layout-toolbar .atlas-mode:hover:not(.active) {
+  background: var(--accent-soft);
+}
+/* Click-to-search instead of an invisible automatic page replacement on every keystroke. */
+.search-wrap {
+  cursor: pointer;
+}
+.search-wrap input {
+  cursor: pointer;
+  caret-color: transparent;
+}
+.search-wrap:focus-within,
+.search-wrap:hover {
+  border-color: var(--accent);
+}
+#globalSearch::placeholder {
+  color: var(--muted);
+  opacity: 1;
+}
+/* Menu uses the available panel height, not a separate scrolling surface.
+   Short displays receive a compact layout further down in the stylesheet. */
+body .sidebar {
+  overflow: hidden;
+}
+#mainNav {
+  overflow: hidden;
+  min-height: 0;
+  padding: 10px 9px 8px;
+}
+.atlas-nav-label {
+  padding: 8px 10px 7px;
+  font-size: var(--atlas-side-heading-size);
+  font-weight: 800;
+  letter-spacing: 0.105em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.atlas-nav-label.atlas-reference-label {
+  margin: 11px 1px 4px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+#mainNav > button[data-view] {
+  color: var(--atlas-side-primary);
+  font-size: var(--atlas-side-text-size);
+  min-height: 35px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 9px;
+  margin: 1px 0;
+  width: 100%;
+  font-weight: 600;
+  text-align: left;
+}
+#mainNav > button[data-view] .atlas-sidebar-icon {
+  min-width: 25px;
+  width: 25px;
+  height: 25px;
+  display: grid;
+  place-items: center;
+  font-size: 13px;
+  border-radius: 7px;
+  background: var(--panel-2);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+#mainNav > button[data-view].active .atlas-sidebar-icon {
+  background: var(--accent-soft);
+}
+/* Home should answer what to do in the first visible screen. */
+/* The home heading and launch tiles share the same edge as Starting points. */
+.atlas-welcome {
+  max-width: var(--atlas-content-max, 1180px);
+  margin: 5px auto 20px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  border-radius: 0;
+}
+.atlas-welcome .eyebrow {
+  margin: 0 0 9px;
+  font-size: 10px;
+  letter-spacing: 0.11em;
+}
+.atlas-welcome h1 {
+  font-size: clamp(25px, 3.1cqw, 35px);
+  line-height: 1.2;
+  letter-spacing: -0.035em;
+  margin: 0 0 9px;
+}
+.atlas-welcome > p {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--muted);
+  max-width: 72ch;
+  margin: 0 0 21px;
+}
+.atlas-home-search {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid var(--line);
+  background: var(--panel-2);
+  border-radius: 11px;
+  min-height: 46px;
+  padding: 9px 13px;
+  text-align: left;
+}
+.atlas-home-search:hover {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+.atlas-home-search span:first-child {
+  font-size: 23px;
+  color: var(--accent);
+  line-height: 1;
+}
+.atlas-home-search span:nth-child(2) {
+  flex: 1;
+  color: var(--muted);
+  font-size: 13px;
+}
+.atlas-home-search kbd {
+  padding: 3px 6px;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  color: var(--muted);
+  background: var(--panel);
+  font-size: 10px;
+}
+.atlas-launch-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 11px;
+  margin-top: 17px;
+}
+.atlas-launch {
+  min-width: 0;
+  min-height: 128px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  gap: 7px;
+  padding: 15px 14px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  transition:
+    background 0.14s ease,
+    border 0.14s ease;
+}
+.atlas-launch:hover {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+}
+.atlas-launch-icon {
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+  font-weight: 750;
+  border-radius: 9px;
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+.atlas-launch strong {
+  font-size: 13.5px;
+  line-height: 1.3;
+}
+.atlas-launch small {
+  color: var(--muted);
+  font-size: 11.5px;
+  line-height: 1.4;
+}
+.atlas-start-paths {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+.atlas-path-shortcut {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 5px 8px;
+  padding: 13px 14px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  text-align: left;
+}
+.atlas-path-shortcut strong {
+  font-size: 13px;
+  grid-column: 1;
+  line-height: 1.35;
+}
+.atlas-path-shortcut small {
+  color: var(--muted);
+  font-size: 11.5px;
+  grid-column: 1;
+  line-height: 1.45;
+}
+.atlas-path-shortcut span {
+  grid-column: 2;
+  grid-row: 1/3;
+  align-self: center;
+  color: var(--accent);
+  font-size: 18px;
+}
+.atlas-path-shortcut:hover {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+}
+.atlas-more-home {
+  max-width: 1100px;
+  margin: 20px auto;
+  padding: 0;
+}
+.atlas-more-home > summary {
+  padding: 14px 15px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  border-radius: 11px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.atlas-more-home[open] > summary {
+  margin-bottom: 15px;
+}
+.atlas-more-home .stat-grid {
+  margin-bottom: 16px;
+}
+.atlas-recent-home {
+  max-width: 1100px;
+  margin: 0 auto 25px;
+}
+.atlas-recent-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: space-between;
+}
+.atlas-recent-title h2 {
+  margin-bottom: 12px;
+  font-size: 17px;
+}
+.atlas-subtle {
+  color: var(--muted);
+  font-size: 11px;
+}
+.atlas-recent-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.atlas-recent-button {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  padding: 9px 12px;
+  border-radius: 9px;
+  min-width: 0;
+  max-width: 100%;
+  text-align: left;
+}
+.atlas-recent-button:hover {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+.atlas-recent-icon {
+  color: var(--accent);
+}
+/* Fast search dialog */
+#atlasCommandPalette {
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  padding: 0;
+  margin: 8vh auto auto;
+  width: min(760px, calc(100vw - 26px));
+  max-width: unset;
+  max-height: 83dvh;
+  overflow: visible;
+  box-shadow: none;
+}
+#atlasCommandPalette::backdrop {
+  background: rgba(5, 12, 8, 0.7);
+  backdrop-filter: blur(5px);
+}
+.atlas-command-shell {
+  border: 1px solid var(--line);
+  background: var(--panel);
+  border-radius: 16px;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  max-height: 83dvh;
+}
+.atlas-command-searchline {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 17px;
+  border-bottom: 1px solid var(--line);
+}
+.atlas-command-searchline > span {
+  font-size: 26px;
+  line-height: 1;
+  color: var(--accent);
+}
+.atlas-command-searchline input {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  font-size: 16px;
+  outline: 0;
+  min-width: 0;
+  flex: 1;
+}
+.atlas-command-searchline input::-webkit-search-cancel-button {
+  cursor: pointer;
+}
+.atlas-command-searchline kbd {
+  border: 1px solid var(--line);
+  background: var(--panel-2);
+  color: var(--muted);
+  font-size: 10px;
+  padding: 4px 6px;
+  border-radius: 5px;
+}
+.atlas-command-scopes {
+  display: flex;
+  gap: 4px;
+  overflow-x: auto;
+  overscroll-behavior: contain;
+  padding: 10px 12px 10px;
+  background: var(--panel);
+  border-bottom: 1px solid var(--line);
+}
+.atlas-command-scopes button {
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  color: var(--muted);
+  white-space: nowrap;
+  font-size: 12px;
+  font-weight: 650;
+  padding: 7px 10px;
+}
+.atlas-command-scopes button.selected {
+  color: var(--text);
+  background: var(--accent-soft);
+  border-color: var(--line);
+}
+.atlas-command-scopes button:hover {
+  color: var(--text);
+}
+.atlas-command-results {
+  min-height: 130px;
+  max-height: min(60dvh, 540px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 8px;
+}
+.atlas-command-caption {
+  font-size: 10px;
+  font-weight: 800;
+  color: var(--muted);
+  letter-spacing: 0.1em;
+  padding: 8px 12px 7px;
+}
+.atlas-command-result {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 30px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 13px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: transparent;
+  text-align: left;
+  padding: 10px 12px;
+}
+.atlas-command-result[aria-selected='true'],
+.atlas-command-result:focus-visible {
+  background: var(--accent-soft);
+  border-color: var(--line);
+  outline: none;
+}
+.atlas-command-result-icon {
+  width: 30px;
+  height: 30px;
+  font-size: 18px;
+  font-weight: 650;
+  line-height: 1;
+  background: var(--panel-2);
+  border-radius: 7px;
+  display: grid;
+  place-items: center;
+  color: var(--accent);
+}
+.atlas-command-result-copy {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  gap: 3px;
+  overflow: hidden;
+}
+.atlas-command-result-copy strong {
+  font-size: 13.5px;
+  font-weight: 700;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+.atlas-command-result-copy small {
+  color: var(--muted);
+  font-size: 11.5px;
+  line-height: 1.5;
+  overflow: hidden;
+  max-height: 2.9em;
+}
+.atlas-command-result-type {
+  padding: 5px 7px;
+  border-radius: 6px;
+  color: var(--muted);
+  background: var(--panel-2);
+  font-size: 10px;
+  white-space: nowrap;
+}
+.atlas-command-empty {
+  padding: 20px;
+  color: var(--muted);
+  text-align: center;
+  font-size: 13px;
+}
+.atlas-command-footer {
+  min-height: 44px;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  align-items: center;
+  padding: 9px 13px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 10.5px;
+}
+.atlas-command-footer i {
+  font-style: normal;
+  margin: 0 4px;
+}
+.atlas-command-footer button {
+  border: 0;
+  background: none;
+  color: var(--accent);
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 11px;
+}
+.atlas-command-footer button[hidden] {
+  display: none;
+}
+/* Minimal way out when both reading focus and toolbar auto-hide are active. */
+.atlas-floating-exit {
+  position: fixed;
+  top: 56px;
+  left: 12px;
+  z-index: 71;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  color: var(--text);
+  background: var(--panel);
+  box-shadow: var(--shadow);
+  opacity: 0.88;
+  padding: 9px 12px;
+  font-size: 12px;
+  font-weight: 700;
+}
+.atlas-floating-exit:hover {
+  opacity: 1;
+  background: var(--accent-soft);
+}
+.atlas-floating-exit[hidden] {
+  display: none !important;
+}
+@container (max-width:700px) {
+  .atlas-launch-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .atlas-start-paths {
+    grid-template-columns: 1fr;
+  }
+}
+@container (max-width:390px) {
+  .atlas-launch-grid {
+    gap: 8px;
+  }
+  .atlas-launch {
+    padding: 11px;
+    min-height: 124px;
+  }
+  .atlas-home-search kbd {
+    display: none;
+  }
+}
+@media (max-width: 1100px) {
+  .layout-toolbar {
+    gap: 6px;
+    padding: 4px 8px;
+  }
+  .atlas-location-text {
+    font-size: 11px;
+  }
+  .layout-toolbar .atlas-mode {
+    padding: 4px 7px;
+    font-size: 11.5px;
+  }
+}
+@media (max-width: 799px) {
+  .atlas-location-text {
+    display: none;
+  }
+  .layout-toolbar {
+    height: 42px;
+    min-height: 42px;
+    justify-content: space-between;
+    overflow: visible;
+  }
+  .atlas-history-buttons {
+    gap: 3px;
+  }
+  .layout-toolbar .atlas-menu-button {
+    min-height: 31px;
+    padding: 5px 7px;
+  }
+  .atlas-menu-text {
+    display: none;
+  }
+  .layout-toolbar .atlas-history-button {
+    min-width: 30px;
+    height: 31px;
+    font-size: 17px;
+  }
+  .atlas-view-modes {
+    gap: 0;
+  }
+  .layout-toolbar .atlas-mode {
+    font-size: 11px;
+    padding: 4px 7px;
+  }
+  .atlas-mode[data-atlas-mode='together'] {
+    display: none;
+  }
+  .atlas-floating-exit {
+    top: 52px;
+    left: 8px;
+    font-size: 11px;
+    padding: 7px 10px;
+  }
+  .atlas-command-searchline {
+    padding: 12px;
+  }
+  .atlas-command-searchline input {
+    font-size: 14px;
+  }
+  .atlas-command-footer {
+    font-size: 10px;
+  }
+}
+@media (max-width: 460px) {
+  .atlas-command-result {
+    gap: 9px;
+    padding: 9px 8px;
+    grid-template-columns: 27px minmax(0, 1fr);
+  }
+  .atlas-command-result-icon {
+    width: 27px;
+    height: 27px;
+  }
+  .atlas-command-result-type {
+    grid-column: 2;
+    justify-self: start;
+    padding: 1px 5px;
+  }
+  .atlas-command-searchline > span {
+    font-size: 20px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .atlas-launch,
+  .atlas-command-result {
+    transition: none;
+  }
+}
+
+.atlas-suggested-paths {
+  max-width: 1100px;
+  margin: 0 auto 28px;
+}
+.atlas-suggested-paths .section-heading h2 {
+  font-size: 19px;
+}
+.atlas-suggested-paths .section-heading {
+  margin-bottom: 13px;
+}
+@media (max-width: 370px) {
+  .layout-toolbar {
+    padding: 4px 5px;
+    gap: 3px;
+  }
+  .atlas-history-buttons {
+    gap: 2px;
+  }
+  .layout-toolbar .atlas-menu-button {
+    padding: 5px 6px;
+  }
+  .layout-toolbar .atlas-history-button {
+    min-width: 27px;
+    padding: 3px 5px;
+  }
+  .atlas-view-modes {
+    padding: 2px;
+  }
+  .layout-toolbar .atlas-mode {
+    font-size: 10px;
+    padding: 4px 6px;
+  }
+}
+
+/* Make the PDF reader's controls unambiguous without removing any feature. */
+.atlas-pdf-history {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-right: 7px;
+}
+.atlas-pdf-history-label {
+  font-size: 11px;
+  color: var(--muted);
+  font-weight: 700;
+  white-space: nowrap;
+}
+.reader-toolbar #readerPrinted {
+  font-size: 11px;
+  white-space: nowrap;
+}
+@media (max-width: 799px) {
+  .reader-toolbar #readerPrinted {
+    font-size: 10px;
+    max-width: none;
+    white-space: nowrap;
+  }
+}
+
+/* One header search entry; layout mode controls the reader. */
+
+/* Search categories are chosen inside the command palette, not twice. */
+.topbar #searchScope {
+  display: none !important;
+}
+
+/* 08-reference-rail.css */
+/* Browse is the second level of the shared Atlas navigation sidebar.
+   Only the imported catalog provides its entries; no PDF data ships here. */
+body .workspace .atlas-area {
+  display: flex;
+  flex: 1 1 0;
+  min-width: 0;
+  min-height: 0;
+  position: relative;
+  overflow: hidden;
+}
+body .atlas-area .content {
+  min-width: 0;
+  flex: 1 1 0;
+  overflow: auto;
+}
+body.layout-no-atlas .workspace .atlas-area {
+  display: none;
+}
+/* Menu and Browse are alternate views inside one fixed-width column.
+   Entry lists use a slim visible vertical scrollbar with no horizontal overflow. */
+.sidebar > .catalog-rail {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0;
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+  max-width: 100%;
+  background: var(--panel);
+  border: 0;
+  overflow: hidden;
+}
+.catalog-rail[hidden],
+#mainNav[hidden] {
+  display: none !important;
+}
+.catalog-rail-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 12px 8px;
+  gap: 6px;
+  min-width: 0;
+}
+.catalog-rail-heading strong {
+  flex: 1 1 auto;
+  min-width: 0;
+  text-align: center;
+  color: var(--atlas-side-heading);
+  font-size: var(--atlas-side-heading-size);
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.catalog-rail-heading button {
+  width: auto;
+  height: 30px;
+  min-width: 0;
+  padding: 0 8px;
+  border: 1px solid var(--line);
+  background: var(--panel-2);
+  color: var(--atlas-side-primary);
+  border-radius: var(--atlas-side-radius);
+  font-size: var(--atlas-side-detail-size);
+  font-weight: 650;
+  white-space: nowrap;
+}
+.catalog-rail-heading button:hover {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+.catalog-rail-heading button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+#catalogRailType {
+  width: calc(100% - 24px);
+  max-width: calc(100% - 24px);
+  height: 37px;
+  min-height: 37px;
+  margin: 0 12px 9px;
+  border: 1px solid var(--line);
+  border-radius: var(--atlas-side-radius);
+  padding: 7px 9px;
+  background: var(--panel-2);
+  font-size: var(--atlas-side-text-size);
+  font-weight: 600;
+  color: var(--atlas-side-primary);
+}
+.catalog-rail-search-label {
+  display: block;
+  padding: 0 12px 9px;
+  color: var(--atlas-side-heading);
+  font-size: var(--atlas-side-heading-size);
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.catalog-rail-search-label input {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  margin-top: 6px;
+  padding: 8px 9px;
+  border: 1px solid var(--line);
+  border-radius: var(--atlas-side-radius);
+  background: var(--panel-2);
+  color: var(--text);
+  font-size: var(--atlas-side-text-size);
+  font-weight: 500;
+  letter-spacing: normal;
+  text-transform: none;
+}
+.catalog-rail-search-label input::placeholder {
+  color: var(--atlas-side-secondary);
+  opacity: 1;
+}
+.catalog-rail-list {
+  flex: 1 1 0;
+  min-height: 0;
+  min-width: 0;
+  max-width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+  padding: 5px 9px 12px;
+}
+/* Share one scrollbar style across Explore, Browse, and search results. */
+#atlasCommandResults,
+#content,
+.catalog-rail-list {
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in srgb, var(--atlas-side-secondary) 55%, transparent) transparent;
+  scrollbar-gutter: auto;
+}
+#atlasCommandResults::-webkit-scrollbar,
+#content::-webkit-scrollbar,
+.catalog-rail-list::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.catalog-rail-list::-webkit-scrollbar {
+  height: 0;
+}
+#atlasCommandResults::-webkit-scrollbar-track,
+#content::-webkit-scrollbar-track,
+.catalog-rail-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+#atlasCommandResults::-webkit-scrollbar-thumb,
+#content::-webkit-scrollbar-thumb,
+.catalog-rail-list::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--atlas-side-secondary) 55%, transparent);
+  border-radius: 999px;
+}
+#atlasCommandResults::-webkit-scrollbar-thumb:hover,
+#content::-webkit-scrollbar-thumb:hover,
+.catalog-rail-list::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in srgb, var(--atlas-side-secondary) 80%, transparent);
+}
+#atlasCommandResults::-webkit-scrollbar-corner,
+#content::-webkit-scrollbar-corner,
+.catalog-rail-list::-webkit-scrollbar-corner {
+  background: transparent;
+}
+.catalog-rail-entry {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+  max-width: 100%;
+  width: 100%;
+  overflow: hidden;
+  gap: 4px;
+  margin: 1px 0;
+  padding: 9px 10px;
+  text-align: left;
+  background: transparent;
+  color: var(--atlas-side-primary);
+  border: 1px solid transparent;
+  border-radius: var(--atlas-side-radius);
+  line-height: 1.4;
+}
+.catalog-rail-entry:hover,
+.catalog-rail-entry:focus-visible {
+  background: var(--panel-2);
+  border-color: var(--line);
+}
+.catalog-rail-entry.current {
+  background: var(--accent-soft);
+  border-color: color-mix(in srgb, var(--accent) 20%, var(--line));
+}
+.catalog-rail-entry.current .catalog-entry-number {
+  color: var(--text);
+}
+.catalog-entry-number {
+  display: block;
+  min-width: 0;
+  max-width: 100%;
+  color: var(--atlas-side-primary);
+  font-size: var(--atlas-side-text-size);
+  line-height: 1.4;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+.catalog-entry-description {
+  display: block;
+  min-width: 0;
+  max-width: 100%;
+  color: var(--atlas-side-secondary);
+  font-size: var(--atlas-side-detail-size);
+  line-height: 1.5;
+  font-weight: 400;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+.catalog-rail-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 0 0 auto;
+  gap: 8px;
+  min-width: 0;
+  max-width: 100%;
+  padding: 7px 11px;
+  color: var(--atlas-side-secondary);
+  font-size: var(--atlas-side-detail-size);
+  border-top: 1px solid var(--line);
+  overflow: hidden;
+}
+.catalog-rail-footer button {
+  max-width: 100%;
+  padding: 6px 8px;
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  font-size: var(--atlas-side-detail-size);
+}
+.catalog-rail-empty {
+  font-size: var(--atlas-side-text-size);
+  color: var(--atlas-side-secondary);
+  padding: 14px;
+}
+
+/* Browse suppresses duplicate previous/next cards in the content panel. */
+body.atlas-list-active .atlas-area .content .pager {
+  display: none;
+}
+
+/* 09-scientific-notation.css */
+/* Source-text presentation. Markup is safely generated at display time; the
+   original extracted strings and selected PDF remain unchanged. */
+.sci-rich {
+  font-variant-numeric: lining-nums;
+  overflow-wrap: break-word;
+  hyphens: none;
+  font-family: inherit;
+  unicode-bidi: plaintext;
+}
+.sci-rich sub,
+.sci-rich sup {
+  font-size: 0.72em;
+  line-height: 0;
+  position: static;
+}
+.sci-rich sup {
+  vertical-align: super;
+}
+.sci-rich sub {
+  vertical-align: sub;
+}
+.sci-unit {
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.source-notation {
+  font-weight: 400;
+  font-style: normal;
+}
+.source-notation .notation-bold {
+  font-weight: 700;
+}
+.source-notation .notation-italic {
+  font-style: italic;
+}
+.source-notation .notation-script {
+  font-family: 'Cambria Math', 'STIX Two Math', 'Times New Roman', serif;
+}
+.source-notation .notation-overbar {
+  text-decoration: overline;
+}
+.sci-rich .science-uncertain {
+  border-bottom: 1px dotted var(--muted);
+}
+.detail-text.sci-rich,
+.problem-statement.sci-rich {
+  line-height: 1.8;
+  white-space: normal;
+}
+.result-snippet.sci-rich {
+  line-height: 1.65;
+}
+.data-table td.sci-rich {
+  line-height: 1.6;
+}
+.equation-detail-preview {
+  overflow-x: auto;
+}
+
+.problem-equations {
+  margin-top: 20px;
+}
+.problem-equations h3 {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.problem-formula {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--panel-2);
+  padding: 12px;
+  margin: 10px 0;
+}
+.problem-formula > strong {
+  display: block;
+  font-size: 11px;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+.problem-formula .equation-catalog-preview {
+  margin: 4px 0 0;
+  overflow-x: auto;
+}
+
+/* Treat source captions and bibliography entries as prose, not monospaced PDF
+   text. Preserve actual blank-line boundaries when available. */
+.source-text {
+  white-space: normal;
+  min-width: 0;
+  max-width: 80ch;
+}
+.source-text p {
+  margin: 0 0 1em;
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+.source-text p:last-child {
+  margin-bottom: 0;
+}
+.source-text--figure,
+.source-text--table {
+  line-height: 1.75;
+}
+.source-text--reference {
+  max-width: 82ch;
+  line-height: 1.72;
+}
+.source-text--reference p {
+  padding-inline-start: 1.2em;
+  text-indent: -1.2em;
+}
+.result-title.sci-rich,
+.detail-header h1.sci-rich {
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+.calc-equation.sci-rich {
+  white-space: normal;
+  line-height: 1.85;
+}
+.calc-equation-line {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  min-width: 0;
+}
+.calc-equation-line + .calc-equation-line {
+  margin-top: 0.3em;
+}
+
+/* 10-components.css */
+/* Component spacing and interface refinements. */
+.collection-toolbar > input,
+.collection-toolbar > select {
+  flex: 1 1 180px;
+  min-width: 0;
+  max-width: 100%;
+}
+.collection-toolbar > .badge {
+  flex-shrink: 0;
+}
+.unassigned-saved-items select {
+  flex: 1 1 220px;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.atlas-sidebar-text {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  line-height: 1.3;
+  font-size: 12px;
+}
+#mainNav > button[data-view] .atlas-sidebar-text {
+  min-width: 0;
+  width: auto;
+  height: auto;
+  display: block;
+  background: transparent;
+  font-weight: 650;
+  font-size: 12px;
+  line-height: 1.35;
+  flex: 1;
+}
+#sidebar.atlas-sidebar-compact #mainNav {
+  padding: 9px 5px;
+}
+#sidebar.atlas-sidebar-compact .atlas-nav-label {
+  display: none;
+}
+#sidebar.atlas-sidebar-compact #mainNav button[data-view] {
+  justify-content: center;
+  display: flex;
+  padding: 7px 0;
+  gap: 0;
+  min-height: 40px;
+  margin: 2px 0;
+}
+#sidebar.atlas-sidebar-compact #mainNav button[data-view] .atlas-sidebar-text {
+  display: none;
+}
+#sidebar.atlas-sidebar-compact #mainNav button[data-view] > span:first-child {
+  margin: auto;
+  flex-shrink: 0;
+}
+#mainNav button[data-view]:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+.atlas-detail-crumb {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex-wrap: wrap;
+  max-width: 100%;
+  margin-bottom: 11px;
+  font-size: 12px;
+  line-height: 1.35;
+  color: var(--muted);
+}
+.atlas-detail-crumb button {
+  border: 0;
+  padding: 4px 5px;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--accent);
+  font-weight: 750;
+  font-size: 12px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+.atlas-detail-crumb button:hover {
+  background: var(--accent-soft);
+}
+.atlas-detail-crumb > span:last-child {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.note-box textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+.note-box #noteSaveStatus {
+  display: block;
+  color: var(--muted);
+  font-size: 11.5px;
+  line-height: 1.5;
+  margin-top: 8px;
+}
+.reader-toolbar #atlasReaderReturn {
+  display: none;
+}
+body.layout-no-atlas .reader-toolbar #atlasReaderReturn {
+  display: inline-flex;
+  align-items: center;
+}
+
+body.layout-no-book #atlasReaderReturn {
+  display: none;
+}
+@media (max-width: 460px) {
+  .atlas-detail-crumb {
+    font-size: 11px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .atlas-detail-crumb button {
+    transition: none;
+  }
+}
+
+/* 11-components-responsive.css */
+/* Consistent control typography, focus treatment, and component readability.
+ * User-supplied PDF content is never embedded or stored in this stylesheet. */
+:root {
+  --ui-focus: color-mix(in srgb, var(--accent) 66%, transparent);
+  --ui-hairline: color-mix(in srgb, var(--line) 80%, transparent);
+}
+body {
+  font-kerning: normal;
+  text-rendering: optimizeLegibility;
+}
+button,
+select,
+input,
+textarea {
+  accent-color: var(--accent);
+}
+button:not(:disabled),
+summary,
+[role='button'] {
+  touch-action: manipulation;
+}
+button:disabled {
+  cursor: default;
+  opacity: 0.53;
+}
+:is(button, input, select, textarea, summary, a, [tabindex='0']):focus-visible {
+  outline: 2px solid var(--accent) !important;
+  outline-offset: 2px;
+}
+/* Existing keyboard controls remain intact; hover never replaces focus. */
+:where(
+  .atlas-launch,
+  .atlas-path-shortcut,
+  .collection-card,
+  .result-card,
+  .atlas-recent-button,
+  .atlas-mode,
+  .atlas-menu-button,
+  .atlas-history-button
+):hover {
+  border-color: color-mix(in srgb, var(--accent) 55%, var(--line));
+}
+/* Make the view switch and the advanced controls feel like separate groups. */
+.layout-toolbar {
+  border-bottom: 1px solid var(--ui-hairline);
+}
+.atlas-history-buttons {
+  gap: 6px;
+}
+.layout-toolbar .atlas-history-button,
+.layout-toolbar .atlas-menu-button {
+  min-height: 35px;
+  border-radius: 9px;
+}
+.atlas-view-modes {
+  border-radius: 10px;
+}
+.layout-toolbar .atlas-mode {
+  min-height: 30px;
+}
+/* Keep typographic rhythm consistent from search results to source details. */
+.view-header h1,
+.detail-header h1 {
+  overflow-wrap: break-word;
+}
+.view-header p {
+  line-height: 1.6;
+  max-width: 75ch;
+}
+.result-title,
+.collection-card .result-title {
+  font-weight: 700;
+  line-height: 1.42;
+  letter-spacing: -0.008em;
+}
+.result-snippet {
+  margin-top: 5px;
+  line-height: 1.65;
+}
+.collection-card,
+.result-card {
+  border-radius: 12px;
+  padding: 14px 16px;
+}
+.collection-card:focus-visible,
+.result-card:focus-visible {
+  position: relative;
+  z-index: 1;
+}
+.detail-header {
+  border-radius: 14px;
+}
+.detail-header h1 {
+  max-width: 40ch;
+}
+.detail-card {
+  border-radius: 13px;
+}
+.detail-meta {
+  font-variant-numeric: tabular-nums;
+}
+.detail-text,
+.problem-statement {
+  max-width: 80ch;
+}
+.sci-rich {
+  font-kerning: normal;
+  letter-spacing: normal;
+}
+.sci-rich sub,
+.sci-rich sup {
+  font-family: inherit;
+}
+.problem-statement {
+  line-height: 1.79;
+}
+.problem-parts {
+  gap: 12px;
+}
+.problem-parts li {
+  border-radius: 9px;
+}
+.problem-parts li > div {
+  line-height: 1.75;
+}
+/* Scientific trust: a mathematical preview is an aid to reading, not a facsimile. */
+.equation-detail-preview {
+  border-radius: 10px;
+}
+.equation-provenance {
+  color: var(--muted);
+  font-size: 11.5px;
+  line-height: 1.55;
+  max-width: 78ch;
+  margin: 11px 0 16px;
+  padding-left: 11px;
+  border-left: 2px solid var(--line);
+}
+.equation-provenance strong {
+  color: var(--text);
+  font-weight: 650;
+}
+.equation-context {
+  line-height: 1.62;
+}
+.source-note {
+  line-height: 1.6;
+}
+/* More legible tables and consistent columns, including symbol definitions. */
+#content table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+  font-variant-numeric: tabular-nums;
+}
+#content table th {
+  font-weight: 740;
+  text-align: left;
+  background: var(--panel-2);
+}
+#content table th,
+#content table td {
+  vertical-align: top;
+  border-bottom: 1px solid var(--line);
+  line-height: 1.5;
+}
+#content table tbody tr:last-child td {
+  border-bottom-color: transparent;
+}
+#content table tbody tr:hover {
+  background: color-mix(in srgb, var(--accent-soft) 42%, var(--panel));
+}
+#content .calc-result-row strong {
+  font-variant-numeric: tabular-nums;
+}
+#content .calc-result-row small {
+  font-family: inherit;
+}
+.calc-result-row {
+  gap: 15px;
+}
+.calc-equation {
+  tab-size: 4;
+  line-height: 1.95;
+}
+.calc-convention {
+  border-left-width: 2px;
+}
+/* The optional Browse list is independently scrollable within the shared sidebar. */
+.catalog-rail-entry {
+  scroll-margin-block: 10px;
+}
+.catalog-rail-footer {
+  font-variant-numeric: tabular-nums;
+}
+/* Progress and status elements should remain readable at very narrow panel sizes. */
+#readerPrinted,
+#readerPage {
+  font-variant-numeric: tabular-nums;
+}
+@container (max-width:480px) {
+  .collection-card,
+  .result-card {
+    padding: 12px;
+  }
+  .detail-card {
+    padding: 15px;
+  }
+  .problem-parts {
+    gap: 8px;
+  }
+  .equation-provenance {
+    font-size: 11px;
+  }
+}
+@media (max-width: 799px) {
+  .layout-toolbar .atlas-history-button,
+  .layout-toolbar .atlas-menu-button {
+    min-height: 31px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .collection-card,
+  .result-card,
+  .atlas-launch,
+  .atlas-path-shortcut {
+    transition: none;
+  }
+}
+
+/* 12-inline-navigation.css */
+/* Inline, nonmodal search suggestions beneath the main toolbar. */
+.topbar {
+  z-index: 90;
+}
+.search-wrap {
+  position: relative;
+  cursor: text !important;
+  overflow: visible;
+}
+.search-wrap input#globalSearch {
+  cursor: text !important;
+  caret-color: var(--text) !important;
+  min-width: 0;
+}
+#atlasCommandPalette.atlas-inline-search-panel {
+  position: absolute;
+  top: calc(100% + 7px);
+  left: 0;
+  right: 0;
+  z-index: 100;
+  margin: 0;
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+  max-height: min(71dvh, 650px, calc(100dvh - var(--topbar) - 8px));
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  background: var(--panel);
+  color: var(--text);
+  box-shadow: 0 16px 46px rgba(0, 0, 0, 0.25);
+}
+#atlasCommandPalette[hidden] {
+  display: none !important;
+}
+/* Pointer events inside the native PDF viewer stay in its frame.
+ * While search is open, let the Atlas page receive the dismissing click. */
+body.atlas-search-open #importedPdfFrame {
+  pointer-events: none;
+}
+#atlasCommandPalette .atlas-command-scopes {
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  overflow: visible;
+}
+#atlasCommandPalette .atlas-command-scopes button {
+  flex: 0 0 auto;
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+#atlasCommandPalette .atlas-command-results {
+  flex: 1 1 auto;
+  min-height: 0;
+  max-height: min(54dvh, 520px);
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+#atlasCommandPalette .atlas-command-footer {
+  flex: 0 0 auto;
+}
+#atlasCommandPalette .atlas-command-result:hover {
+  background: var(--accent-soft);
+}
+@media (max-width: 799px) {
+  #atlasCommandPalette.atlas-inline-search-panel {
+    max-height: min(69dvh, 560px, calc(100dvh - var(--topbar) - 8px));
+    border-radius: 10px;
+  }
+  #atlasCommandPalette .atlas-command-results {
+    max-height: 51dvh;
+  }
+  #atlasCommandPalette .atlas-command-footer {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+}
+@media (max-width: 460px) {
+  #atlasCommandPalette .atlas-command-scopes {
+    padding: 7px 6px;
+    gap: 2px;
+  }
+  #atlasCommandPalette .atlas-command-scopes button {
+    padding: 7px 8px;
+    font-size: 11px;
+  }
+  #atlasCommandPalette .atlas-command-footer {
+    padding: 8px 10px;
+  }
+  #atlasCommandPalette .atlas-command-footer span {
+    font-size: 10px;
+    line-height: 1.4;
+  }
+}
+
+/* 13-equation-layout.css */
+/* Source audit and equation presentation. */
+.source-audit-dialog {
+  max-width: min(680px, calc(100vw - 28px));
+  max-height: min(82vh, 780px);
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--text);
+  border-radius: 17px;
+  padding: 0;
+  box-shadow: 0 18px 60px #0005;
+}
+.source-audit-dialog::backdrop {
+  background: #0008;
+  backdrop-filter: blur(2px);
+}
+.source-audit-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 17px 20px;
+  border-bottom: 1px solid var(--line);
+}
+.source-audit-head h2 {
+  margin: 0;
+  font-size: 19px;
+}
+.source-audit-head button {
+  font-size: 25px;
+  min-width: 35px;
+}
+.source-audit-body {
+  padding: 20px;
+  overflow: auto;
+  max-height: calc(82vh - 70px);
+  line-height: 1.6;
+}
+.source-audit-body h3 {
+  margin: 19px 0 6px;
+}
+.source-audit-body li {
+  margin: 5px 0;
+}
+.source-audit-body ul {
+  padding-left: 22px;
+}
+.source-audit-summary {
+  margin-top: 0;
+}
+.source-facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 15px;
+}
+.source-facts > div {
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  min-width: 0;
+}
+.source-facts dt {
+  font-size: 11px;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+.source-facts dd {
+  font-size: 13px;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.source-location-tag {
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--muted);
+  padding: 5px 0 3px;
+}
+.source-primary-message {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.context-section-crumb {
+  max-width: 220px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 12px;
+}
+.calc-scientific-note {
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  margin: 10px 0 16px;
+}
+.calc-scientific-note summary {
+  padding: 10px 12px;
+  font-size: 13px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.calc-scientific-note > div {
+  padding: 0 12px 10px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+.calc-scientific-note p {
+  margin: 8px 0;
+}
+
+.source-home-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  align-items: center;
+  padding: 14px 2px 18px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 15px;
+}
+.source-home-row strong {
+  font-size: 14px;
+}
+.source-home-row p {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 4px 0 0;
+}
+.source-home-row button {
+  flex-shrink: 0;
+}
+@media (max-width: 640px) {
+  .source-home-row {
+    display: block;
+  }
+  .source-home-row button {
+    margin-top: 10px;
+  }
+}
+
+.calc-sensitivity {
+  margin: 10px 0 16px;
+}
+.calc-sensitivity .calc-resize {
+  padding: 8px 14px 14px;
+}
+.calc-sensitivity p {
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+#calcSensitivityResults {
+  margin-top: 13px;
+  font-size: 12px;
+}
+.sensitivity-table-wrap {
+  overflow-x: auto;
+  margin: 9px 0;
+}
+.sensitivity-table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 12px;
+}
+.sensitivity-table th,
+.sensitivity-table td {
+  border-bottom: 1px solid var(--line);
+  padding: 8px 10px;
+  vertical-align: top;
+  text-align: left;
+}
+.sensitivity-table th {
+  font-size: 11px;
+  font-weight: 650;
+}
+.sensitivity-table td small {
+  display: block;
+  color: var(--muted);
+}
+
+.source-glossary {
+  margin: 16px 0;
+  padding: 11px 14px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+.source-glossary summary {
+  cursor: pointer;
+  font-weight: 650;
+}
+.source-glossary summary small {
+  display: inline-block;
+  font-weight: 400;
+  font-size: 11px;
+  color: var(--muted);
+  margin-left: 8px;
+}
+.source-glossary dl {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 9px 15px;
+}
+.source-glossary dl > div {
+  border-bottom: 1px solid var(--line);
+  padding: 7px 0;
+}
+.source-glossary dt {
+  font-weight: 650;
+  font-size: 13px;
+}
+.source-glossary dd {
+  margin: 4px 0 0;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+@media (max-width: 640px) {
+  .source-glossary dl {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Identically sized preview FRAMES: an equation is tightly cropped to its
+   original mathematical ink, then CONTAIN-fitted inside this uniform area.
+   Short and tall expressions get the same box; remaining space is filled by
+   the sampled PDF page tone. The frame is unchanged while the image loads. */
+.equation-detail-preview,
+.equation-catalog-preview {
+  --atlas-equation-frame-height: 184px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  min-width: 0;
+  width: 100%;
+  height: var(--atlas-equation-frame-height);
+  min-height: 0;
+  max-height: var(--atlas-equation-frame-height);
+  padding: 5px 12px;
+  background: #fff;
+  color: #1d281f;
+  border: 0;
+  border-radius: 9px;
+  overflow: hidden;
+}
+.equation-detail-preview {
+  margin: 0 0 12px;
+}
+.equation-catalog-preview {
+  margin: 10px 0;
+  text-align: center;
+}
+.equation-catalog-preview .formula-status {
+  font-size: 12px;
+  line-height: 1.5;
+}
+.atlas-source-equation {
+  display: block;
+  flex: none;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  image-rendering: auto;
+  user-select: none;
+}
+.atlas-equation-parts {
+  display: flex;
+  flex: 0 1 auto;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  max-width: 100%;
+}
+.equation-unavailable {
+  background: var(--panel-2);
+}
+@media (max-width: 640px) {
+  .equation-detail-preview,
+  .equation-catalog-preview {
+    --atlas-equation-frame-height: 156px;
+    padding: 4px 8px;
+  }
+}
+/* A scroll or cover crop would conceal exactly the indices, limits and bars
+   that need to remain visible. Keep all equation content within the box. */
+.equation-scroll-hint {
+  display: none;
+}
+
+.problem-formula .equation-catalog-preview {
+  overflow: hidden;
+}
+
+/* 14-calculator-workbench.css */
+/* Focused calculator controls and result panels. */
+#content .calc-header {
+  max-width: 1400px;
+  margin: 0 auto 20px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--line);
+}
+#content .calc-header h1 {
+  letter-spacing: -0.035em;
+  margin-bottom: 8px;
+}
+#content .calc-header p {
+  max-width: 74ch;
+  line-height: 1.6;
+}
+.calc-layout {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(225px, 270px) minmax(0, 1fr);
+  align-items: start;
+  gap: 20px;
+}
+.calc-library {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  position: sticky;
+  top: 0;
+  min-width: 0;
+  box-shadow: 0 3px 12px #00000006;
+}
+.calc-library > summary {
+  list-style: none;
+  display: none;
+}
+.calc-library-body {
+  padding: 17px 10px 12px;
+  max-height: min(74vh, 920px);
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+.calc-library .calc-search-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+  margin: 0 6px 6px;
+}
+.calc-library input,
+.calc-library select {
+  box-sizing: border-box;
+  width: calc(100% - 12px);
+  margin: 0 6px 15px;
+  border: 1px solid var(--line);
+  background: var(--panel-2);
+  color: var(--text);
+  border-radius: 9px;
+  padding: 11px 12px;
+  font: inherit;
+  font-size: 12px;
+  min-width: 0;
+  outline-offset: 2px;
+}
+.calc-library input:focus,
+.calc-library select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+  outline: none;
+}
+.calc-tool-list {
+  display: grid;
+  gap: 16px;
+}
+.calc-tool-group {
+  min-width: 0;
+}
+.calc-tool-group-title {
+  font-size: 10px;
+  color: var(--muted);
+  font-weight: 800;
+  letter-spacing: 0.075em;
+  text-transform: uppercase;
+  margin: 0 7px 6px;
+}
+.calc-tool-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  width: 100%;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--text);
+  padding: 9px 11px;
+  border-radius: 9px;
+  text-align: left;
+  cursor: pointer;
+  font-size: 12px;
+  line-height: 1.35;
+  transition:
+    background 0.15s,
+    border-color 0.15s;
+}
+.calc-tool-item .calc-tool-name {
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+.calc-tool-arrow {
+  color: var(--muted);
+  font-size: 18px;
+  flex: none;
+}
+.calc-tool-item:hover {
+  background: var(--panel-2);
+  border-color: var(--line);
+}
+.calc-tool-item.active {
+  background: var(--accent-soft);
+  border-color: color-mix(in srgb, var(--accent) 32%, var(--line));
+  color: var(--text);
+  font-weight: 750;
+}
+.calc-tool-item.active .calc-tool-arrow {
+  color: var(--accent);
+}
+.calc-tool-item:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+.calc-library-footer {
+  padding: 14px 7px 0;
+  margin-top: 10px;
+  border-top: 1px solid var(--line);
+  font-size: 11px;
+  color: var(--muted);
+}
+.calc-main {
+  min-width: 0;
+}
+#content #calcTool {
+  max-width: none;
+  margin: 0;
+}
+.calc-workbench {
+  min-width: 0;
+}
+.calc-title-row {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 2px 0 16px;
+}
+.calc-title-row h2 {
+  font-size: clamp(20px, 2.2vw, 27px);
+  line-height: 1.17;
+  margin: 0 0 10px;
+  letter-spacing: -0.03em;
+}
+.calc-title-row p {
+  font-size: 13px;
+  line-height: 1.55;
+  max-width: 65ch;
+  color: var(--muted);
+}
+.calc-source-pill {
+  border: 1px solid var(--line);
+  background: var(--panel);
+  padding: 9px 12px;
+  border-radius: 10px;
+  color: var(--text);
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+  cursor: pointer;
+  flex: none;
+}
+.calc-source-pill:hover {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+.calc-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  border-top: 1px solid var(--line);
+  padding: 12px 0;
+  margin: 0;
+}
+.calc-live-badge {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 11px;
+  color: var(--muted);
+  font-weight: 650;
+}
+.calc-live-badge:before {
+  content: '';
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+.calc-action-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.calc-action-buttons button {
+  border: 1px solid var(--line);
+  font-size: 11px;
+  border-radius: 9px;
+  padding: 8px 11px;
+  background: var(--panel);
+}
+.calc-convention {
+  background: var(--panel-2);
+  border-left: 3px solid var(--accent-2);
+  padding: 11px 13px;
+  border-radius: 0 8px 8px 0;
+  margin: 7px 0 19px;
+  font-size: 11px;
+  line-height: 1.6;
+}
+.calc-work-grid {
+  gap: 16px;
+  margin-bottom: 17px;
+  grid-template-columns: minmax(0, 1fr) !important;
+  align-items: stretch;
+}
+.calc-work-grid > .calc-fold {
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px #00000005;
+}
+.calc-fold > summary {
+  padding: 16px 18px;
+  font-size: 13px;
+  border-bottom: 1px solid transparent;
+}
+.calc-fold[open] > summary {
+  border-bottom-color: var(--line);
+}
+.calc-fold .calc-resize {
+  padding: 18px;
+  resize: vertical;
+  min-height: 75px;
+  max-height: none;
+}
+.calc-field-grid {
+  gap: 17px 13px;
+}
+.calc-field label,
+.calc-field > span {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 7px;
+  line-height: 1.35;
+}
+.calc-field small {
+  font-size: 10px;
+  line-height: 1.45;
+  color: var(--muted);
+}
+.calc-field select:not([data-unit]),
+.quantity-input {
+  border-radius: 9px;
+  min-height: 42px;
+}
+.quantity-input input {
+  font-size: 15px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  padding: 9px 10px;
+}
+.quantity-input select {
+  font-size: 11px;
+  padding: 8px 7px;
+  max-width: 95px;
+}
+.calc-submit {
+  font-size: 12px;
+  font-weight: 750;
+  padding: 11px 18px;
+  margin-top: 22px;
+  border-radius: 9px;
+}
+.calc-auto {
+  font-size: 11px;
+  display: inline-block;
+  line-height: 1.5;
+}
+.calc-results {
+  border-radius: 14px;
+  padding: 19px 20px;
+  box-shadow: 0 3px 10px #00000005;
+  min-width: 0;
+}
+.calc-results-heading {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 13px;
+  border-bottom: 1px solid var(--line);
+}
+.calc-results-heading h3 {
+  font-size: 16px;
+  letter-spacing: -0.015em;
+  margin: 4px 0 0;
+}
+.calc-results-heading .eyebrow {
+  font-size: 10px;
+  margin: 0;
+}
+.calc-results-icon {
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--accent);
+  opacity: 0.6;
+}
+.calc-result-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 0;
+  font-size: 12px;
+}
+.calc-result-row strong {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 7px;
+  justify-content: flex-end;
+  font-size: 14px;
+  text-align: right;
+  flex-wrap: wrap;
+  line-height: 1.35;
+}
+.calc-result-row strong small {
+  font-size: 11px;
+  color: var(--muted);
+  white-space: normal;
+}
+.calc-result-row.calc-primary-result {
+  display: block;
+  padding: 18px 0;
+  margin: 0 0 5px;
+  border-bottom: 1px solid var(--line);
+}
+.calc-primary-result > span {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+.calc-primary-result strong {
+  display: block;
+  text-align: left;
+  color: var(--text);
+  font-weight: 800;
+  font-size: clamp(22px, 2.5vw, 32px);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.045em;
+  overflow-wrap: anywhere;
+}
+.calc-primary-result strong small {
+  font-weight: 600;
+  letter-spacing: normal;
+  font-size: 14px;
+}
+.calc-book-citation {
+  max-width: 86ch;
+}
+.calc-equation {
+  font-size: 13px;
+  line-height: 1.8;
+  padding: 15px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.calc-sensitivity > .calc-resize,
+.calc-fold > .calc-curve-controls {
+  padding: 14px 18px;
+}
+.source-inline-reference {
+  margin-top: 16px;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--panel-2);
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+.pdf-remember-panel[hidden] {
+  display: none;
+}
+.pdf-remember-panel {
+  border: 1px solid #a8c4b1;
+  background: #e7f3e8;
+  border-radius: 13px;
+  padding: 14px;
+  margin-bottom: 16px;
+  display: grid;
+  gap: 12px;
+}
+.pdf-remember-panel strong,
+.pdf-remember-panel small {
+  display: block;
+  overflow-wrap: anywhere;
+}
+.pdf-remember-panel strong {
+  font-size: 13px;
+  color: #214c37;
+}
+.pdf-remember-panel small {
+  font-size: 11px;
+  color: #476c59;
+  margin-top: 4px;
+}
+.pdf-remember-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.pdf-remember-actions button,
+.remember-pdf-button {
+  padding: 11px 13px;
+  border-radius: 10px;
+  border: 1px solid #a4bbac;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 750;
+}
+.pdf-remember-actions .primary,
+.remember-pdf-button {
+  background: #2b6347;
+  color: #fff;
+  border-color: #2b6347;
+}
+.pdf-remember-actions .secondary {
+  background: #fff;
+  color: #244735;
+}
+.remember-pdf-button {
+  width: 100%;
+  margin-bottom: 14px;
+  text-align: center;
+  font-size: 13px;
+}
+.remember-pdf-button[hidden] {
+  display: none;
+}
+.pdf-dropzone {
+  padding: 20px 14px;
+}
+.pdf-dropzone strong {
+  font-size: 14px;
+}
+@container (min-width:1060px) {
+  .calc-work-grid {
+    grid-template-columns: minmax(0, 1.14fr) minmax(0, 0.86fr) !important;
+  }
+  .calc-work-grid > .calc-fold,
+  .calc-work-grid > .calc-results {
+    align-self: stretch;
+  }
+}
+@container (max-width:920px) {
+  .calc-layout {
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: 14px;
+  }
+  .calc-field-grid {
+    grid-template-columns: 1fr;
+  }
+  .calc-title-row {
+    flex-wrap: wrap;
+  }
+  .calc-library-body {
+    max-height: 80vh;
+  }
+}
+@container (max-width:680px) {
+  .calc-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .calc-library {
+    position: relative;
+    top: auto;
+  }
+  .calc-library > summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    cursor: pointer;
+    padding: 13px 16px;
+    font-size: 12px;
+    font-weight: 800;
+  }
+  .calc-library > summary strong {
+    font-size: 11px;
+    color: var(--muted);
+    font-weight: 550;
+    text-align: right;
+  }
+  .calc-library:not([open]) .calc-library-body {
+    display: none;
+  }
+  .calc-library-body {
+    max-height: 420px;
+    overflow: auto;
+    border-top: 1px solid var(--line);
+  }
+  .calc-actions {
+    align-items: flex-start;
+  }
+  .calc-convention {
+    margin-top: 12px;
+  }
+}
+@container (max-width:410px) {
+  .calc-field-grid {
+    grid-template-columns: 1fr;
+  }
+  .calc-title-row h2 {
+    font-size: 22px;
+  }
+  .calc-results {
+    padding: 14px;
+  }
+  .calc-action-buttons {
+    justify-content: flex-start;
+  }
+}
+.reader #readerMore .reader-target-badge[hidden] {
+  display: none;
+}
+.reader #readerMore .reader-target-badge {
+  max-width: min(32ch, 34vw);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--line);
+  background: var(--accent-soft);
+  color: var(--text);
+  border-radius: 8px;
+  padding: 7px 10px;
+  font-size: 11px;
+  font-weight: 650;
+}
+
+/* 15-refinements.css */
+/* Compact entry navigation and focus feedback. */
+.atlas-entry-pager {
+  position: sticky;
+  top: 0;
+  z-index: 8;
+  display: grid;
+  grid-template-columns: minmax(80px, 1fr) auto minmax(80px, 1fr);
+  align-items: center;
+  gap: 12px;
+  padding: 7px 11px;
+  margin: 2px 0 14px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  border-radius: 10px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.055);
+}
+.atlas-entry-pager button {
+  max-width: 170px;
+  min-height: 34px;
+  padding: 6px 11px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 650;
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+}
+.atlas-entry-pager button:first-child {
+  justify-self: start;
+}
+.atlas-entry-pager button:last-child {
+  justify-self: end;
+}
+.atlas-entry-pager button:hover:not(:disabled) {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+}
+.atlas-entry-pager button:disabled {
+  opacity: 0.32;
+  cursor: default;
+}
+.atlas-entry-position {
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  font-size: 11.5px;
+  color: var(--muted);
+  font-weight: 650;
+}
+#content h1[tabindex='-1']:focus {
+  outline: none;
+}
+.atlas-detail-crumb button {
+  text-decoration: none;
+}
+.atlas-detail-crumb button:hover {
+  text-decoration: underline;
+}
+/* Reduce visually repetitive scientific source notes without hiding warnings. */
+.source-inline-reference {
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+@media (max-width: 480px) {
+  .atlas-entry-pager {
+    gap: 5px;
+    padding: 6px 7px;
+    grid-template-columns: 1fr auto 1fr;
+  }
+  .atlas-entry-pager button {
+    font-size: 11px;
+    padding: 6px 7px;
+    min-height: 32px;
+  }
+  .atlas-entry-position {
+    font-size: 10px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .atlas-entry-pager * {
+    scroll-behavior: auto;
+  }
+}
+
+/* Tighten detail pages without reducing scientific text size. */
+.detail-header {
+  padding: 16px 19px 14px;
+}
+.detail-header h1 {
+  font-size: clamp(23px, 2.25vw, 31px);
+  line-height: 1.24;
+  margin: 8px 0 6px;
+}
+.detail-header .detail-meta {
+  margin: 6px 0 12px;
+}
+.detail-header .button-row {
+  gap: 8px;
+}
+.detail-header .button-row button {
+  min-height: 36px;
+}
+@media (max-width: 480px) {
+  .detail-header {
+    padding: 14px;
+  }
+}
+
+/* 16-import-details.css */
+/* Primary PDF import controls, with optional recovery actions. */
+.import-shell {
+  width: min(100%, 550px);
+  padding: clamp(25px, 4vw, 38px);
+}
+.import-shell h1 {
+  margin: 14px 0 7px;
+}
+.import-shell .import-subtitle {
+  margin: 0 0 24px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.import-shell .pdf-dropzone {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 13px;
+  min-height: 86px;
+  padding: 17px 18px;
+  border: 1.5px dashed #9bb8a5;
+  border-radius: 14px;
+  background: #eef5ee;
+  text-align: left;
+  cursor: default;
+}
+.import-shell .pdf-dropzone:hover,
+.import-shell .pdf-dropzone.over,
+.import-shell .pdf-dropzone:focus-within {
+  border-color: #397251;
+  background: #e8f1e9;
+}
+.import-shell .pdf-primary-button {
+  border: 1px solid #285e44;
+  border-radius: 10px;
+  background: #285e44;
+  color: #fff;
+  padding: 13px 21px;
+  font: 750 14px/1.25 system-ui;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background 0.12s,
+    border-color 0.12s;
+}
+.import-shell .pdf-primary-button:hover {
+  background: #1a4e35;
+  border-color: #1a4e35;
+}
+.import-shell .pdf-primary-button:focus-visible,
+.pdf-more-options summary:focus-visible,
+.pdf-more-content button:focus-visible {
+  outline: 3px solid #6ea885;
+  outline-offset: 3px;
+}
+.import-shell .pdf-primary-button:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+.import-shell .pdf-drop-hint {
+  font-size: 13px;
+  color: #51695b;
+}
+.import-shell #sourcePdfFile[hidden] {
+  display: none !important;
+}
+.import-shell .pdf-current {
+  flex-basis: 100%;
+  width: 100%;
+  margin: 0 !important;
+  min-width: 0;
+  font-size: 12px;
+  line-height: 1.45;
+  color: #3f5d4a;
+  overflow-wrap: anywhere;
+}
+.import-shell .pdf-current[hidden] {
+  display: none !important;
+}
+.import-shell .pdf-more-options {
+  margin-top: 13px;
+  border-top: 1px solid #e1e8df;
+  padding-top: 12px;
+  color: #355543;
+  font-size: 13px;
+}
+.import-shell .pdf-more-options[hidden] {
+  display: none !important;
+}
+.import-shell .pdf-more-options > summary {
+  list-style: none;
+  width: max-content;
+  cursor: pointer;
+  color: #325f47;
+  font-weight: 650;
+  line-height: 1.6;
+  user-select: none;
+}
+.import-shell .pdf-more-options > summary::-webkit-details-marker {
+  display: none;
+}
+.import-shell .pdf-more-options > summary:before {
+  content: '▸';
+  margin-right: 8px;
+  color: #507a62;
+  display: inline-block;
+}
+.import-shell .pdf-more-options[open] > summary:before {
+  content: '▾';
+}
+.pdf-more-content {
+  display: grid;
+  gap: 13px;
+  padding: 15px 0 3px;
+}
+.pdf-more-content .portable-source-panel {
+  gap: 12px;
+}
+.pdf-more-content .pdf-secondary-status {
+  display: block;
+  font-size: 12px;
+  color: #4a6956;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+.pdf-more-content .pdf-remember-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.pdf-more-content .pdf-remember-actions button,
+.pdf-more-content > button {
+  background: #fff;
+  color: #29523c;
+  border: 1px solid #b3c5ba;
+  border-radius: 9px;
+  padding: 9px 12px;
+  font: 650 12px/1.4 system-ui;
+  cursor: pointer;
+}
+.pdf-more-content .pdf-remember-actions button:hover,
+.pdf-more-content > button:hover {
+  background: #f1f7f0;
+}
+.pdf-more-content .portable-path-fallback {
+  padding-top: 12px;
+  margin-top: 2px;
+  border-top: 1px solid #dce7dd;
+  color: #395a46;
+}
+.pdf-more-content .portable-path-fallback label {
+  display: block;
+  margin: 0 0 8px;
+  font-size: 12px;
+  font-weight: 650;
+}
+.pdf-more-content .pdf-path-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.pdf-more-content .pdf-path-row input {
+  flex: 1;
+  min-width: 0;
+  padding: 10px 12px;
+  background: #fff;
+  color: #1b3028;
+  border: 1px solid #b3c7b9;
+  border-radius: 9px;
+  font: 12px system-ui;
+}
+.pdf-more-content .pdf-path-row button {
+  background: #fff;
+  color: #285e44;
+  border: 1px solid #b3c7b9;
+  border-radius: 9px;
+  padding: 10px 12px;
+  font: 650 12px/1.4 system-ui;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.pdf-more-content .pdf-saved-options {
+  display: grid;
+  gap: 7px;
+  font-size: 12px;
+}
+.pdf-more-content .pdf-saved-options[hidden] {
+  display: none !important;
+}
+.pdf-more-content .pdf-saved-options small {
+  color: #557060;
+}
+.import-shell .import-progress-area {
+  margin: 16px 0 4px;
+}
+.import-shell .import-error {
+  margin: 14px 0 0;
+  font-size: 12px;
+  line-height: 1.5;
+}
+@media (max-width: 420px) {
+  .import-shell .pdf-dropzone {
+    justify-content: center;
+    text-align: center;
+    gap: 9px;
+  }
+  .import-shell .pdf-primary-button {
+    width: 100%;
+  }
+  .import-shell .pdf-drop-hint {
+    width: 100%;
+  }
+  .pdf-more-content .pdf-path-row {
+    flex-wrap: wrap;
+  }
+  .pdf-more-content .pdf-path-row button {
+    width: 100%;
+  }
+}
+
+.pdf-more-content .pdf-secondary-status:empty {
+  display: none;
+}
+
+/* 17-pane-constraints.css */
+/* Respect readable minimum widths when the user drags panel splitters. */
+@media (min-width: 800px) {
+  body .workspace {
+    position: relative;
+  }
+  body.layout-nav-overlay .sidebar {
+    position: absolute !important;
+    inset: 0 auto 0 0;
+    z-index: 25;
+    width: var(--nav-width);
+    max-width: min(450px, 85%);
+    flex: 0 0 auto;
+    box-shadow: 12px 0 34px rgba(0, 0, 0, 0.24);
+    border-right: 1px solid var(--line);
+  }
+  body.layout-nav-overlay #navDivider {
+    display: none !important;
+  }
+}
+body .reader .book-body {
+  position: relative;
+  min-width: 0;
+}
+body .reader.reader-outline-overlay .outline-panel {
+  position: absolute !important;
+  inset: 0 auto 0 0;
+  z-index: 7;
+  flex: 0 0 auto;
+  width: var(--outline-width);
+  max-width: calc(100% - 35px);
+  box-shadow: 9px 0 24px rgba(0, 0, 0, 0.25);
+  background: var(--panel);
+}
+body .reader.reader-outline-overlay .outline-divider {
+  display: none !important;
+}
+/* Ensure card text and controls wrap rather than breaking a narrow view. */
+body .atlas-area,
+body .reader {
+  overflow: hidden;
+}
+body .atlas-area .content,
+body .reader .book-viewport {
+  min-width: 0;
+}
+@media (max-width: 799px) {
+  /* Let the outer page dismiss the Menu on a click over the native PDF. */
+  body:not(.layout-no-nav) #importedPdfFrame {
+    pointer-events: none;
+  }
+  #guideContent [data-layout='study'] {
+    display: none;
+  }
+  body .reader .book-body {
+    position: relative;
+  }
+}
+
+/* 18-toolbar.css */
+/* Unified application toolbar. Browser search, history and view controls are
+ * moved into this grid, never duplicated. These are structural styles only. */
+:root {
+  --topbar: 62px;
+  --layoutbar: 0px;
+}
+body.atlas-unified-toolbar > .topbar {
+  position: relative;
+  z-index: 90;
+  display: grid;
+  grid-template-columns: minmax(170px, 215px) max-content minmax(190px, 1fr) max-content max-content;
+  grid-template-rows: minmax(0, 1fr);
+  column-gap: 13px;
+  align-items: center;
+  height: var(--topbar);
+  min-height: var(--topbar);
+  padding: 8px 16px;
+  background: var(--panel);
+  border-bottom: 1px solid var(--line);
+  overflow: visible;
+}
+body.atlas-unified-toolbar > .topbar > .layout-toolbar {
+  display: contents !important;
+}
+body.atlas-unified-toolbar > .topbar > .brand {
+  display: flex !important;
+  grid-column: 1;
+  grid-row: 1;
+  width: auto;
+  max-width: 100%;
+  min-width: 0;
+  gap: 10px;
+  padding: 1px;
+  align-items: center;
+  justify-self: start;
+  white-space: nowrap;
+}
+body.atlas-unified-toolbar > .topbar > .brand .brand-mark {
+  flex: 0 0 38px;
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+  border-radius: 10px;
+  font-size: 12px;
+  box-shadow: none;
+}
+body.atlas-unified-toolbar > .topbar > .brand strong {
+  font-size: 14px;
+  font-weight: 780;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+body.atlas-unified-toolbar > .topbar > .brand small {
+  display: none;
+}
+body.atlas-unified-toolbar > .topbar .layout-toolbar > .atlas-history-buttons {
+  grid-column: 2;
+  grid-row: 1;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+  padding-right: 12px;
+  border-right: 1px solid var(--line);
+}
+body.atlas-unified-toolbar > .topbar .layout-toolbar > .atlas-toolbar-search {
+  grid-column: 3;
+  grid-row: 1;
+  position: relative;
+  display: flex;
+  min-width: 0;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+body.atlas-unified-toolbar > .topbar .atlas-toolbar-search .search-wrap {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  width: 100%;
+  max-width: 820px;
+  height: 39px;
+  margin: auto;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--panel-2);
+  box-shadow: none;
+}
+body.atlas-unified-toolbar > .topbar .atlas-toolbar-search .search-wrap:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 14%, transparent);
+}
+body.atlas-unified-toolbar > .topbar .atlas-toolbar-search input#globalSearch {
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+  font-size: 13px;
+  cursor: text;
+  caret-color: var(--text);
+}
+body.atlas-unified-toolbar > .topbar .atlas-toolbar-search .search-wrap {
+  cursor: text;
+}
+body.atlas-unified-toolbar > .topbar .layout-toolbar > .atlas-toolbar-right {
+  grid-column: 4;
+  grid-row: 1;
+  display: flex;
+  align-items: center;
+  justify-self: end;
+  min-width: 0;
+}
+body.atlas-unified-toolbar > .topbar > .top-actions {
+  grid-column: 5;
+  grid-row: 1;
+  display: flex;
+  align-items: center;
+  justify-self: end;
+  gap: 6px;
+  padding-left: 12px;
+  border-left: 1px solid var(--line);
+}
+body.atlas-unified-toolbar > .topbar .layout-toolbar > .atlas-history-buttons > button,
+body.atlas-unified-toolbar > .topbar > .top-actions button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  height: 35px;
+  min-height: 35px;
+  border-radius: 8px;
+}
+body.atlas-unified-toolbar > .topbar .atlas-history-buttons .atlas-menu-button {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 10px;
+  font-weight: 690;
+}
+body.atlas-unified-toolbar > .topbar .atlas-history-buttons .atlas-history-button {
+  width: 34px;
+  min-width: 34px;
+  padding: 0 7px;
+  font-size: 18px;
+}
+body.atlas-unified-toolbar > .topbar .atlas-history-buttons #atlasBack {
+  margin-left: 6px;
+}
+body.atlas-unified-toolbar > .topbar .atlas-view-modes {
+  border-radius: 9px;
+  gap: 2px;
+  padding: 3px;
+}
+body.atlas-unified-toolbar > .topbar .atlas-view-modes .atlas-mode {
+  min-height: 29px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+}
+body.atlas-unified-toolbar > .topbar > .top-actions #beginnerToggle,
+body.atlas-unified-toolbar > .topbar > .top-actions #themeToggle {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  padding: 0 11px;
+}
+body.atlas-unified-toolbar > .topbar > .top-actions #themeToggle {
+  width: 35px;
+  min-width: 35px;
+  padding: 0;
+  font-size: 17px;
+}
+/* The current location is announced to assistive technology; headings supply
+ * the visible location inside each content pane. */
+body.atlas-unified-toolbar .layout-toolbar > #atlasLocation {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+}
+body.atlas-unified-toolbar #atlasCommandPalette.atlas-inline-search-panel {
+  top: calc(100% + 7px);
+  z-index: 150;
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.22);
+}
+.atlas-compact-mode,
+.atlas-mobile-nav-actions {
+  display: none;
+}
+.atlas-guide-layout-actions {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+.atlas-guide-layout-actions button {
+  min-height: 36px;
+}
+body.atlas-unified-toolbar > .topbar .atlas-history-buttons #atlasMenuButton {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--muted);
+}
+body.atlas-unified-toolbar > .topbar .atlas-history-buttons #atlasMenuButton[aria-expanded='true'] {
+  background: var(--accent-soft);
+  color: var(--text);
+  border-color: var(--accent);
+}
+body.atlas-unified-toolbar > .topbar .atlas-history-buttons #atlasMenuButton:hover {
+  color: var(--text);
+  border-color: var(--accent);
+}
+
+@media (max-width: 1320px) {
+  body.atlas-unified-toolbar > .topbar {
+    grid-template-columns:
+      minmax(130px, 185px) max-content minmax(160px, 1fr)
+      max-content max-content;
+    column-gap: 9px;
+    padding-inline: 12px;
+  }
+  body.atlas-unified-toolbar > .topbar .atlas-menu-text {
+    display: none;
+  }
+  body.atlas-unified-toolbar > .topbar .atlas-history-buttons .atlas-menu-button {
+    width: 35px;
+    min-width: 35px;
+    padding: 0;
+  }
+}
+@media (max-width: 1120px) {
+  body.atlas-unified-toolbar > .topbar {
+    grid-template-columns: max-content max-content minmax(130px, 1fr) max-content max-content;
+  }
+  body.atlas-unified-toolbar > .topbar > .brand {
+    max-width: 39px;
+  }
+  body.atlas-unified-toolbar > .topbar > .brand > span:nth-child(2) {
+    display: none;
+  }
+  body.atlas-unified-toolbar > .topbar .atlas-view-modes {
+    display: none;
+  }
+  body.atlas-unified-toolbar > .topbar .atlas-compact-mode {
+    display: block;
+    width: 112px;
+    max-width: 100%;
+    height: 36px;
+    padding: 5px 9px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--panel-2);
+    color: var(--text);
+    font-size: 12px;
+    font-weight: 660;
+  }
+}
+/* Two deliberate rows on narrow screens: controls above a full-width search. */
+@media (max-width: 740px) {
+  :root {
+    --topbar: 96px;
+    --layoutbar: 0px;
+  }
+  body.atlas-unified-toolbar > .topbar {
+    grid-template-columns: max-content minmax(0, 1fr) max-content max-content;
+    grid-template-rows: 36px 38px;
+    column-gap: 6px;
+    row-gap: 5px;
+    align-content: center;
+    height: var(--topbar);
+    min-height: var(--topbar);
+    padding: 7px 10px;
+  }
+  body.atlas-unified-toolbar > .topbar > .brand {
+    grid-column: 1;
+    grid-row: 1;
+    max-width: 35px;
+  }
+  body.atlas-unified-toolbar > .topbar > .brand .brand-mark {
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+    flex-basis: 34px;
+  }
+  body.atlas-unified-toolbar > .topbar .layout-toolbar > .atlas-history-buttons {
+    grid-column: 2;
+    grid-row: 1;
+    gap: 3px;
+    padding: 0;
+    border: 0;
+  }
+  body.atlas-unified-toolbar > .topbar .layout-toolbar > .atlas-toolbar-right {
+    grid-column: 3;
+    grid-row: 1;
+  }
+  body.atlas-unified-toolbar > .topbar > .top-actions {
+    grid-column: 4;
+    grid-row: 1;
+    gap: 3px;
+    padding: 0;
+    border: 0;
+  }
+  body.atlas-unified-toolbar > .topbar .layout-toolbar > .atlas-toolbar-search {
+    grid-column: 1/-1;
+    grid-row: 2;
+  }
+  body.atlas-unified-toolbar > .topbar .atlas-toolbar-search .search-wrap {
+    height: 38px;
+    max-width: none;
+    margin: 0;
+  }
+  body.atlas-unified-toolbar > .topbar .atlas-history-buttons .atlas-menu-button {
+    display: inline-flex !important;
+    justify-content: center;
+    width: 34px;
+    min-width: 34px;
+    padding: 0 !important;
+  }
+  body.atlas-unified-toolbar > .topbar .atlas-compact-mode {
+    width: 98px;
+    height: 35px;
+    padding: 5px 7px;
+  }
+  body.atlas-unified-toolbar > .topbar > .top-actions #beginnerToggle {
+    padding: 0 8px;
+  }
+  .atlas-mobile-nav-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 7px;
+    padding: 13px 2px 4px;
+    margin: 12px 0 0;
+    border-top: 1px solid var(--line);
+  }
+  #mainNav .atlas-mobile-nav-actions > .atlas-mobile-nav-action {
+    display: flex !important;
+    min-height: 38px;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 8px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--panel-2);
+    color: var(--text);
+    font-size: 12px;
+    font-weight: 650;
+  }
+}
+@media (max-width: 445px) {
+  body.atlas-unified-toolbar > .topbar {
+    padding-inline: 7px;
+    column-gap: 4px;
+  }
+  body.atlas-unified-toolbar > .topbar .atlas-history-buttons #atlasBack {
+    margin-left: 2px;
+  }
+  body.atlas-unified-toolbar > .topbar .atlas-history-buttons .atlas-history-button {
+    width: 30px;
+    min-width: 30px;
+    padding: 0 4px;
+  }
+  body.atlas-unified-toolbar > .topbar .atlas-compact-mode {
+    width: 82px;
+    padding-inline: 4px;
+    font-size: 11px;
+  }
+  body.atlas-unified-toolbar > .topbar > .top-actions #themeToggle {
+    display: none !important;
+  }
+  body.atlas-unified-toolbar > .topbar > .top-actions #beginnerToggle {
+    padding: 0 7px;
+    font-size: 11px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  body.atlas-unified-toolbar > .topbar * {
+    transition: none !important;
+  }
+}
+
+/* 19-workspace-organization.css */
+/* Workspace information architecture — one module for navigation, content rhythm,
+ * PDF-panel framing and adaptable content. No source-PDF pixels or text. */
+:root {
+  --atlas-content-max: 1180px;
+  --atlas-ui-gap: 14px;
+}
+
+/* The Atlas page, PDF, and reference List may scroll; Menu always fits. */
+body .workspace {
+  background: var(--bg);
+}
+/* Explicit visibility overrides are essential: the shell declares flex panes,
+ * whereas layout modes hide whole panes. A later flex declaration must never
+ * bring a hidden pane back on phones or in Read/Explore focus modes. */
+body.layout-no-nav .workspace .sidebar,
+body.layout-no-nav .workspace #navDivider,
+body.layout-no-book .workspace .reader,
+body.layout-no-book .workspace #bookDivider,
+body.layout-no-atlas .workspace .atlas-area,
+body.layout-no-atlas .workspace #bookDivider {
+  display: none !important;
+}
+body.layout-no-atlas .workspace .reader {
+  flex: 1 1 0 !important;
+  width: auto !important;
+}
+
+body .workspace .sidebar {
+  display: flex;
+  flex-direction: column;
+  background: var(--panel);
+  border-right: 1px solid var(--line);
+  overflow: hidden;
+}
+/* Use shrinkable navigation rows so the menu adjusts to the screen height.
+   Only List has internal scrolling; no scrollbars or scroll offsets in Menu. */
+body .workspace #mainNav {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0;
+  min-height: 0;
+  overflow: hidden;
+  overscroll-behavior: none;
+  padding: 10px 11px 11px;
+}
+body .workspace #mainNav > button[data-view] {
+  flex: 0 1 38px;
+  min-height: 26px;
+}
+body .workspace #mainNav > .atlas-nav-label {
+  flex: 0 0 auto;
+}
+body .workspace #mainNav > .atlas-mobile-nav-actions {
+  flex: 0 0 auto;
+}
+#mainNav .atlas-nav-label {
+  padding: 7px 12px 9px;
+  margin: 0 0 2px;
+  color: var(--atlas-side-heading);
+  font-size: var(--atlas-side-heading-size);
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+#mainNav .atlas-group-label {
+  margin: 13px 2px 7px;
+  padding: 15px 10px 6px;
+  border-top: 1px solid var(--line);
+}
+#mainNav > button[data-view] {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-height: 38px;
+  padding: 6px 10px;
+  margin: 2px 0;
+  width: 100%;
+  border: 1px solid transparent;
+  border-radius: var(--atlas-side-radius);
+  color: var(--atlas-side-primary);
+  background: transparent;
+  font-weight: 600;
+  font-size: var(--atlas-side-text-size);
+  line-height: 1.4;
+  transition:
+    background-color 0.13s,
+    border-color 0.13s;
+}
+#mainNav > button[data-view]:hover {
+  background: var(--panel-2);
+  border-color: var(--line);
+}
+#mainNav > button[data-view].active {
+  background: var(--accent-soft);
+  color: var(--text);
+  border-color: color-mix(in srgb, var(--accent) 20%, var(--line));
+  font-weight: 750;
+}
+#mainNav > button[data-view].active::before {
+  content: '';
+  position: absolute;
+  inset: 8px auto 8px -1px;
+  width: 3px;
+  border-radius: 4px;
+  background: var(--accent);
+}
+#mainNav > button[data-view] .atlas-sidebar-icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 27px;
+  min-width: 27px;
+  width: 27px;
+  height: 27px;
+  border-radius: 7px;
+  background: var(--panel-2);
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 730;
+  line-height: 1;
+}
+#mainNav > button[data-view].active .atlas-sidebar-icon {
+  background: var(--panel);
+}
+#mainNav > button[data-view] .atlas-sidebar-text {
+  min-width: 0;
+  line-height: 1.4;
+  color: var(--atlas-side-primary);
+  font-size: inherit;
+  font-weight: inherit;
+}
+#mainNav > button[data-view].active .atlas-sidebar-text {
+  color: var(--text);
+}
+
+/* On tall monitors, use a little of the free vertical space for easier touch
+   targets and clearer section breaks. These rules do not affect short windows. */
+@media (min-height: 760px) {
+  #mainNav .atlas-group-label {
+    margin-top: 24px;
+    padding-top: 18px;
+  }
+  body .workspace #mainNav > button[data-view] {
+    flex-basis: 46px;
+    max-height: 48px;
+    margin: 3px 0;
+  }
+}
+@media (min-height: 1000px) {
+  #mainNav .atlas-group-label {
+    margin-top: 34px;
+    padding-top: 22px;
+  }
+  body .workspace #mainNav > button[data-view] {
+    flex-basis: 51px;
+    max-height: 54px;
+    margin: 4px 0;
+  }
+}
+
+/* Recent entries and submitted searches share the footer below Menu and Browse. */
+.atlas-sidebar-recent {
+  flex: 0 0 auto;
+  margin: 0 12px 11px;
+  padding: 9px 5px 0;
+  background: transparent;
+  border: 0;
+  border-top: 1px solid var(--line);
+  border-radius: 0;
+  min-width: 0;
+}
+.atlas-sidebar-recent-label {
+  padding: 0 5px 5px;
+  color: var(--atlas-side-heading);
+  font-size: var(--atlas-side-heading-size);
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.atlas-sidebar-recent-entry:hover {
+  color: var(--text);
+  background: var(--accent-soft);
+}
+.atlas-sidebar-recent-entry:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+.atlas-sidebar-recent-empty[hidden] {
+  display: none !important;
+}
+.atlas-sidebar-recent-empty {
+  margin: 0;
+  padding: 4px 5px;
+  color: var(--atlas-side-secondary);
+  font-size: var(--atlas-side-detail-size);
+  line-height: 1.4;
+}
+.atlas-sidebar-recent-list {
+  display: grid;
+  gap: 2px;
+}
+.atlas-sidebar-recent-entry {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 7px;
+  width: 100%;
+  min-height: 30px;
+  text-align: left;
+  padding: 5px 8px;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  color: var(--atlas-side-primary);
+  font-size: var(--atlas-side-detail-size);
+  font-weight: 600;
+  line-height: 1.4;
+  font-family: inherit;
+  cursor: pointer;
+}
+.atlas-sidebar-recent-name {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.atlas-sidebar-recent-arrow {
+  flex: 0 0 auto;
+  font-size: 13px;
+  color: var(--muted);
+}
+/* The recent-activity footer is a sibling of Menu and Browse. Keep it anchored
+   below either level, so changing levels never moves the footer. */
+#sidebar.atlas-sidebar-compact .atlas-sidebar-recent {
+  display: none !important;
+}
+@media (max-height: 850px) {
+  .atlas-sidebar-recent {
+    margin-bottom: 8px;
+    padding-top: 6px;
+  }
+  .atlas-sidebar-recent-entry {
+    min-height: 26px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+}
+/* Keep the non-scrolling Menu usable in short and narrow windows. */
+@media (max-height: 680px), (max-width: 799px) {
+  .atlas-sidebar-recent {
+    display: none !important;
+  }
+}
+
+/* Atlas content retains the same typographic rhythm in all reading modes. */
+body .atlas-area .content {
+  flex: 1 1 0;
+  min-width: 0;
+  min-height: 0;
+  padding: clamp(17px, 2vw, 30px);
+  background: var(--bg);
+  scroll-padding-top: 12px;
+  overscroll-behavior: contain;
+}
+#content
+  > :is(
+    .view-header,
+    .detail-header,
+    .hero,
+    .atlas-welcome,
+    .section-block,
+    .fold-panel,
+    .stat-grid,
+    .toolbar,
+    .card-grid,
+    .result-list,
+    .toc-chapter,
+    .path-card,
+    .detail-card,
+    .atlas-entry-pager,
+    .atlas-suggested-paths,
+    .atlas-more-home,
+    .atlas-recent-home,
+    .calculator-workbench,
+    .calc-layout,
+    .calculator-layout,
+    .browse-shell,
+    .pager,
+    .table-scroll
+  ) {
+  width: 100%;
+  max-width: var(--atlas-content-max);
+  margin-left: auto;
+  margin-right: auto;
+}
+#content .view-header {
+  margin: 3px auto 21px;
+}
+#content .view-header h1 {
+  margin-bottom: 8px;
+  font-size: clamp(24px, 2.8cqw, 34px);
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+}
+#content .view-header p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13.5px;
+  line-height: 1.65;
+}
+#content .section-block {
+  margin-top: 19px;
+  margin-bottom: 24px;
+}
+#content .section-heading {
+  align-items: baseline;
+  gap: 9px;
+  margin: 0 0 12px;
+}
+#content .section-heading h2 {
+  font-size: 17px;
+  line-height: 1.35;
+}
+#content .card-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+#content :is(.info-card, .path-card, .detail-card, .result-card, .collection-card, .stat-card) {
+  min-width: 0;
+  border-color: var(--line);
+  box-shadow: none;
+}
+#content :is(.result-card, .collection-card, .info-card) {
+  border-radius: 11px;
+  padding: 15px 16px;
+}
+#content .result-list {
+  gap: 10px;
+}
+#content .detail-card {
+  margin-bottom: 14px;
+}
+#content .view-header + .toolbar {
+  margin-top: 0;
+}
+#content .toolbar {
+  gap: 9px;
+  margin-top: 13px;
+  margin-bottom: 15px;
+}
+#content .toolbar > :is(input, select, button) {
+  min-height: 36px;
+}
+#content .atlas-welcome,
+#content .atlas-suggested-paths,
+#content .atlas-more-home,
+#content .atlas-recent-home {
+  max-width: var(--atlas-content-max);
+}
+#content .atlas-welcome {
+  margin-top: 5px;
+  margin-bottom: 22px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+#content .atlas-welcome h1 {
+  margin: 0 0 16px;
+}
+#content .atlas-launch-grid {
+  margin-top: 0;
+  gap: 12px;
+}
+#content .atlas-launch {
+  min-height: 116px;
+  gap: 7px;
+}
+#content .atlas-more-home {
+  margin-top: 22px;
+}
+#content .atlas-entry-pager {
+  top: 10px;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+#content .detail-header h1 {
+  max-width: 52ch;
+}
+#content .detail-header {
+  margin-bottom: 15px;
+}
+
+/* Compress vertical rhythm on shorter monitors instead of making Menu scroll. */
+@media (max-height: 760px) {
+  body .workspace #mainNav {
+    padding-top: 7px;
+    padding-bottom: 7px;
+  }
+  #mainNav .atlas-nav-label {
+    padding: 4px 10px 5px;
+  }
+  #mainNav .atlas-group-label {
+    margin: 6px 2px 3px;
+    padding: 7px 10px 3px;
+  }
+  body .workspace #mainNav > button[data-view] {
+    flex-basis: 34px;
+    min-height: 24px;
+    padding: 3px 9px;
+    margin: 0;
+  }
+  #mainNav > button[data-view] .atlas-sidebar-icon {
+    flex-basis: 24px;
+    min-width: 24px;
+    width: 24px;
+    height: 24px;
+  }
+  #mainNav .atlas-mobile-nav-actions {
+    margin-top: 5px;
+    padding-top: 6px;
+    gap: 4px;
+  }
+  #mainNav .atlas-mobile-nav-actions > .atlas-mobile-nav-action {
+    min-height: 28px;
+    padding: 3px 6px;
+  }
+}
+@media (max-height: 590px) {
+  :root {
+    --atlas-side-heading-size: 9px;
+  }
+  body .workspace #mainNav {
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+  #mainNav .atlas-nav-label {
+    padding: 3px 8px 3px;
+    font-size: 9px;
+  }
+  #mainNav .atlas-group-label {
+    margin: 3px 2px 2px;
+    padding: 5px 8px 2px;
+  }
+  body .workspace #mainNav > button[data-view] {
+    flex-basis: 29px;
+    min-height: 22px;
+    padding: 2px 8px;
+  }
+  #mainNav > button[data-view] .atlas-sidebar-icon {
+    flex-basis: 21px;
+    min-width: 21px;
+    width: 21px;
+    height: 21px;
+    font-size: 11px;
+  }
+  #mainNav .atlas-mobile-nav-actions {
+    margin-top: 2px;
+    padding-top: 3px;
+  }
+  #mainNav .atlas-mobile-nav-actions > .atlas-mobile-nav-action {
+    min-height: 25px;
+  }
+}
+/* Extremely short windows: two columns retain every destination in-view.
+   Section headings span the full width, while List remains a single column. */
+@media (max-height: 485px) {
+  :root {
+    --atlas-side-text-size: 10px;
+    --atlas-side-detail-size: 10px;
+  }
+  body .workspace #mainNav {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: minmax(0, auto);
+    align-content: start;
+    gap: 2px 4px;
+    padding: 4px 6px;
+  }
+  #mainNav > .atlas-nav-label {
+    grid-column: 1 / -1;
+    margin: 0;
+    padding: 2px 5px;
+    border-top: 0;
+    font-size: 9px;
+    line-height: 1.1;
+  }
+  #mainNav > .atlas-group-label {
+    border-top: 1px solid var(--line);
+  }
+  body .workspace #mainNav > button[data-view] {
+    min-height: 0;
+    height: 33px;
+    padding: 2px 4px;
+    gap: 4px;
+    margin: 0;
+    font-size: 11px;
+    line-height: 1.15;
+  }
+  #mainNav > button[data-view] .atlas-sidebar-icon {
+    flex-basis: 20px;
+    min-width: 20px;
+    width: 20px;
+    height: 20px;
+    font-size: 10px;
+  }
+  #mainNav > button[data-view] .atlas-sidebar-text {
+    font-size: 10px;
+    line-height: 1.1;
+    min-width: 0;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+  #mainNav .atlas-mobile-nav-actions {
+    grid-column: 1 / -1;
+    margin: 0;
+    padding: 2px 0 0;
+    border-top: 0;
+  }
+}
+/* Twelve destinations make seven grid rows. Shorten them before the 96px
+   mobile header leaves too little room for the menu and appearance action. */
+@media (max-height: 430px) {
+  :root {
+    --atlas-side-heading-size: 8px;
+  }
+  body .workspace #mainNav {
+    gap: 1px 3px;
+    padding: 2px 5px;
+  }
+  body .workspace #mainNav > button[data-view] {
+    height: 27px;
+    padding: 0 3px;
+  }
+  #mainNav > .atlas-nav-label {
+    padding: 1px 3px;
+    font-size: 8px;
+  }
+  #mainNav .atlas-mobile-nav-actions > .atlas-mobile-nav-action {
+    min-height: 23px;
+    padding: 1px 3px;
+  }
+}
+/* List-specific styling lives in 08-reference-rail.css. Both views share
+   the navigation tokens above, not competing, late List overrides. */
+
+/* The PDF reader has one useful persistent navigation row, not a sparse
+   secondary strip. Less-common actions live in grouped cards under Tools. */
+body .workspace .reader {
+  min-width: 0;
+  border-left: 1px solid var(--line);
+  background: var(--panel-2);
+}
+.reader .reader-toolbar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  min-height: 50px;
+  height: auto;
+  padding: 10px 12px;
+  background: var(--panel);
+  border-bottom: 1px solid var(--line);
+  flex-shrink: 0;
+}
+.reader .reader-toolbar > #readerBack,
+.reader .reader-toolbar > #readerForward {
+  display: inline-flex;
+}
+.reader .reader-toolbar button {
+  min-height: 36px;
+  height: 36px;
+  padding: 5px 12px;
+  border-radius: 10px;
+  font-size: 12px;
+  line-height: 1.3;
+  font-weight: 650;
+  white-space: nowrap;
+}
+.reader .reader-page-controls,
+.reader .reader-utilities {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+.reader .reader-page-controls {
+  flex: 1 1 250px;
+  flex-wrap: wrap;
+}
+.reader .reader-page-controls label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  font-size: 11px;
+  white-space: nowrap;
+}
+.reader .reader-page-controls input {
+  width: 68px;
+  height: 34px;
+  min-height: 34px;
+  font-size: 12px;
+}
+.reader .reader-page-controls #readerPrinted {
+  font-size: 13px;
+  font-weight: 650;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 170px;
+  min-width: 0;
+  color: var(--accent-2);
+}
+.reader .reader-utilities {
+  margin-left: auto;
+  justify-content: flex-end;
+  flex: 0 1 auto;
+  flex-wrap: wrap;
+}
+.reader .reader-utilities #bookmarkPage {
+  font-size: 18px;
+  min-width: 38px;
+  padding: 4px 8px;
+}
+.reader .reader-utilities #outlineToggle,
+.reader .reader-utilities #openCurrentExternal,
+.reader .reader-utilities #readerToolsToggle {
+  padding-inline: 13px;
+}
+.reader .reader-utilities #readerToolsToggle[aria-expanded='true'] {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent-2);
+}
+.reader .book-body {
+  min-height: 0;
+  flex: 1 1 0;
+}
+.reader .book-viewport {
+  min-width: 0;
+  min-height: 0;
+}
+.reader #readerMore {
+  flex-shrink: 0;
+  max-height: 48%;
+  overflow: auto;
+  border-bottom: 1px solid var(--line);
+  background: var(--panel);
+}
+.reader .reader-message--compact {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  min-height: 0;
+  height: auto;
+  padding: 8px 12px;
+  background: transparent;
+  border-bottom: 1px solid var(--line);
+  font-size: 12px;
+  color: var(--muted);
+}
+.reader .reader-message--compact .reader-target-badge {
+  margin-left: auto;
+}
+.reader .reader-tools-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  padding: 12px;
+  background: transparent;
+  border-bottom: none;
+}
+.reader .reader-tool-group {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--panel-2);
+  min-width: 0;
+}
+.reader .reader-tool-group h3 {
+  margin: 0;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.reader .reader-tool-row {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-width: 0;
+  flex-wrap: nowrap;
+}
+.reader .reader-tool-row--wrap {
+  flex-wrap: wrap;
+}
+.reader .reader-tool-row > output#zoomReadout,
+.reader .reader-tool-row > .atlas-pdf-history,
+.reader .reader-tool-row > label,
+.reader .reader-tool-row > button {
+  flex: 0 0 auto;
+}
+.reader .reader-tool-row .book-jump-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.reader .reader-tool-row .book-jump-label input {
+  width: 78px;
+}
+.reader .reader-tool-group button,
+.reader .reader-tool-group input,
+.reader .reader-tool-group output {
+  min-height: 34px;
+}
+.reader .atlas-pdf-history {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  padding: 0;
+  border: none;
+  background: transparent;
+  min-height: 0;
+}
+.reader .atlas-pdf-history-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-right: 2px;
+}
+.reader .atlas-pdf-history button {
+  padding-inline: 11px;
+}
+.reader .atlas-pdf-history-slot {
+  display: none;
+}
+/* Column-based responsiveness for the actual Atlas pane (not entire screen). */
+@container (max-width:690px) {
+  #content .card-grid {
+    grid-template-columns: 1fr;
+  }
+  #content .atlas-start-paths {
+    grid-template-columns: 1fr;
+  }
+  #content .view-header {
+    margin-bottom: 16px;
+  }
+}
+@container (max-width:455px) {
+  #content .atlas-launch-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px;
+  }
+  #content .atlas-launch {
+    padding: 12px;
+    min-height: 116px;
+  }
+  #content .info-card,
+  #content .result-card,
+  #content .collection-card {
+    padding: 13px;
+  }
+  #content .detail-header {
+    padding: 15px;
+  }
+}
+@media (max-width: 799px) {
+  body .workspace .sidebar {
+    position: fixed;
+    z-index: 35;
+    top: var(--topbar);
+    bottom: 0;
+    left: 0;
+    width: min(292px, 86vw);
+    max-height: calc(100dvh - var(--topbar));
+    border-right: 1px solid var(--line);
+    box-shadow: 14px 0 35px #0005;
+  }
+  body .atlas-area .content {
+    padding: 16px;
+  }
+}
+@media (max-width: 980px) {
+  .reader .reader-tools-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 10px;
+  }
+}
+@media (max-width: 490px) {
+  .reader .reader-toolbar {
+    padding: 8px 9px;
+    gap: 6px;
+  }
+  .reader .reader-page-controls {
+    flex-basis: 180px;
+  }
+  .reader .reader-page-controls #readerPrinted {
+    font-size: 11px;
+    max-width: 120px;
+  }
+  .reader .reader-utilities #openCurrentExternal {
+    font-size: 0;
+    min-width: 34px;
+    padding: 4px 8px;
+  }
+  .reader .reader-utilities #openCurrentExternal::after {
+    content: '↗';
+    font-size: 16px;
+  }
+  .reader .reader-utilities #outlineToggle {
+    font-size: 0;
+    min-width: 34px;
+    padding: 4px 8px;
+  }
+  .reader .reader-utilities #outlineToggle::after {
+    content: '☷';
+    font-size: 15px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  #mainNav > button[data-view] {
+    transition: none;
+  }
+}
+
+/* Immersive PDF reading: suppress the dedicated reader bars and expose only a
+   floating Hide bar control in the top-right of the PDF viewport. */
+.reader > .reader-toolbar,
+.reader > #readerMore {
+  display: none !important;
+}
+.reader .book-body {
+  flex: 1 1 auto;
+  min-height: 0;
+}
+.reader .reader-hover-controls {
+  position: absolute;
+  top: var(--atlas-pdf-overlay-top);
+  right: var(--atlas-pdf-overlay-right);
+  z-index: 6;
+  opacity: 0.48;
+  transition: opacity 0.15s ease;
+}
+.reader .reader-hover-controls:hover,
+.reader .reader-hover-controls:focus-within {
+  opacity: 1;
+}
+.reader .reader-hover-controls button {
+  min-height: 27px;
+  padding: 3px 8px;
+  border-radius: 7px;
+  border: 1px solid transparent;
+  background: transparent;
+  box-shadow: none;
+  color: var(--muted);
+  font-size: 10.5px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+.reader .reader-hover-controls button:hover,
+.reader .reader-hover-controls button:focus-visible {
+  background: var(--panel);
+  border-color: var(--line);
+  color: var(--text);
+}
+.reader .reader-hover-controls button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+body.atlas-top-bars-hidden .reader .reader-hover-controls {
+  display: none;
+}
+@media (hover: none) {
+  .reader .reader-hover-controls {
+    opacity: 0.8;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .reader .reader-hover-controls {
+    transition: none;
+  }
+}
+
+/* 20-symbol-table.css */
+/* Symbols use the shared collection-card button for the entire preview.
+   Only field layout belongs here; hover and focus follow all catalog cards. */
+#content .symbol-card .result-snippet {
+  display: block;
+}
+
+#content .symbol-card-detail {
+  display: block;
+  margin-top: 8px;
+  min-width: 0;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--muted);
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+#content .symbol-card-field-label {
+  font-weight: 650;
+  color: var(--text);
+}
+
+.notation-definition {
+  display: block;
+  min-width: 0;
+}
+.notation-definition + .notation-definition {
+  border-top: 1px solid var(--line);
+  margin-top: 12px;
+  padding-top: 8px;
+}
+.notation-definition-label {
+  font-weight: 650;
+}
+.notation-detail .notation-definition {
+  margin-block: 12px;
+  line-height: 1.7;
+}
+.notation-detail .notation-definition p {
+  margin: 0 0 8px;
+}
+.notation-section-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px;
+}
+.notation-section-links .page-ref {
+  max-width: 100%;
+  white-space: normal;
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+
+/* 21-figure-preview.css */
+/* Figure canvases keep their aspect ratio and contain only reviewed artwork. */
+#content .figure-catalog-preview,
+#content .figure-detail-preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  padding: 8px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+  color: #66706b;
+  text-align: center;
+}
+
+#content .figure-catalog-preview {
+  height: 168px;
+  margin: 12px 0 6px;
+  font-size: 12px;
+}
+
+#content .figure-detail-preview {
+  height: 270px;
+  margin: 0 0 16px;
+  font-size: 13px;
+}
+
+#content .figure-preview-unavailable {
+  background: var(--panel-2);
+  color: var(--muted);
+}
+
+#content .figure-preview-frame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  overflow: hidden;
+}
+
+#content canvas.atlas-source-figure {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Each introductory structure plate gets the available width and its natural
+   height, so splitting Figure 1 does not squeeze it back into a small frame. */
+#content .figure-part-preview {
+  height: auto;
+  min-height: 168px;
+}
+#content .figure-part-preview .figure-preview-frame {
+  height: auto;
+}
+#content .figure-part-preview canvas.atlas-source-figure {
+  width: 100%;
+  max-height: none;
+}
+
+@container (max-width: 440px) {
+  #content .figure-catalog-preview:not(.figure-part-preview) {
+    height: 140px;
+  }
+  #content .figure-detail-preview:not(.figure-part-preview) {
+    height: 210px;
+  }
+}
+
+/* 22-table-preview.css */
+/* Printed tables retain their source columns and notation. Catalog cards show
+   one page; both views fit the available width without scaling controls. */
+#content .table-catalog-preview,
+#content .table-detail-preview {
+  min-width: 0;
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+  color: #56615b;
+}
+#content .table-catalog-preview {
+  margin: 12px 0 8px;
+  padding: 8px;
+}
+#content .table-catalog-preview .table-preview-viewport {
+  min-width: 0;
+}
+#content .table-catalog-preview canvas.atlas-source-table,
+#content .table-detail-preview canvas.atlas-source-table {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+#content .table-detail-preview {
+  margin: 0 0 16px;
+}
+#content .table-detail-preview .table-preview-viewport {
+  min-height: 100px;
+  max-height: min(72vh, 780px);
+  overflow: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+}
+#content .table-detail-preview .table-preview-viewport:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+}
+#content .table-preview-controls {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background: var(--panel-2);
+  border-bottom: 1px solid var(--line);
+}
+#content .table-preview-controls select {
+  min-height: 34px;
+  width: auto;
+  margin: 0;
+  padding: 5px 9px;
+  font-size: 12px;
+}
+#content .table-preview-page-info {
+  display: block;
+  padding: 6px 10px;
+  font-size: 11px;
+  line-height: 1.4;
+  text-align: center;
+}
+#content .table-preview-page-info[hidden] {
+  display: none;
+}
+#content .table-preview-unavailable {
+  padding: 12px;
+  background: var(--panel-2);
+  color: var(--muted);
+}

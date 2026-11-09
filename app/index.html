@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Electrochemical Atlas</title>
+    <link rel="stylesheet" href="atlas.css" />
+  </head>
+  <body class="atlas-unified-toolbar">
+    <header class="topbar" aria-label="Electrochemical Atlas">
+      <button class="brand" id="homeButton" title="Electrochemical Atlas · Home">
+        <span class="brand-mark">EA</span>
+        <span
+          ><strong>Electrochemical Atlas</strong
+          ><small>Offline companion to Electrochemical Methods, 3e</small></span
+        >
+      </button>
+      <div class="search-wrap">
+        <span class="search-icon">⌕</span>
+        <input
+          id="globalSearch"
+          type="search"
+          autocomplete="off"
+          spellcheck="false"
+          placeholder="Search Atlas or PDF…" />
+        <select id="searchScope" aria-label="Search scope">
+          <option value="all">Everything</option>
+          <option value="sections">Sections</option>
+          <option value="pages">Book text</option>
+          <option value="figures">Figures</option>
+          <option value="tables">Tables</option>
+          <option value="equations">Equations</option>
+          <option value="problems">Problems</option>
+          <option value="references">References</option>
+          <option value="concepts">Concept index</option>
+          <option value="symbols">Symbols &amp; abbreviations</option>
+          <option value="glossary">Glossary</option>
+        </select>
+        <kbd>/</kbd>
+      </div>
+      <div class="layout-toolbar" aria-label="Atlas navigation and view"></div>
+      <div class="top-actions">
+        <button
+          id="beginnerToggle"
+          class="icon-button"
+          title="Open the interactive guide"
+          aria-haspopup="dialog"
+          >Guide</button
+        >
+        <button id="themeToggle" class="icon-button" title="Toggle light/dark theme">◐</button>
+      </div>
+    </header>
+
+    <div class="workspace">
+      <aside class="sidebar" id="sidebar">
+        <nav id="mainNav" aria-label="Atlas navigation">
+          <div class="atlas-nav-label" role="heading" aria-level="2">Explore</div>
+          <button type="button" data-view="home" class="nav-item active" title="Home"
+            ><span aria-hidden="true" class="atlas-sidebar-icon">⌂</span
+            ><span class="atlas-sidebar-text">Home</span></button
+          >
+          <button type="button" data-view="book" aria-controls="content" title="Chapters"
+            ><span aria-hidden="true" class="atlas-sidebar-icon">≡</span
+            ><span class="atlas-sidebar-text">Chapters</span></button
+          >
+          <button type="button" data-view="paths" title="Study paths"
+            ><span aria-hidden="true" class="atlas-sidebar-icon">→</span
+            ><span class="atlas-sidebar-text">Study paths</span></button
+          >
+          <div class="atlas-nav-label atlas-group-label" role="heading" aria-level="2"
+            >Workspace</div
+          >
+          <button type="button" data-view="calculators" title="Calculators"
+            ><span aria-hidden="true" class="atlas-sidebar-icon">ƒx</span
+            ><span class="atlas-sidebar-text">Calculators</span></button
+          >
+          <button type="button" data-view="notes" title="Saved items"
+            ><span aria-hidden="true" class="atlas-sidebar-icon">★</span
+            ><span class="atlas-sidebar-text">Saved items</span></button
+          >
+          <div
+            class="atlas-nav-label atlas-group-label atlas-reference-label"
+            role="heading"
+            aria-level="2"
+            >Reference library</div
+          >
+          <button type="button" data-view="concepts" title="Concept index"
+            ><span aria-hidden="true" class="atlas-sidebar-icon">A–Z</span
+            ><span class="atlas-sidebar-text">Concept index</span></button
+          >
+          <button type="button" data-view="symbols" title="Symbols &amp; abbreviations"
+            ><span aria-hidden="true" class="atlas-sidebar-icon">α</span
+            ><span class="atlas-sidebar-text">Symbols &amp; abbreviations</span></button
+          >
+          <button type="button" data-view="figures" aria-controls="content" title="Figures"
+            ><span aria-hidden="true" class="atlas-sidebar-icon">▧</span
+            ><span class="atlas-sidebar-text">Figures</span></button
+          >
+          <button type="button" data-view="tables" aria-controls="content" title="Tables"
+            ><span aria-hidden="true" class="atlas-sidebar-icon">▦</span
+            ><span class="atlas-sidebar-text">Tables</span></button
+          >
+          <button type="button" data-view="equations" aria-controls="content" title="Equations"
+            ><span aria-hidden="true" class="atlas-sidebar-icon">=</span
+            ><span class="atlas-sidebar-text">Equations</span></button
+          >
+          <button type="button" data-view="problems" aria-controls="content" title="Problems"
+            ><span aria-hidden="true" class="atlas-sidebar-icon">?</span
+            ><span class="atlas-sidebar-text">Problems</span></button
+          >
+          <button type="button" data-view="references" aria-controls="content" title="References"
+            ><span aria-hidden="true" class="atlas-sidebar-icon">☷</span
+            ><span class="atlas-sidebar-text">References</span></button
+          >
+        </nav>
+        <aside
+          class="catalog-rail"
+          id="catalogRail"
+          aria-label="Optional vertical reference list"
+          hidden>
+          <div class="catalog-rail-heading"
+            ><button
+              id="closeCatalogRail"
+              type="button"
+              aria-label="Back to Menu"
+              title="Back to Menu"
+              >← Menu</button
+            ><strong>Browse</strong
+            ><button id="catalogRailOpenIndex" type="button" title="Open the full category index"
+              >Index ↗</button
+            ></div
+          >
+          <select id="catalogRailType" aria-label="Reference list category">
+            <option value="figures">Figures</option
+            ><option value="tables">Tables</option
+            ><option value="equations">Equations</option
+            ><option value="problems">Problems</option
+            ><option value="references">References</option>
+          </select>
+          <label class="catalog-rail-search-label"
+            >Filter this list<input
+              id="catalogRailFilter"
+              type="search"
+              autocomplete="off"
+              placeholder="Number or description…"
+          /></label>
+          <div id="catalogRailList" class="catalog-rail-list" role="list" tabindex="0"></div>
+          <div class="catalog-rail-footer"
+            ><span id="catalogRailCount"></span
+            ><button id="catalogRailMore" type="button" hidden>Show more</button></div
+          >
+        </aside>
+        <section
+          id="atlasSidebarRecent"
+          class="atlas-sidebar-recent"
+          aria-labelledby="atlasSidebarRecentHeading">
+          <div
+            id="atlasSidebarRecentHeading"
+            class="atlas-sidebar-recent-label"
+            role="heading"
+            aria-level="2"
+            >Recently viewed</div
+          >
+          <div id="atlasSidebarRecentList" class="atlas-sidebar-recent-list"></div>
+          <p id="atlasSidebarRecentEmpty" class="atlas-sidebar-recent-empty"
+            >Opened entries and searches appear here.</p
+          >
+        </section>
+      </aside>
+
+      <div
+        class="panel-divider"
+        id="navDivider"
+        title="Drag to resize · double-click to reset · use arrow keys (Shift for larger steps)"
+        role="separator"
+        aria-label="Resize Menu or List column"
+        aria-orientation="vertical"
+        tabindex="0"></div>
+      <div class="atlas-area" id="atlasArea">
+        <main class="content" id="content" tabindex="-1"></main>
+      </div>
+
+      <div
+        class="panel-divider"
+        id="bookDivider"
+        title="Drag to resize · double-click to reset · use arrow keys (Shift for larger steps)"
+        role="separator"
+        aria-label="Resize atlas and book"
+        aria-orientation="vertical"
+        tabindex="0"></div>
+      <aside class="reader" id="reader">
+        <!-- Compatibility controls: reader scripts still bind these IDs, while the visible
+         PDF controls come from the browser and the floating Hide/Show actions. -->
+        <div class="reader-toolbar" aria-label="PDF page controls">
+          <button id="readerBack" title="Previous viewed PDF page">←</button>
+          <button id="readerForward" title="Next viewed PDF page">→</button>
+          <div class="reader-page-controls" role="group" aria-label="PDF page navigation">
+            <button id="readerPrev" title="Previous PDF page">‹</button>
+            <label
+              >PDF page <input id="readerPage" type="number" min="1" max="1107" value="57"
+            /></label>
+            <button id="readerNext" title="Next PDF page">›</button>
+            <span id="readerPrinted">Book p. 1</span>
+          </div>
+          <div class="reader-utilities" role="group" aria-label="PDF actions">
+            <button
+              id="bookmarkPage"
+              title="Bookmark this PDF page"
+              aria-label="Bookmark this PDF page"
+              >☆</button
+            >
+            <button
+              id="outlineToggle"
+              aria-expanded="false"
+              title="Show the book’s hierarchical bookmarks"
+              >☷ Bookmarks</button
+            >
+            <button
+              id="openCurrentExternal"
+              title="Open the PDF in a separate tab"
+              aria-label="Open PDF in a separate tab"
+              >Open PDF ↗</button
+            >
+            <button
+              id="readerToolsToggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="readerMore"
+              title="More PDF reading controls"
+              >Tools ▾</button
+            >
+          </div>
+        </div>
+        <div id="readerMore" hidden>
+          <div
+            class="reader-message reader-message--compact"
+            id="readerMessage"
+            role="status"
+            aria-live="polite">
+            <span>Your imported PDF</span>
+            <span id="readerTargetBadge" class="reader-target-badge" role="status" hidden></span>
+          </div>
+          <div class="book-tools reader-tools-grid">
+            <section class="reader-tool-group" aria-labelledby="readerNavToolsHeading">
+              <h3 id="readerNavToolsHeading">Navigate</h3>
+              <div class="reader-tool-row reader-tool-row--wrap">
+                <span id="readerPdfHistorySlot" class="atlas-pdf-history-slot"></span>
+                <label class="book-jump-label"
+                  >Book page
+                  <input
+                    id="printedJump"
+                    aria-label="Printed book page or roman front-matter page"
+                    placeholder="1 or xxv"
+                    size="5"
+                /></label>
+                <button id="printedGo" title="Jump to printed book page">Go</button>
+              </div>
+            </section>
+            <section class="reader-tool-group" aria-labelledby="readerViewToolsHeading">
+              <h3 id="readerViewToolsHeading">View</h3>
+              <div class="reader-tool-row">
+                <button id="zoomOut" title="Zoom out">−</button><output id="zoomReadout">Fit</output
+                ><button id="zoomIn" title="Zoom in">+</button>
+                <button id="zoomFit" title="Fit page width">Fit</button>
+                <button id="expandReader" title="Expand the book reader">Expand</button>
+                <button
+                  id="collapseTopBars"
+                  type="button"
+                  aria-pressed="false"
+                  aria-keyshortcuts="Shift+H"
+                  title="Hide the Atlas toolbar and PDF controls (Shift+H)"
+                  >Hide bar</button
+                >
+              </div>
+            </section>
+            <section class="reader-tool-group" aria-labelledby="readerActionToolsHeading">
+              <h3 id="readerActionToolsHeading">Actions</h3>
+              <div class="reader-tool-row reader-tool-row--wrap">
+                <button id="highlightLinks" title="Explain links already present in your PDF"
+                  >Links</button
+                >
+                <button
+                  id="copyPageText"
+                  type="button"
+                  title="Copy selectable text from the current PDF page"
+                  >Copy page text</button
+                >
+                <button id="closeReader" title="Return to the encyclopedia">Back to atlas</button>
+              </div>
+            </section>
+          </div>
+        </div>
+        <div class="book-body">
+          <section id="outlinePanel" class="outline-panel" aria-label="Book bookmarks" hidden>
+            <input
+              id="outlineSearch"
+              type="search"
+              placeholder="Find a bookmark…"
+              aria-label="Filter bookmarks" />
+            <div id="outlineTree"></div>
+          </section>
+          <div
+            id="outlineDivider"
+            class="outline-divider"
+            title="Drag to resize · double-click to reset · use arrow keys (Shift for larger steps)"
+            role="separator"
+            aria-label="Resize book bookmarks"
+            aria-orientation="vertical"
+            tabindex="0"
+            hidden></div>
+          <div
+            id="bookViewport"
+            class="book-viewport"
+            tabindex="0"
+            aria-label="Book page; use the page controls to navigate">
+            <div class="reader-hover-controls"
+              ><button
+                id="floatingHideBar"
+                type="button"
+                aria-pressed="false"
+                aria-keyshortcuts="Shift+H"
+                title="Hide bar (Shift+H)"
+                >Hide bar</button
+              ></div
+            >
+            <iframe
+              id="importedPdfFrame"
+              title="Your locally selected original PDF"
+              hidden></iframe>
+            <div id="bookPage" class="book-page" hidden>
+              <img id="bookImage" alt="" draggable="false" />
+              <div id="bookText" class="book-text-layer" aria-label="Selectable page text"></div>
+              <div id="bookLinks" class="book-link-layer" aria-label="Page hyperlinks"></div>
+            </div>
+            <div id="readerFallback" class="book-error" role="alert" hidden>
+              <h3>The browser couldn't display this PDF.</h3>
+              <p
+                >Your original document is still available. Open it separately or choose Retry;
+                Atlas itself remains offline and functional.</p
+              >
+              <button id="retryPage">Retry page</button
+              ><button id="fallbackOpen">Open the PDF separately</button>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <dialog id="helpDialog">
+      <form method="dialog" class="dialog-card">
+        <button class="dialog-close" value="close">×</button>
+        <h2>Using Electrochemical Atlas</h2>
+
+        <div class="shortcut-grid">
+          <kbd>/, Ctrl/⌘ K</kbd><span>Open quick navigation</span> <kbd>Alt + ← / →</kbd
+          ><span>Navigate Atlas history</span> <kbd>[</kbd><span>Previous PDF page</span>
+          <kbd>]</kbd><span>Next PDF page</span> <kbd>B</kbd
+          ><span>Bookmark the current PDF page</span> <kbd>Esc</kbd
+          ><span>Close dialogs or clear search</span> <kbd>Shift+H</kbd
+          ><span>Hide or show the top bar while reading</span> <kbd>Shift+L</kbd
+          ><span>Toggle the optional vertical reference list</span>
+        </div>
+        <p
+          ><strong>Saved PDF:</strong> The portable launcher reopens the original file from its
+          saved path. Browser-only mode may require selecting the file again.</p
+        ><p
+          >Use <strong>Bookmarks</strong> for the full outline, <strong>Links</strong> for PDF link
+          guidance, <strong>Expand</strong> for a larger reading area, or enter a printed book page
+          (including roman front matter). The back arrow returns to your previous page after a link
+          jump.</p
+        >
+        <p class="muted"
+          >Notes, bookmarks, reading progress, and display settings are stored only in this browser.
+          Export them from the Bookmarks & notes page before moving the folder to another
+          computer.</p
+        >
+      </form>
+    </dialog>
+
+    <dialog id="guideDialog" aria-labelledby="guideTitle">
+      <div class="guide-shell"
+        ><header class="guide-header"
+          ><div
+            ><div class="eyebrow">Electrochemical Atlas · PDF import edition</div
+            ><h2 id="guideTitle">Your guide to the Atlas</h2></div
+          ><button id="closeGuide" class="icon-button" aria-label="Close guide">×</button></header
+        >
+        <div class="guide-tabs" role="tablist" aria-label="Guide topics">
+          <button role="tab" id="guide-tab-start" data-guide="start" aria-controls="guideContent"
+            >Start here</button
+          ><button role="tab" id="guide-tab-layout" data-guide="layout" aria-controls="guideContent"
+            >Layout</button
+          ><button role="tab" id="guide-tab-read" data-guide="read" aria-controls="guideContent"
+            >Reading</button
+          ><button role="tab" id="guide-tab-calc" data-guide="calc" aria-controls="guideContent"
+            >Calculators</button
+          ><button role="tab" id="guide-tab-data" data-guide="data" aria-controls="guideContent"
+            >Your data</button
+          > </div
+        ><section id="guideContent" role="tabpanel" tabindex="0"></section>
+      </div>
+    </dialog>
+    <button
+      id="restoreTopBars"
+      class="restore-top-bars"
+      type="button"
+      aria-keyshortcuts="Shift+H"
+      title="Show bar (Shift+H)"
+      hidden
+      >Show bar</button
+    >
+    <div id="layoutNotice" class="layout-notice" role="status" hidden></div>
+    <input id="importNotesFile" type="file" accept="application/json" hidden />
+    <div
+      id="pdfImport"
+      class="import-screen"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="pdfImportHeading">
+      <div class="import-shell">
+        <div class="import-badge">EA</div>
+        <h1 id="pdfImportHeading">Open your PDF</h1>
+        <p class="import-subtitle">Select your original textbook.</p>
+
+        <div class="pdf-dropzone" id="pdfDropZone" aria-label="Choose or drop a PDF">
+          <button id="pdfChoosePrimary" type="button" class="pdf-primary-button">Choose PDF</button>
+          <span class="pdf-drop-hint">or drop it here</span>
+          <input
+            type="file"
+            id="sourcePdfFile"
+            accept=".pdf,application/pdf"
+            aria-label="Select your original PDF"
+            hidden />
+          <p class="pdf-current" id="pdfSelectionName" role="status" aria-live="polite" hidden></p>
+        </div>
+
+        <details class="pdf-more-options" id="pdfMoreOptions" hidden>
+          <summary>Other options</summary>
+          <div class="pdf-more-content">
+            <div class="portable-source-panel" id="portablePdfPanel" hidden>
+              <small id="portablePdfStatus" class="pdf-secondary-status"></small>
+              <div class="pdf-remember-actions">
+                <button id="portablePick" type="button" hidden>Choose &amp; remember PDF</button>
+                <button id="portableForget" type="button" class="secondary" hidden
+                  >Forget saved location</button
+                >
+                <button id="pdfBrowserFallback" type="button" class="secondary"
+                  >Browse for this session</button
+                >
+              </div>
+              <div class="portable-path-fallback">
+                <label for="portablePath">Open by file path</label>
+                <div class="pdf-path-row">
+                  <input
+                    type="text"
+                    id="portablePath"
+                    autocomplete="off"
+                    spellcheck="false"
+                    placeholder="Path to your PDF" />
+                  <button type="button" id="portableSavePath" class="secondary">Save path</button>
+                </div>
+              </div>
+            </div>
+            <div id="savedPdfPanel" class="pdf-saved-options" hidden>
+              <strong id="savedPdfName">Previously selected PDF</strong>
+              <small id="savedPdfStatus"></small>
+              <div class="pdf-remember-actions">
+                <button id="reconnectPdf" type="button" class="secondary"
+                  >Reconnect saved PDF</button
+                >
+                <button id="forgetSavedPdf" type="button" class="secondary"
+                  >Forget reference</button
+                >
+              </div>
+            </div>
+            <button id="rememberPdfPicker" type="button" hidden>Choose &amp; remember PDF</button>
+          </div>
+        </details>
+
+        <div class="import-progress-area" id="importProgressArea" hidden>
+          <strong id="importProgressText">Preparing…</strong>
+          <div class="progress-track"><div id="importProgressBar"></div></div>
+          <small></small>
+        </div>
+        <p class="import-error" id="pdfImportError" role="alert" hidden></p>
+      </div>
+    </div>
+    <dialog id="sourceAuditDialog" class="source-audit-dialog" aria-labelledby="sourceAuditTitle"
+      ><div class="source-audit-head"
+        ><h2 id="sourceAuditTitle">PDF source & index quality</h2
+        ><button type="button" data-close-audit aria-label="Close source report">×</button></div
+      ><div class="source-audit-body"></div
+    ></dialog>
+    <script src="text-utils.js"></script>
+    <script src="storage.js"></script>
+    <script src="equation-index.js"></script>
+    <script src="pdf-core.js"></script>
+    <script src="runtime-catalog.js"></script>
+    <script src="source-audit.js"></script>
+    <script src="equations/source-map.js"></script>
+    <script src="equation-geometry.js"></script>
+    <script src="equation-preview.js"></script>
+    <script src="source-regions.js"></script>
+    <script src="figures/source-map.js"></script>
+    <script src="figure-reviewed-crops.js"></script>
+    <script src="figure-geometry.js"></script>
+    <script src="figure-preview.js"></script>
+    <script src="tables/source-map.js"></script>
+    <script src="table-preview.js"></script>
+    <script src="science-format.js"></script>
+    <script src="calculator-core.js"></script>
+    <script src="calculator-ui.js"></script>
+    <script src="reading-chrome.js"></script>
+    <script src="pdf-file-memory.js"></script>
+    <script src="portable-source.js"></script>
+    <script src="bootstrap.js"></script>
+  </body>
+</html>
