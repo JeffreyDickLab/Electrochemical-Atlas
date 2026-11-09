@@ -1,0 +1,524 @@
+/* Workspace controls, deliberately independent of the book renderer. */
+:root {
+  --layoutbar: 42px;
+  --nav-width: 232px;
+  --book-width: 55%;
+  --outline-width: 250px;
+  --topbar: 64px;
+}
+button:focus-visible,
+select:focus-visible,
+input:focus-visible,
+summary:focus-visible,
+[role='separator']:focus-visible {
+  outline: 3px solid var(--accent-2);
+  outline-offset: 2px;
+}
+.topbar {
+  grid-template-columns: 245px minmax(100px, 1fr) auto;
+  gap: 12px;
+  height: var(--topbar);
+}
+.search-wrap input {
+  min-width: 0;
+}
+.top-actions #beginnerToggle {
+  display: inline-block;
+}
+.layout-toolbar {
+  height: var(--layoutbar);
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 4px 12px;
+  background: var(--panel);
+  border-bottom: 1px solid var(--line);
+  font-size: 12px;
+  z-index: 21;
+  position: relative;
+}
+.layout-toolbar button,
+.layout-toolbar select,
+.reader-toolbar button {
+  border: 1px solid var(--line);
+  background: var(--panel-2);
+  border-radius: 7px;
+  padding: 5px 9px;
+  min-height: 30px;
+  white-space: nowrap;
+}
+.layout-toolbar button[aria-expanded='true'] {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+body .workspace,
+body.reader-expanded .workspace,
+body.compact-reader .workspace {
+  display: flex;
+  height: calc(100dvh - var(--topbar) - var(--layoutbar));
+  min-height: 0;
+  overflow: hidden;
+}
+body .sidebar {
+  width: var(--nav-width);
+  flex: 0 0 var(--nav-width);
+  display: flex;
+  border: 0;
+}
+body .content {
+  flex: 1 1 0;
+  min-width: 0;
+  min-height: 0;
+  display: block;
+  padding: 24px;
+  overflow: auto;
+  scroll-behavior: auto;
+  border: 0;
+  container-type: inline-size;
+}
+body .reader,
+body.reader-open .reader {
+  display: flex;
+  position: relative;
+  inset: auto;
+  flex: 0 0 var(--book-width);
+  width: var(--book-width);
+  z-index: 0;
+  min-width: 0;
+}
+body.layout-no-nav .sidebar,
+body.layout-no-nav #navDivider {
+  display: none;
+}
+body.layout-no-book .reader,
+body.layout-no-book #bookDivider {
+  display: none;
+}
+body.layout-no-atlas .content,
+body.layout-no-atlas #bookDivider {
+  display: none;
+}
+body.layout-no-atlas .reader {
+  flex: 1 1 0;
+  width: auto;
+}
+.panel-divider {
+  width: 10px;
+  flex: 0 0 10px;
+  position: relative;
+  background: var(--bg);
+  cursor: col-resize;
+  touch-action: none;
+  z-index: 4;
+  border-left: 1px solid var(--line);
+  border-right: 1px solid var(--line);
+}
+.panel-divider::after,
+.outline-divider::after {
+  content: '';
+  position: absolute;
+  top: 43%;
+  bottom: 43%;
+  left: 2px;
+  right: 2px;
+  border-radius: 9px;
+  background: var(--line);
+}
+.panel-divider:hover,
+.panel-divider:focus-visible,
+.outline-divider:hover {
+  background: var(--accent-soft);
+}
+body.resizing,
+body.resizing * {
+  user-select: none !important;
+  cursor: col-resize !important;
+}
+body.resizing #bookLinks,
+body.resizing #importedPdfFrame {
+  pointer-events: none !important;
+}
+#readerMore {
+  flex-shrink: 0;
+  max-height: 40%;
+  overflow: auto;
+}
+#closeReader {
+  display: inline-block;
+}
+.reader-message {
+  white-space: normal;
+  font-size: 11px;
+}
+.reader-toolbar {
+  padding: 6px;
+  gap: 4px;
+}
+.reader-toolbar label {
+  font-size: 11px;
+}
+#readerPrinted {
+  font-size: 10px;
+  white-space: normal;
+  max-width: 130px;
+}
+.reader-toolbar input {
+  width: 55px;
+}
+.book-viewport {
+  padding: 12px;
+}
+.outline-panel {
+  width: var(--outline-width);
+  flex: 0 1 var(--outline-width);
+  min-width: 0;
+  max-width: min(90%, calc(100% - 76px));
+  position: relative;
+  inset: auto;
+}
+.outline-divider {
+  width: 10px;
+  flex: 0 0 10px;
+  position: relative;
+  background: var(--panel-2);
+  cursor: col-resize;
+  touch-action: none;
+}
+.fold-panel {
+  border: 1px solid var(--line);
+  background: var(--panel);
+  border-radius: 12px;
+  margin: 14px 0;
+  overflow: hidden;
+}
+.fold-panel > summary {
+  padding: 13px 15px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.fold-panel > summary::before {
+  content: '▸';
+  color: var(--accent);
+  font-size: 16px;
+}
+.fold-panel[open] > summary::before {
+  content: '▾';
+}
+.fold-panel > summary small {
+  font-weight: 400;
+  font-size: 11px;
+  color: var(--muted);
+  margin-left: auto;
+}
+.fold-panel > .fold-body {
+  padding: 0 15px 15px;
+  min-height: 45px;
+  max-height: none;
+  overflow: auto;
+  resize: vertical;
+}
+.fold-body .section-block,
+.fold-body .path-card {
+  margin: 0;
+  border: 0;
+  box-shadow: none;
+}
+.fold-body .section-heading h2,
+.fold-body > .section-block > h3,
+.fold-body .path-head h2 {
+  display: none;
+}
+.fold-body .note-box {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+#content > header,
+#content > .hero,
+#content > .fold-panel,
+#content > .stat-grid {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.hero {
+  grid-template-columns: 1fr 100px;
+  box-shadow: none;
+  padding: 22px;
+}
+.hero img {
+  width: 100px;
+}
+.hero h1 {
+  font-size: clamp(23px, 3cqw, 34px);
+}
+.view-header h1 {
+  font-size: 27px;
+}
+.hero p {
+  font-size: 14px;
+}
+.view-header p {
+  color: var(--muted);
+  font-size: 14px;
+}
+.section-heading {
+  flex-wrap: wrap;
+}
+#guideDialog {
+  border: 1px solid var(--line);
+  padding: 0;
+  border-radius: 16px;
+  background: var(--panel);
+  color: var(--text);
+  width: min(800px, 94vw);
+  max-width: 94vw;
+  max-height: 88dvh;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+#guideDialog::backdrop {
+  background: #101d17a8;
+  backdrop-filter: blur(3px);
+}
+.guide-shell {
+  display: flex;
+  flex-direction: column;
+  max-height: 88dvh;
+}
+.guide-header {
+  padding: 20px 22px 8px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+.guide-header h2 {
+  margin: 0;
+  font-size: 25px;
+}
+.guide-tabs {
+  display: flex;
+  gap: 6px;
+  padding: 12px 20px;
+  overflow: auto;
+  border-bottom: 1px solid var(--line);
+  flex-shrink: 0;
+}
+.guide-tabs button {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 8px 10px;
+  white-space: nowrap;
+  background: var(--panel-2);
+  font-size: 13px;
+}
+.guide-tabs button[aria-selected='true'] {
+  background: var(--accent);
+  color: var(--panel);
+}
+#guideContent {
+  overflow: auto;
+  padding: 20px 24px;
+  line-height: 1.65;
+  min-height: 230px;
+  font-size: 14px;
+}
+#guideContent h3 {
+  font-size: 18px;
+  margin: 14px 0 7px;
+}
+#guideContent p {
+  margin: 8px 0 14px;
+}
+#guideContent .guide-step {
+  padding: 12px;
+  background: var(--panel-2);
+  border-radius: 10px;
+  margin: 8px 0;
+}
+#guideContent button {
+  margin: 3px;
+}
+.guide-shortcuts {
+  display: grid;
+  grid-template-columns: 125px 1fr;
+  gap: 9px;
+}
+.layout-notice {
+  position: fixed;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 16px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--panel);
+  box-shadow: var(--shadow);
+  z-index: 80;
+  font-size: 12px;
+  max-width: 90vw;
+}
+@container (max-width:470px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+  .hero img {
+    display: none;
+  }
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+  .stat-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .path-step {
+    grid-template-columns: 24px 1fr;
+  }
+  .path-step .page-label {
+    display: none;
+  }
+}
+@media (max-width: 1050px) {
+  .topbar {
+    grid-template-columns: 160px minmax(0, 1fr) auto;
+    gap: 8px;
+  }
+  .brand strong {
+    font-size: 13px;
+  }
+  .brand small {
+    display: none;
+  }
+  .layout-hint {
+    display: none;
+  }
+  .content {
+    padding: 18px !important;
+  }
+  .layout-toolbar {
+    gap: 5px;
+  }
+  .layout-toolbar button,
+  .layout-toolbar select {
+    padding: 5px 7px;
+  }
+}
+@media (max-width: 799px) {
+  :root {
+    --topbar: 58px;
+    --layoutbar: 42px;
+  }
+  body {
+    overflow: hidden;
+  }
+  .topbar {
+    grid-template-columns: minmax(0, 1fr) auto;
+    padding: 7px;
+    position: relative;
+  }
+  .brand {
+    display: none;
+  }
+  .search-wrap {
+    width: 100%;
+    height: 40px;
+  }
+  .search-wrap kbd,
+  .search-wrap select {
+    display: none;
+  }
+  .top-actions {
+    gap: 4px;
+  }
+  .top-actions .icon-button {
+    height: 36px;
+    min-width: 34px;
+  }
+  .layout-toolbar {
+    padding: 4px 7px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 5px;
+  }
+  .layout-toolbar button {
+    font-size: 11px;
+  }
+  body .sidebar {
+    position: fixed;
+    top: calc(var(--topbar) + var(--layoutbar));
+    bottom: 0;
+    left: 0;
+    width: min(280px, 85vw);
+    z-index: 30;
+    box-shadow: 8px 0 30px #0005;
+  }
+  body #navDivider,
+  body #bookDivider {
+    display: none !important;
+  }
+  body .content {
+    min-height: 0 !important;
+    padding: 14px !important;
+    flex: 1;
+  }
+  body .reader {
+    flex: 1 1 100% !important;
+    width: 100% !important;
+  }
+  .outline-panel {
+    position: absolute;
+    inset: 0 auto 0 0;
+    max-width: 90%;
+    width: min(var(--outline-width), 90vw);
+    z-index: 6;
+    box-shadow: 5px 0 15px #0005;
+  }
+  .outline-divider {
+    display: none !important;
+  }
+  .guide-tabs {
+    padding: 10px;
+    gap: 4px;
+  }
+  .guide-tabs button {
+    padding: 7px;
+    font-size: 11px;
+  }
+  .guide-header {
+    padding: 15px;
+  }
+  .guide-header h2 {
+    font-size: 20px;
+  }
+  #guideContent {
+    padding: 15px;
+  }
+  .reader-toolbar label {
+    font-size: 0;
+  }
+  .reader-toolbar label input {
+    font-size: 12px;
+  }
+  .reader-toolbar #readerPrinted {
+    max-width: 110px;
+  }
+  .hero {
+    padding: 15px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}
+
+.brand-mark {
+  flex-shrink: 0;
+}

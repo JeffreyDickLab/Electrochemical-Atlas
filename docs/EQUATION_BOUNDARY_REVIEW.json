@@ -1,0 +1,4354 @@
+{
+  "summary": {
+    "combined_references": 4,
+    "standalone_regions": 2000,
+    "risk_sparse_top_edge_ink": 373,
+    "risk_sparse_bottom_edge_ink": 201,
+    "risk_possible_edge_prose": 117,
+    "indexed_entries": 2004,
+    "flagged_regions": 608,
+    "source_pages": 1107
+  },
+  "findings": [
+    {
+      "label": "1.1.11",
+      "page": 62,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "1.1.14",
+      "page": 64,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "1.1.15",
+      "page": 64,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "1.3.2",
+      "page": 80,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "1.3.7",
+      "page": 82,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "1.3.8",
+      "page": 82,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "1.3.9",
+      "page": 82,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "1.3.11",
+      "page": 83,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "1.3.12",
+      "page": 83,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "1.3.13",
+      "page": 83,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "1.3.15",
+      "page": 83,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "1.3.17",
+      "page": 83,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "1.3.20",
+      "page": 84,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "1.3.21",
+      "page": 84,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "1.3.26",
+      "page": 86,
+      "reasons": [
+        "possible_edge_prose",
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "1.3.29",
+      "page": 86,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "1.4.5",
+      "page": 87,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "1.4.15",
+      "page": 88,
+      "reasons": [
+        "sparse_bottom_edge_ink",
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "1.4.7",
+      "page": 88,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "1.4.16",
+      "page": 89,
+      "reasons": [
+        "sparse_bottom_edge_ink",
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "1.4.18",
+      "page": 89,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "1.4.22",
+      "page": 89,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "1.5.2",
+      "page": 96,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "1.5.4",
+      "page": 97,
+      "reasons": [
+        "possible_edge_prose"
+      ]
+    },
+    {
+      "label": "1.6.12",
+      "page": 103,
+      "reasons": [
+        "possible_edge_prose"
+      ]
+    },
+    {
+      "label": "1.6.15",
+      "page": 103,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "1.6.17",
+      "page": 103,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "1.6.18",
+      "page": 103,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "1.6.23",
+      "page": 105,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "2.1.15",
+      "page": 119,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "2.1.25",
+      "page": 121,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "2.1.26",
+      "page": 122,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "2.1.35",
+      "page": 124,
+      "reasons": [
+        "sparse_bottom_edge_ink",
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "2.1.42",
+      "page": 126,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "2.1.43",
+      "page": 127,
+      "reasons": [
+        "sparse_bottom_edge_ink",
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "2.1.44",
+      "page": 127,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "2.1.45",
+      "page": 127,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "2.1.49",
+      "page": 128,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "2.1.54",
+      "page": 130,
+      "reasons": [
+        "possible_edge_prose"
+      ]
+    },
+    {
+      "label": "2.1.60",
+      "page": 131,
+      "reasons": [
+        "possible_edge_prose",
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "2.2.3",
+      "page": 137,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "2.2.20",
+      "page": 143,
+      "reasons": [
+        "possible_edge_prose"
+      ]
+    },
+    {
+      "label": "2.2.24",
+      "page": 144,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "2.2.25",
+      "page": 144,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "2.3.3",
+      "page": 148,
+      "reasons": [
+        "possible_edge_prose"
+      ]
+    },
+    {
+      "label": "2.3.7",
+      "page": 149,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "2.3.10",
+      "page": 150,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "2.3.11",
+      "page": 150,
+      "reasons": [
+        "sparse_bottom_edge_ink",
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "2.3.18",
+      "page": 151,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "2.3.25",
+      "page": 153,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "2.3.29",
+      "page": 154,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "2.3.32",
+      "page": 154,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "2.3.35",
+      "page": 154,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "2.3.36",
+      "page": 155,
+      "reasons": [
+        "sparse_bottom_edge_ink",
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "2.3.38",
+      "page": 155,
+      "reasons": [
+        "sparse_bottom_edge_ink",
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "2.3.39",
+      "page": 156,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "2.3.45",
+      "page": 157,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "2.4.3",
+      "page": 158,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "2.4.12",
+      "page": 161,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "2.4.15",
+      "page": 161,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "3.1.2b",
+      "page": 177,
+      "reasons": [
+        "possible_edge_prose"
+      ]
+    },
+    {
+      "label": "3.1.3",
+      "page": 177,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "3.1.4",
+      "page": 177,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "3.1.6",
+      "page": 178,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "3.1.9",
+      "page": 179,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "3.1.10",
+      "page": 180,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "3.1.11",
+      "page": 180,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "3.1.12a",
+      "page": 180,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "3.1.13a",
+      "page": 181,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "3.1.14",
+      "page": 181,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "3.2.4",
+      "page": 182,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "3.2.7",
+      "page": 182,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "3.3.5a",
+      "page": 185,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "3.3.5b",
+      "page": 185,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "3.3.6b",
+      "page": 186,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "3.3.7a",
+      "page": 186,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "3.3.7b",
+      "page": 186,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "3.3.8",
+      "page": 186,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "3.4.6",
+      "page": 189,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "3.4.11",
+      "page": 191,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "3.4.12",
+      "page": 192,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "3.4.13",
+      "page": 192,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "3.4.15",
+      "page": 193,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "3.4.16b",
+      "page": 193,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "3.4.17",
+      "page": 193,
+      "reasons": [
+        "possible_edge_prose"
+      ]
+    },
+    {
+      "label": "3.4.20",
+      "page": 195,
+      "reasons": [
+        "possible_edge_prose",
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "3.4.22a",
+      "page": 195,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "3.4.22b",
+      "page": 195,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "3.4.23",
+      "page": 195,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "3.4.24",
+      "page": 195,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "3.4.25",
+      "page": 195,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "3.4.28",
+      "page": 195,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "3.4.31",
+      "page": 196,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "3.4.33",
+      "page": 196,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "3.5.12",
+      "page": 203,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "3.5.5",
+      "page": 203,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "3.5.7",
+      "page": 203,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "3.5.13",
+      "page": 204,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "3.5.14",
+      "page": 204,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "3.5.15",
+      "page": 204,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "3.5.16",
+      "page": 206,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "3.5.19",
+      "page": 206,
+      "reasons": [
+        "possible_edge_prose"
+      ]
+    },
+    {
+      "label": "3.5.20",
+      "page": 206,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "3.5.22",
+      "page": 206,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "3.5.23",
+      "page": 207,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "3.5.24",
+      "page": 207,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "3.5.27",
+      "page": 207,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "3.5.28",
+      "page": 208,
+      "reasons": [
+        "possible_edge_prose",
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "3.5.30",
+      "page": 208,
+      "reasons": [
+        "possible_edge_prose"
+      ]
+    },
+    {
+      "label": "3.5.31",
+      "page": 208,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "3.5.32",
+      "page": 208,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "3.5.39a",
+      "page": 209,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "3.5.39b",
+      "page": 209,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "3.5.41",
+      "page": 210,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "3.5.42",
+      "page": 210,
+      "reasons": [
+        "possible_edge_prose",
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "3.5.44",
+      "page": 210,
+      "reasons": [
+        "possible_edge_prose",
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "3.5.46",
+      "page": 210,
+      "reasons": [
+        "possible_edge_prose"
+      ]
+    },
+    {
+      "label": "3.5.50",
+      "page": 218,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "3.5.59",
+      "page": 221,
+      "reasons": [
+        "possible_edge_prose"
+      ]
+    },
+    {
+      "label": "3.5.65",
+      "page": 223,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "3.5.66",
+      "page": 223,
+      "reasons": [
+        "possible_edge_prose"
+      ]
+    },
+    {
+      "label": "3.5.67",
+      "page": 223,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "3.5.68",
+      "page": 223,
+      "reasons": [
+        "possible_edge_prose",
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "3.5.69",
+      "page": 223,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "3.6.1",
+      "page": 225,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "3.6.2",
+      "page": 225,
+      "reasons": [
+        "possible_edge_prose"
+      ]
+    },
+    {
+      "label": "3.7.1",
+      "page": 227,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "3.7.10",
+      "page": 229,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "3.7.8",
+      "page": 229,
+      "reasons": [
+        "possible_edge_prose"
+      ]
+    },
+    {
+      "label": "3.7.12",
+      "page": 230,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "3.7.16",
+      "page": 231,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "3.7.17",
+      "page": 231,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "3.7.18",
+      "page": 231,
+      "reasons": [
+        "sparse_bottom_edge_ink",
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "3.7.21",
+      "page": 232,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "3.7.22",
+      "page": 232,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "3.7.23",
+      "page": 232,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "3.7.24",
+      "page": 232,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "3.7.25",
+      "page": 232,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "4.1.4",
+      "page": 240,
+      "reasons": [
+        "possible_edge_prose"
+      ]
+    },
+    {
+      "label": "4.1.5",
+      "page": 240,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "4.1.8",
+      "page": 240,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "4.1.9",
+      "page": 240,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "4.1.10",
+      "page": 241,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "4.1.11",
+      "page": 241,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "4.1.12",
+      "page": 241,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "4.1.18",
+      "page": 242,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "4.2.6",
+      "page": 243,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "4.2.7",
+      "page": 243,
+      "reasons": [
+        "possible_edge_prose",
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "4.2.9",
+      "page": 243,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "4.4.1",
+      "page": 249,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "4.4.3",
+      "page": 251,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "4.4.4",
+      "page": 251,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "4.4.5",
+      "page": 251,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "4.4.10",
+      "page": 252,
+      "reasons": [
+        "possible_edge_prose",
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "4.4.9",
+      "page": 252,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "4.4.12",
+      "page": 253,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "4.4.13",
+      "page": 253,
+      "reasons": [
+        "possible_edge_prose"
+      ]
+    },
+    {
+      "label": "4.4.16",
+      "page": 253,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "4.4.17",
+      "page": 253,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "4.4.18",
+      "page": 254,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "4.4.19",
+      "page": 255,
+      "reasons": [
+        "possible_edge_prose"
+      ]
+    },
+    {
+      "label": "4.4.20",
+      "page": 255,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "4.5.10",
+      "page": 258,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "4.5.8",
+      "page": 258,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "4.5.9",
+      "page": 258,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "4.5.15",
+      "page": 259,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "5.1.2",
+      "page": 265,
+      "reasons": [
+        "sparse_bottom_edge_ink",
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "5.1.3",
+      "page": 265,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "5.1.5",
+      "page": 265,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "5.1.9",
+      "page": 265,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "5.1.11b",
+      "page": 266,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "5.1.16",
+      "page": 267,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "5.1.17",
+      "page": 267,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "5.2.12",
+      "page": 275,
+      "reasons": [
+        "possible_edge_prose",
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "5.2.17",
+      "page": 275,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "5.2.19",
+      "page": 276,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "5.2.23",
+      "page": 276,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "5.2.25b",
+      "page": 278,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "5.2.28",
+      "page": 279,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "5.2.29",
+      "page": 279,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "5.2.33",
+      "page": 279,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "5.3.1",
+      "page": 280,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "5.3.3",
+      "page": 280,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "5.3.4",
+      "page": 280,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "5.3.6",
+      "page": 281,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "5.3.7",
+      "page": 281,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "5.4.2",
+      "page": 287,
+      "reasons": [
+        "possible_edge_prose"
+      ]
+    },
+    {
+      "label": "5.4.4",
+      "page": 287,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "5.4.7",
+      "page": 287,
+      "reasons": [
+        "sparse_bottom_edge_ink",
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "5.4.10a",
+      "page": 288,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "5.4.10b",
+      "page": 288,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "5.4.11a",
+      "page": 289,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "5.4.11b",
+      "page": 289,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "5.4.12",
+      "page": 289,
+      "reasons": [
+        "possible_edge_prose",
+        "sparse_bottom_edge_ink",
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "5.4.14",
+      "page": 290,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "5.4.18",
+      "page": 294,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "5.4.19",
+      "page": 294,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "5.6.1",
+      "page": 298,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "5.6.2",
+      "page": 298,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "5.7.2",
+      "page": 302,
+      "reasons": [
+        "possible_edge_prose",
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "5.7.4",
+      "page": 306,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "5.11.1",
+      "page": 316,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "6.1.12",
+      "page": 319,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "6.1.2",
+      "page": 319,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "6.1.6",
+      "page": 319,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "6.1.7",
+      "page": 319,
+      "reasons": [
+        "possible_edge_prose"
+      ]
+    },
+    {
+      "label": "6.1.8",
+      "page": 319,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "6.1.13",
+      "page": 320,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "6.1.14",
+      "page": 320,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "6.1.15",
+      "page": 321,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "6.1.24",
+      "page": 323,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "6.1.26",
+      "page": 323,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "6.1.36",
+      "page": 326,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "6.1.37",
+      "page": 326,
+      "reasons": [
+        "possible_edge_prose",
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "6.2.13",
+      "page": 333,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "6.2.6",
+      "page": 333,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "6.2.8",
+      "page": 333,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "6.2.9",
+      "page": 333,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "6.2.14",
+      "page": 334,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "6.2.17",
+      "page": 334,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "6.2.20",
+      "page": 335,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "6.2.22",
+      "page": 335,
+      "reasons": [
+        "possible_edge_prose",
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "6.2.23",
+      "page": 335,
+      "reasons": [
+        "sparse_bottom_edge_ink",
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "6.2.24",
+      "page": 335,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "6.2.25",
+      "page": 335,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "6.3.2",
+      "page": 336,
+      "reasons": [
+        "possible_edge_prose",
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "6.3.4",
+      "page": 336,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "6.3.5",
+      "page": 336,
+      "reasons": [
+        "possible_edge_prose"
+      ]
+    },
+    {
+      "label": "6.3.6",
+      "page": 336,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "6.3.7",
+      "page": 336,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "6.3.8",
+      "page": 336,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "6.3.11b",
+      "page": 337,
+      "reasons": [
+        "possible_edge_prose",
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "6.3.16",
+      "page": 338,
+      "reasons": [
+        "possible_edge_prose"
+      ]
+    },
+    {
+      "label": "6.3.21",
+      "page": 338,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "6.3.26",
+      "page": 341,
+      "reasons": [
+        "sparse_bottom_edge_ink",
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "6.3.29",
+      "page": 342,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "6.3.31",
+      "page": 342,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "6.3.34",
+      "page": 342,
+      "reasons": [
+        "sparse_bottom_edge_ink",
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "6.5.8b",
+      "page": 348,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "6.5.10",
+      "page": 349,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "6.5.12",
+      "page": 349,
+      "reasons": [
+        "possible_edge_prose"
+      ]
+    },
+    {
+      "label": "6.5.14",
+      "page": 349,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "6.5.16",
+      "page": 350,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "6.6.2",
+      "page": 352,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "6.6.6",
+      "page": 352,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "6.6.10",
+      "page": 355,
+      "reasons": [
+        "possible_edge_prose",
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "6.7.2",
+      "page": 356,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "6.7.4",
+      "page": 357,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "7.2.4",
+      "page": 370,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "7.2.5",
+      "page": 370,
+      "reasons": [
+        "possible_edge_prose",
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "7.2.8",
+      "page": 370,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "7.2.9",
+      "page": 370,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "7.2.12",
+      "page": 371,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "7.2.18",
+      "page": 371,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "7.2.19",
+      "page": 371,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "7.2.20",
+      "page": 372,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "7.2.21",
+      "page": 372,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "7.2.22",
+      "page": 372,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "7.2.23",
+      "page": 372,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "7.2.24",
+      "page": 372,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "7.2.40",
+      "page": 378,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "7.3.2",
+      "page": 382,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "7.3.3",
+      "page": 382,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "7.3.6",
+      "page": 383,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "7.4.1",
+      "page": 385,
+      "reasons": [
+        "possible_edge_prose"
+      ]
+    },
+    {
+      "label": "7.4.10",
+      "page": 387,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "7.4.11",
+      "page": 387,
+      "reasons": [
+        "possible_edge_prose"
+      ]
+    },
+    {
+      "label": "7.4.7",
+      "page": 387,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "7.4.8",
+      "page": 387,
+      "reasons": [
+        "possible_edge_prose",
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "7.4.9",
+      "page": 387,
+      "reasons": [
+        "sparse_bottom_edge_ink",
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "7.4.12",
+      "page": 388,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "7.4.13",
+      "page": 388,
+      "reasons": [
+        "sparse_bottom_edge_ink",
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "7.4.14",
+      "page": 388,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "7.4.15",
+      "page": 388,
+      "reasons": [
+        "possible_edge_prose"
+      ]
+    },
+    {
+      "label": "7.5.1",
+      "page": 389,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "7.7.2",
+      "page": 392,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "7.7.5",
+      "page": 392,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "7.7.6",
+      "page": 393,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "7.8.3",
+      "page": 395,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "8.1.1",
+      "page": 412,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "8.1.3",
+      "page": 413,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "8.1.4a",
+      "page": 414,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "8.1.6",
+      "page": 415,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "8.1.8",
+      "page": 416,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "8.1.9",
+      "page": 416,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "8.2.1",
+      "page": 418,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "8.3.1",
+      "page": 424,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "8.3.3",
+      "page": 424,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "8.3.7",
+      "page": 425,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "8.4.1a",
+      "page": 428,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "8.4.2",
+      "page": 428,
+      "reasons": [
+        "possible_edge_prose"
+      ]
+    },
+    {
+      "label": "8.4.7",
+      "page": 429,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "8.4.8",
+      "page": 429,
+      "reasons": [
+        "possible_edge_prose",
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "8.4.9",
+      "page": 429,
+      "reasons": [
+        "sparse_bottom_edge_ink",
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "8.5.1",
+      "page": 434,
+      "reasons": [
+        "possible_edge_prose",
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "8.5.7",
+      "page": 436,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "9.2.2",
+      "page": 447,
+      "reasons": [
+        "possible_edge_prose"
+      ]
+    },
+    {
+      "label": "9.2.3",
+      "page": 447,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "9.2.11",
+      "page": 448,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "9.2.5",
+      "page": 448,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "9.2.6",
+      "page": 448,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "9.2.8",
+      "page": 448,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "9.3.1",
+      "page": 450,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "9.3.2",
+      "page": 450,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "9.3.10",
+      "page": 451,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "9.3.7",
+      "page": 451,
+      "reasons": [
+        "possible_edge_prose",
+        "sparse_bottom_edge_ink",
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "9.3.18",
+      "page": 453,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "9.4.6",
+      "page": 455,
+      "reasons": [
+        "possible_edge_prose"
+      ]
+    },
+    {
+      "label": "9.4.9",
+      "page": 455,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "9.5.2",
+      "page": 456,
+      "reasons": [
+        "sparse_bottom_edge_ink",
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "9.5.3",
+      "page": 456,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "9.5.5",
+      "page": 456,
+      "reasons": [
+        "possible_edge_prose",
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "9.5.6",
+      "page": 456,
+      "reasons": [
+        "possible_edge_prose",
+        "sparse_bottom_edge_ink",
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "9.6.2",
+      "page": 458,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "9.6.3",
+      "page": 458,
+      "reasons": [
+        "possible_edge_prose",
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "9.7.7",
+      "page": 460,
+      "reasons": [
+        "sparse_bottom_edge_ink",
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "10.2.2",
+      "page": 470,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "10.2.4",
+      "page": 471,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "10.2.5",
+      "page": 471,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "10.2.6",
+      "page": 471,
+      "reasons": [
+        "sparse_bottom_edge_ink",
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "10.2.7",
+      "page": 471,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "10.2.8",
+      "page": 471,
+      "reasons": [
+        "possible_edge_prose"
+      ]
+    },
+    {
+      "label": "10.2.12",
+      "page": 473,
+      "reasons": [
+        "possible_edge_prose",
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "10.2.16",
+      "page": 473,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "10.2.18",
+      "page": 473,
+      "reasons": [
+        "possible_edge_prose"
+      ]
+    },
+    {
+      "label": "10.2.20",
+      "page": 474,
+      "reasons": [
+        "possible_edge_prose"
+      ]
+    },
+    {
+      "label": "10.2.21",
+      "page": 474,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "10.2.23",
+      "page": 474,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "10.2.24",
+      "page": 474,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "10.2.25",
+      "page": 474,
+      "reasons": [
+        "possible_edge_prose"
+      ]
+    },
+    {
+      "label": "10.2.30",
+      "page": 475,
+      "reasons": [
+        "possible_edge_prose"
+      ]
+    },
+    {
+      "label": "10.2.34",
+      "page": 476,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "10.2.37",
+      "page": 476,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "10.2.39",
+      "page": 476,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "10.2.43",
+      "page": 479,
+      "reasons": [
+        "possible_edge_prose"
+      ]
+    },
+    {
+      "label": "10.2.44",
+      "page": 479,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "10.2.45",
+      "page": 479,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "10.2.47",
+      "page": 480,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "10.2.51",
+      "page": 482,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "10.3.1",
+      "page": 483,
+      "reasons": [
+        "sparse_bottom_edge_ink",
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "10.3.11",
+      "page": 484,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "10.3.5",
+      "page": 484,
+      "reasons": [
+        "possible_edge_prose",
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "10.3.6",
+      "page": 484,
+      "reasons": [
+        "sparse_bottom_edge_ink",
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "10.3.8",
+      "page": 484,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "10.3.12",
+      "page": 485,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "10.3.13",
+      "page": 485,
+      "reasons": [
+        "possible_edge_prose",
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "10.3.14",
+      "page": 485,
+      "reasons": [
+        "possible_edge_prose"
+      ]
+    },
+    {
+      "label": "10.3.18",
+      "page": 485,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "10.3.20",
+      "page": 486,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "10.3.21",
+      "page": 486,
+      "reasons": [
+        "possible_edge_prose",
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "10.3.22",
+      "page": 487,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "10.3.23",
+      "page": 487,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "10.4.1",
+      "page": 488,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "10.4.2",
+      "page": 488,
+      "reasons": [
+        "possible_edge_prose",
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "10.4.6",
+      "page": 490,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "10.4.7",
+      "page": 490,
+      "reasons": [
+        "possible_edge_prose",
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "10.4.8",
+      "page": 490,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "10.6.2",
+      "page": 492,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "11.2.11",
+      "page": 504,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "11.3.4",
+      "page": 508,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "11.3.6",
+      "page": 508,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "11.3.13",
+      "page": 509,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "11.3.14",
+      "page": 509,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "11.3.8",
+      "page": 509,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "11.3.19",
+      "page": 510,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "11.3.21",
+      "page": 510,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "11.3.22",
+      "page": 510,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "11.3.24",
+      "page": 510,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "11.3.26",
+      "page": 511,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "11.3.28",
+      "page": 511,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "11.3.29",
+      "page": 511,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "11.3.33",
+      "page": 512,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "11.3.35",
+      "page": 514,
+      "reasons": [
+        "possible_edge_prose"
+      ]
+    },
+    {
+      "label": "11.3.36",
+      "page": 514,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "11.4.11",
+      "page": 518,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "11.4.9",
+      "page": 518,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "11.4.17",
+      "page": 519,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "11.4.23",
+      "page": 525,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "11.4.24",
+      "page": 525,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "11.5.1",
+      "page": 527,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "11.5.2",
+      "page": 527,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "11.5.7",
+      "page": 528,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "11.5.8",
+      "page": 528,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "11.5.9",
+      "page": 528,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "11.5.10",
+      "page": 530,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "11.5.11",
+      "page": 530,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "11.5.14",
+      "page": 530,
+      "reasons": [
+        "possible_edge_prose"
+      ]
+    },
+    {
+      "label": "11.5.18",
+      "page": 531,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "11.5.19",
+      "page": 531,
+      "reasons": [
+        "sparse_bottom_edge_ink",
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "12.1.3a",
+      "page": 547,
+      "reasons": [
+        "possible_edge_prose",
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "12.1.4",
+      "page": 547,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "12.1.5",
+      "page": 547,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "12.1.6",
+      "page": 547,
+      "reasons": [
+        "possible_edge_prose",
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "12.2.2",
+      "page": 551,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "12.2.5",
+      "page": 552,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "12.2.7",
+      "page": 552,
+      "reasons": [
+        "possible_edge_prose"
+      ]
+    },
+    {
+      "label": "12.2.8",
+      "page": 552,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "12.2.9",
+      "page": 553,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "12.2.11",
+      "page": 554,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "12.5.25",
+      "page": 571,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "12.5.28",
+      "page": 571,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "12.6.1",
+      "page": 578,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "12.6.5",
+      "page": 579,
+      "reasons": [
+        "possible_edge_prose"
+      ]
+    },
+    {
+      "label": "12.6.6",
+      "page": 579,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "12.6.8",
+      "page": 579,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "12.6.12",
+      "page": 580,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "12.6.15",
+      "page": 580,
+      "reasons": [
+        "possible_edge_prose",
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "12.6.16",
+      "page": 580,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "12.6.18a",
+      "page": 580,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "12.6.20",
+      "page": 581,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "13.1.13",
+      "page": 598,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "13.2.2",
+      "page": 602,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "13.2.3",
+      "page": 603,
+      "reasons": [
+        "possible_edge_prose"
+      ]
+    },
+    {
+      "label": "13.2.4",
+      "page": 604,
+      "reasons": [
+        "possible_edge_prose"
+      ]
+    },
+    {
+      "label": "13.2.10",
+      "page": 605,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "13.3.3",
+      "page": 611,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "13.3.4",
+      "page": 611,
+      "reasons": [
+        "possible_edge_prose"
+      ]
+    },
+    {
+      "label": "13.3.6",
+      "page": 612,
+      "reasons": [
+        "possible_edge_prose"
+      ]
+    },
+    {
+      "label": "13.3.17",
+      "page": 617,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "13.3.19",
+      "page": 619,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "13.3.25",
+      "page": 621,
+      "reasons": [
+        "possible_edge_prose"
+      ]
+    },
+    {
+      "label": "13.3.26",
+      "page": 622,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "13.3.30",
+      "page": 623,
+      "reasons": [
+        "sparse_bottom_edge_ink",
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "13.3.34",
+      "page": 628,
+      "reasons": [
+        "possible_edge_prose"
+      ]
+    },
+    {
+      "label": "13.3.35",
+      "page": 629,
+      "reasons": [
+        "sparse_bottom_edge_ink",
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "13.3.39",
+      "page": 632,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "13.3.43",
+      "page": 635,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "13.3.53",
+      "page": 640,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "13.3.54",
+      "page": 640,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "13.3.58",
+      "page": 643,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "13.3.60",
+      "page": 643,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "13.3.64",
+      "page": 645,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "14.1.2",
+      "page": 656,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "14.1.7",
+      "page": 657,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "14.1.8",
+      "page": 658,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "14.2.2",
+      "page": 659,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "14.2.3",
+      "page": 659,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "14.3.3a",
+      "page": 666,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "14.3.3b",
+      "page": 666,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "14.3.4",
+      "page": 666,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "14.3.7",
+      "page": 666,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "14.3.8",
+      "page": 666,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "14.3.11",
+      "page": 667,
+      "reasons": [
+        "possible_edge_prose",
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "14.3.12",
+      "page": 667,
+      "reasons": [
+        "possible_edge_prose",
+        "sparse_bottom_edge_ink",
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "14.3.16",
+      "page": 667,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "14.3.17",
+      "page": 667,
+      "reasons": [
+        "possible_edge_prose"
+      ]
+    },
+    {
+      "label": "14.3.24",
+      "page": 670,
+      "reasons": [
+        "possible_edge_prose",
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "14.3.25",
+      "page": 670,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "14.3.26",
+      "page": 671,
+      "reasons": [
+        "possible_edge_prose"
+      ]
+    },
+    {
+      "label": "14.3.27",
+      "page": 671,
+      "reasons": [
+        "possible_edge_prose"
+      ]
+    },
+    {
+      "label": "14.3.28",
+      "page": 671,
+      "reasons": [
+        "possible_edge_prose"
+      ]
+    },
+    {
+      "label": "14.3.29",
+      "page": 671,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "14.3.32",
+      "page": 672,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "14.5.1",
+      "page": 686,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "14.5.8a",
+      "page": 687,
+      "reasons": [
+        "sparse_bottom_edge_ink",
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "14.5.8b",
+      "page": 687,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "14.5.14",
+      "page": 688,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "14.5.17",
+      "page": 689,
+      "reasons": [
+        "possible_edge_prose",
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "14.5.19",
+      "page": 689,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "14.5.20",
+      "page": 690,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "14.7.2",
+      "page": 693,
+      "reasons": [
+        "possible_edge_prose"
+      ]
+    },
+    {
+      "label": "14.7.3",
+      "page": 693,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "14.7.6",
+      "page": 694,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "14.7.8",
+      "page": 694,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "14.9.3",
+      "page": 706,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "15.2.8",
+      "page": 716,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "15.2.11",
+      "page": 717,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "15.2.20",
+      "page": 718,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "15.2.22",
+      "page": 718,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "15.2.26",
+      "page": 719,
+      "reasons": [
+        "possible_edge_prose"
+      ]
+    },
+    {
+      "label": "15.2.28",
+      "page": 720,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "15.2.29",
+      "page": 720,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "15.2.31",
+      "page": 720,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "15.2.33",
+      "page": 720,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "15.2.35",
+      "page": 721,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "15.5.2",
+      "page": 740,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "15.5.3",
+      "page": 740,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "15.5.8",
+      "page": 741,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "15.6.5",
+      "page": 748,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "15.6.7",
+      "page": 749,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "15.6.15",
+      "page": 750,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "15.6.16",
+      "page": 750,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "15.6.17",
+      "page": 751,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "15.6.19",
+      "page": 751,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "15.6.23",
+      "page": 752,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "15.6.24",
+      "page": 752,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "15.6.27",
+      "page": 753,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "15.6.28",
+      "page": 753,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "15.6.33",
+      "page": 755,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "15.6.36",
+      "page": 755,
+      "reasons": [
+        "possible_edge_prose"
+      ]
+    },
+    {
+      "label": "15.6.38",
+      "page": 756,
+      "reasons": [
+        "possible_edge_prose"
+      ]
+    },
+    {
+      "label": "15.6.41",
+      "page": 762,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "15.6.49",
+      "page": 766,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "15.6.52",
+      "page": 766,
+      "reasons": [
+        "sparse_bottom_edge_ink",
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "15.6.53",
+      "page": 767,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "15.6.55",
+      "page": 768,
+      "reasons": [
+        "possible_edge_prose"
+      ]
+    },
+    {
+      "label": "16.2.3",
+      "page": 781,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "16.2.4",
+      "page": 781,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "16.2.12",
+      "page": 783,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "16.2.8",
+      "page": 783,
+      "reasons": [
+        "possible_edge_prose",
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "16.2.13",
+      "page": 784,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "16.4.4",
+      "page": 788,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "16.7.5",
+      "page": 797,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "16.8.2",
+      "page": 801,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "17.2.11",
+      "page": 815,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "17.2.12",
+      "page": 815,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "17.2.9",
+      "page": 815,
+      "reasons": [
+        "possible_edge_prose"
+      ]
+    },
+    {
+      "label": "17.2.21",
+      "page": 820,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "17.2.22",
+      "page": 820,
+      "reasons": [
+        "possible_edge_prose"
+      ]
+    },
+    {
+      "label": "17.2.25a",
+      "page": 821,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "17.2.25b",
+      "page": 821,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "17.2.26",
+      "page": 821,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "17.2.27",
+      "page": 821,
+      "reasons": [
+        "sparse_bottom_edge_ink",
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "17.2.28",
+      "page": 821,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "17.2.32",
+      "page": 823,
+      "reasons": [
+        "possible_edge_prose"
+      ]
+    },
+    {
+      "label": "17.2.33",
+      "page": 828,
+      "reasons": [
+        "sparse_bottom_edge_ink",
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "17.2.36",
+      "page": 829,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "17.2.37",
+      "page": 829,
+      "reasons": [
+        "possible_edge_prose"
+      ]
+    },
+    {
+      "label": "17.3.1",
+      "page": 832,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "17.3.2",
+      "page": 832,
+      "reasons": [
+        "possible_edge_prose",
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "17.3.3",
+      "page": 832,
+      "reasons": [
+        "possible_edge_prose",
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "17.3.4",
+      "page": 833,
+      "reasons": [
+        "possible_edge_prose"
+      ]
+    },
+    {
+      "label": "17.3.6",
+      "page": 833,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "17.5.1",
+      "page": 839,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "17.5.2",
+      "page": 840,
+      "reasons": [
+        "possible_edge_prose"
+      ]
+    },
+    {
+      "label": "17.5.5",
+      "page": 842,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "17.5.7",
+      "page": 843,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "17.5.11",
+      "page": 845,
+      "reasons": [
+        "possible_edge_prose",
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "17.5.12",
+      "page": 845,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "17.6.1",
+      "page": 849,
+      "reasons": [
+        "possible_edge_prose"
+      ]
+    },
+    {
+      "label": "17.6.2",
+      "page": 849,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "17.8.7",
+      "page": 866,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "18.2.1",
+      "page": 878,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "18.2.10",
+      "page": 879,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "18.2.5",
+      "page": 879,
+      "reasons": [
+        "possible_edge_prose"
+      ]
+    },
+    {
+      "label": "18.2.6",
+      "page": 879,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "18.4.1",
+      "page": 885,
+      "reasons": [
+        "sparse_bottom_edge_ink",
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "18.4.2",
+      "page": 885,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "18.4.3",
+      "page": 885,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "18.4.4",
+      "page": 885,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "18.4.5",
+      "page": 888,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "18.4.10",
+      "page": 891,
+      "reasons": [
+        "possible_edge_prose",
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "19.3.3",
+      "page": 911,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "19.3.5",
+      "page": 911,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "19.3.7",
+      "page": 913,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "19.4.1",
+      "page": 914,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "19.4.3",
+      "page": 916,
+      "reasons": [
+        "possible_edge_prose"
+      ]
+    },
+    {
+      "label": "19.4.4",
+      "page": 919,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "19.4.8",
+      "page": 925,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "19.5.1",
+      "page": 928,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "19.6.3",
+      "page": 932,
+      "reasons": [
+        "possible_edge_prose",
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "19.6.4",
+      "page": 932,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "19.6.5",
+      "page": 932,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "20.1.1",
+      "page": 944,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "20.1.2",
+      "page": 945,
+      "reasons": [
+        "possible_edge_prose"
+      ]
+    },
+    {
+      "label": "20.2.1",
+      "page": 952,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "20.2.2",
+      "page": 952,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "20.2.3",
+      "page": 952,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "20.2.4",
+      "page": 953,
+      "reasons": [
+        "possible_edge_prose"
+      ]
+    },
+    {
+      "label": "20.5.4",
+      "page": 966,
+      "reasons": [
+        "possible_edge_prose",
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "21.2.2",
+      "page": 998,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "21.3.1",
+      "page": 999,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "21.4.1",
+      "page": 1008,
+      "reasons": [
+        "possible_edge_prose",
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "21.5.1",
+      "page": 1009,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "A.1.8",
+      "page": 1024,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "A.1.10",
+      "page": 1025,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "A.1.11",
+      "page": 1025,
+      "reasons": [
+        "sparse_bottom_edge_ink",
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "A.1.15",
+      "page": 1025,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "A.1.16",
+      "page": 1026,
+      "reasons": [
+        "possible_edge_prose"
+      ]
+    },
+    {
+      "label": "A.1.18",
+      "page": 1026,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "A.1.21",
+      "page": 1026,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "A.1.24",
+      "page": 1026,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "A.1.26",
+      "page": 1026,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "A.1.28",
+      "page": 1027,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "A.1.38",
+      "page": 1028,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "A.1.43",
+      "page": 1029,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "A.1.44",
+      "page": 1029,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "A.1.53",
+      "page": 1030,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "A.1.54",
+      "page": 1030,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "A.1.61",
+      "page": 1031,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "A.1.62",
+      "page": 1031,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "A.1.63",
+      "page": 1031,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "A.1.64",
+      "page": 1031,
+      "reasons": [
+        "possible_edge_prose"
+      ]
+    },
+    {
+      "label": "A.1.66",
+      "page": 1031,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "A.1.68",
+      "page": 1031,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "A.1.69",
+      "page": 1031,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "A.2.3",
+      "page": 1032,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "A.2.6",
+      "page": 1033,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "A.2.7",
+      "page": 1033,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "A.3.5",
+      "page": 1034,
+      "reasons": [
+        "possible_edge_prose",
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "A.5.2",
+      "page": 1035,
+      "reasons": [
+        "sparse_bottom_edge_ink"
+      ]
+    },
+    {
+      "label": "A.5.4",
+      "page": 1036,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "A.5.7",
+      "page": 1036,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "B.1.9",
+      "page": 1043,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "B.1.11",
+      "page": 1046,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "B.1.12",
+      "page": 1046,
+      "reasons": [
+        "possible_edge_prose"
+      ]
+    },
+    {
+      "label": "B.1.15",
+      "page": 1047,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "B.1.22",
+      "page": 1048,
+      "reasons": [
+        "possible_edge_prose"
+      ]
+    },
+    {
+      "label": "B.1.24",
+      "page": 1048,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "B.2.6",
+      "page": 1053,
+      "reasons": [
+        "sparse_bottom_edge_ink",
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "B.3.7",
+      "page": 1055,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "B.4.5",
+      "page": 1057,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "B.4.12",
+      "page": 1058,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "B.4.8",
+      "page": 1058,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "B.4.9",
+      "page": 1058,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "B.4.16",
+      "page": 1059,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "B.4.17",
+      "page": 1059,
+      "reasons": [
+        "possible_edge_prose",
+        "sparse_top_edge_ink"
+      ]
+    },
+    {
+      "label": "B.4.23",
+      "page": 1060,
+      "reasons": [
+        "sparse_top_edge_ink"
+      ]
+    }
+  ],
+  "scope": "Source-coordinate and sampled-ink risk scan, not full visual verification or a PDF.js browser acceptance test."
+}

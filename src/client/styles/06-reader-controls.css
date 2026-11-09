@@ -1,0 +1,80 @@
+/* Reader-only vertical space and toolbar controls.
+ * Place floating controls below native PDF buttons but clear of its scrollbar. */
+:root {
+  --atlas-pdf-overlay-top: 66px;
+  --atlas-pdf-overlay-right: 44px;
+}
+body.atlas-top-bars-hidden {
+  --topbar: 0px;
+  --layoutbar: 0px;
+}
+body.atlas-top-bars-hidden > .topbar,
+body.atlas-top-bars-hidden > .layout-toolbar,
+body.atlas-top-bars-hidden .reader > .reader-toolbar,
+body.atlas-top-bars-hidden .reader > #readerMore {
+  display: none !important;
+}
+/* Full viewport height while the application rows are collapsed. */
+body.atlas-top-bars-hidden .workspace {
+  height: 100dvh !important;
+}
+/* Ensure the PDF iframe itself grows, not just its surrounding panel. */
+body.atlas-top-bars-hidden .reader .book-body {
+  flex: 1 1 auto;
+  min-height: 0;
+}
+.restore-top-bars {
+  position: fixed;
+  z-index: 70;
+  top: var(--atlas-pdf-overlay-top);
+  right: var(--atlas-pdf-overlay-right);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px 8px;
+  min-height: 27px;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  color: var(--muted);
+  background: transparent;
+  box-shadow: none;
+  font-size: 10.5px;
+  font-weight: 600;
+  line-height: 1.4;
+  white-space: nowrap;
+  opacity: 0.45;
+  transition:
+    opacity 0.15s ease,
+    background-color 0.15s ease,
+    border-color 0.15s ease;
+}
+.restore-top-bars:hover,
+.restore-top-bars:focus-visible {
+  opacity: 1;
+  color: var(--text);
+  background: var(--panel);
+  border-color: var(--line);
+}
+.restore-top-bars:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+.restore-top-bars[hidden] {
+  display: none !important;
+}
+@media (max-width: 520px) {
+  .restore-top-bars {
+    right: 36px;
+  }
+}
+
+@media (hover: none) {
+  .restore-top-bars {
+    opacity: 0.8;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .restore-top-bars {
+    transition: none;
+  }
+}

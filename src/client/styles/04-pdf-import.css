@@ -1,0 +1,338 @@
+/* Self-contained importer and reader. All illustrations and colors below are original CSS. */
+.import-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: grid;
+  place-items: center;
+  overflow: auto;
+  padding: 28px;
+  background: radial-gradient(ellipse 90% 70% at 30% 0, #30594b, #12291f 62%, #0c1813 100%);
+  color: #f5f8f2;
+}
+.import-screen[hidden] {
+  display: none;
+}
+.import-shell {
+  width: min(100%, 610px);
+  margin: auto;
+  padding: clamp(26px, 4vw, 45px);
+  background: #f8faf6;
+  color: #1b3028;
+  border: 1px solid #dfe7dd;
+  border-radius: 22px;
+  box-shadow: 0 32px 100px #0007;
+  text-align: left;
+}
+.import-shell .eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: #547667;
+  font-weight: 800;
+  margin-top: 22px;
+}
+.import-shell h1 {
+  font-size: clamp(26px, 5vw, 36px);
+  margin: 10px 0 12px;
+  line-height: 1.13;
+  letter-spacing: -0.035em;
+}
+.import-shell p {
+  font-size: 14px;
+  line-height: 1.63;
+  color: #50665b;
+  margin: 0 0 22px;
+}
+.import-badge {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: #e0c35b;
+  color: #233527;
+  font-weight: 900;
+  font-size: 20px;
+  letter-spacing: 0.045em;
+}
+.pdf-dropzone {
+  display: grid;
+  gap: 8px;
+  position: relative;
+  padding: 19px 18px;
+  border-radius: 16px;
+  border: 2px dashed #9db8a7;
+  background: #eff5ee;
+  text-align: center;
+  cursor: pointer;
+  outline-offset: 4px;
+  transition:
+    background 0.12s,
+    border-color 0.12s;
+}
+.pdf-dropzone:hover,
+.pdf-dropzone.over,
+.pdf-dropzone:focus-within {
+  background: #e1eee3;
+  border-color: #316d50;
+}
+.pdf-dropzone strong {
+  font-size: 17px;
+  color: #234f38;
+}
+.pdf-dropzone span {
+  font-size: 12px;
+  color: #62756b;
+}
+#pdfDropZone input[type='file'] {
+  position: static;
+  display: block;
+  opacity: 1;
+  width: 100%;
+  max-width: 100%;
+  min-height: 42px;
+  height: auto;
+  margin-top: 5px;
+  cursor: pointer;
+  border: 1px solid #9db8a7;
+  border-radius: 10px;
+  padding: 6px;
+  background: #fff;
+  color: #233527;
+  font: 12px/1.5 system-ui;
+}
+#pdfDropZone input[type='file']::file-selector-button {
+  border: 0;
+  border-radius: 7px;
+  background: #285e44;
+  color: #fff;
+  padding: 9px 15px;
+  margin-right: 12px;
+  font: 600 12px system-ui;
+  cursor: pointer;
+}
+#pdfDropZone input[type='file']:focus-visible {
+  outline: 3px solid #64a57d;
+  outline-offset: 3px;
+}
+#pdfDropZone input[type='file']:disabled {
+  opacity: 0.6;
+}
+.pdf-dropzone input:disabled {
+  cursor: wait;
+}
+.import-shell #pdfSelectionName {
+  font-size: 12px;
+  margin: 10px 0 18px;
+  word-break: break-all;
+}
+.import-progress-area {
+  margin: 13px 0 18px;
+}
+.import-progress-area[hidden] {
+  display: none;
+}
+.import-progress-area strong {
+  font-size: 13px;
+  display: block;
+  margin-bottom: 12px;
+}
+.import-progress-area .progress-track {
+  height: 8px;
+  background: #dde9df;
+  border-radius: 16px;
+  overflow: hidden;
+}
+.import-progress-area .progress-track > div {
+  width: 0;
+  height: 100%;
+  background: #337755;
+  transition: width 0.2s;
+}
+.import-progress-area small {
+  display: block;
+  font-size: 11px;
+  color: #68796d;
+  margin-top: 9px;
+}
+.import-shell .import-error {
+  padding: 10px 12px;
+  color: #922e35;
+  background: #ffe5e6;
+  border-radius: 8px;
+}
+.import-shell .import-error[hidden] {
+  display: none;
+}
+.import-shell .import-footnote {
+  font-size: 11px;
+  margin: 20px 0 0;
+  padding-top: 15px;
+  border-top: 1px solid #e2e9e1;
+  color: #526359;
+  text-align: center;
+}
+.cover-graphic {
+  width: min(210px, 31%);
+  aspect-ratio: 3/4;
+  border-radius: 13px;
+  flex: none;
+  background: linear-gradient(160deg, #1b3326 0%, #1d3c30 68%, #091b12 100%);
+  box-shadow: 0 16px 35px #0004;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 23px 16px;
+  color: #ddc875;
+  overflow: hidden;
+  position: relative;
+}
+.cover-graphic:before,
+.cover-graphic:after {
+  content: '';
+  width: 170px;
+  height: 170px;
+  position: absolute;
+  border: 1.5px solid #c9b96d65;
+  border-radius: 50%;
+  transform: translate(45px, 45px);
+}
+.cover-graphic:after {
+  transform: translate(-45px, 90px);
+  width: 120px;
+  height: 120px;
+}
+.cover-graphic .cover-motif {
+  font-family: Georgia, serif;
+  font-size: clamp(30px, 6vw, 70px);
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  z-index: 1;
+  margin: auto;
+}
+.cover-graphic small {
+  text-align: center;
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  font-weight: 700;
+  z-index: 1;
+  line-height: 1.6;
+}
+@container (max-width:470px) {
+  .cover-graphic {
+    display: none;
+  }
+}
+#bookViewport {
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+#importedPdfFrame {
+  display: block;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #fefefe;
+  z-index: 1;
+}
+#importedPdfFrame[hidden] {
+  display: none;
+}
+@media (max-width: 600px) {
+  .import-screen {
+    padding: 14px;
+  }
+  .import-shell {
+    padding: 24px 20px;
+    border-radius: 16px;
+  }
+}
+
+/* The original layout reserved a narrow image column; the new glyph is not a book cover. */
+.hero {
+  grid-template-columns: minmax(0, 1fr) 110px !important;
+}
+.hero > .cover-graphic {
+  box-sizing: border-box;
+  width: 110px !important;
+  min-width: 110px;
+  max-width: 110px;
+  aspect-ratio: 3/4;
+  align-self: center;
+  padding: 13px 8px;
+  border-radius: 9px;
+}
+.hero > .cover-graphic:before {
+  width: 100px;
+  height: 100px;
+}
+.hero > .cover-graphic:after {
+  width: 75px;
+  height: 75px;
+}
+.hero > .cover-graphic .cover-motif {
+  font-size: 39px;
+}
+.hero > .cover-graphic small {
+  font-size: 6px;
+  letter-spacing: 0.08em;
+}
+@container (max-width:470px) {
+  .hero {
+    grid-template-columns: 1fr !important;
+  }
+  .hero > .cover-graphic {
+    display: none !important;
+  }
+}
+
+/* Portable source: optional one-time native path selection, no PDF storage. */
+.portable-source-panel {
+  display: grid;
+  gap: 12px;
+  align-items: start;
+}
+.portable-source-panel[hidden] {
+  display: none !important;
+}
+.portable-source-copy small {
+  display: block;
+  margin-top: 5px;
+  line-height: 1.45;
+}
+.portable-path-fallback {
+  width: 100%;
+  font-size: 12px;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+  padding-top: 9px;
+}
+.portable-path-fallback summary {
+  cursor: pointer;
+  line-height: 1.5;
+}
+.portable-path-fallback label {
+  display: grid;
+  gap: 5px;
+  margin: 10px 0;
+  font-weight: 600;
+}
+.portable-path-fallback input {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  color: var(--text);
+  font: inherit;
+}
+.portable-path-fallback button {
+  max-width: 100%;
+  white-space: normal;
+}

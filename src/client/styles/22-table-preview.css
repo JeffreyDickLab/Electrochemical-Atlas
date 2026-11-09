@@ -1,0 +1,69 @@
+/* Printed tables retain their source columns and notation. Catalog cards show
+   one page; both views fit the available width without scaling controls. */
+#content .table-catalog-preview,
+#content .table-detail-preview {
+  min-width: 0;
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+  color: #56615b;
+}
+#content .table-catalog-preview {
+  margin: 12px 0 8px;
+  padding: 8px;
+}
+#content .table-catalog-preview .table-preview-viewport {
+  min-width: 0;
+}
+#content .table-catalog-preview canvas.atlas-source-table,
+#content .table-detail-preview canvas.atlas-source-table {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+#content .table-detail-preview {
+  margin: 0 0 16px;
+}
+#content .table-detail-preview .table-preview-viewport {
+  min-height: 100px;
+  max-height: min(72vh, 780px);
+  overflow: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+}
+#content .table-detail-preview .table-preview-viewport:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+}
+#content .table-preview-controls {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background: var(--panel-2);
+  border-bottom: 1px solid var(--line);
+}
+#content .table-preview-controls select {
+  min-height: 34px;
+  width: auto;
+  margin: 0;
+  padding: 5px 9px;
+  font-size: 12px;
+}
+#content .table-preview-page-info {
+  display: block;
+  padding: 6px 10px;
+  font-size: 11px;
+  line-height: 1.4;
+  text-align: center;
+}
+#content .table-preview-page-info[hidden] {
+  display: none;
+}
+#content .table-preview-unavailable {
+  padding: 12px;
+  background: var(--panel-2);
+  color: var(--muted);
+}

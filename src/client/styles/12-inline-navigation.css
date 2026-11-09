@@ -1,0 +1,96 @@
+/* Inline, nonmodal search suggestions beneath the main toolbar. */
+.topbar {
+  z-index: 90;
+}
+.search-wrap {
+  position: relative;
+  cursor: text !important;
+  overflow: visible;
+}
+.search-wrap input#globalSearch {
+  cursor: text !important;
+  caret-color: var(--text) !important;
+  min-width: 0;
+}
+#atlasCommandPalette.atlas-inline-search-panel {
+  position: absolute;
+  top: calc(100% + 7px);
+  left: 0;
+  right: 0;
+  z-index: 100;
+  margin: 0;
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+  max-height: min(71dvh, 650px, calc(100dvh - var(--topbar) - 8px));
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  background: var(--panel);
+  color: var(--text);
+  box-shadow: 0 16px 46px rgba(0, 0, 0, 0.25);
+}
+#atlasCommandPalette[hidden] {
+  display: none !important;
+}
+/* Pointer events inside the native PDF viewer stay in its frame.
+ * While search is open, let the Atlas page receive the dismissing click. */
+body.atlas-search-open #importedPdfFrame {
+  pointer-events: none;
+}
+#atlasCommandPalette .atlas-command-scopes {
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  overflow: visible;
+}
+#atlasCommandPalette .atlas-command-scopes button {
+  flex: 0 0 auto;
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+#atlasCommandPalette .atlas-command-results {
+  flex: 1 1 auto;
+  min-height: 0;
+  max-height: min(54dvh, 520px);
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+#atlasCommandPalette .atlas-command-footer {
+  flex: 0 0 auto;
+}
+#atlasCommandPalette .atlas-command-result:hover {
+  background: var(--accent-soft);
+}
+@media (max-width: 799px) {
+  #atlasCommandPalette.atlas-inline-search-panel {
+    max-height: min(69dvh, 560px, calc(100dvh - var(--topbar) - 8px));
+    border-radius: 10px;
+  }
+  #atlasCommandPalette .atlas-command-results {
+    max-height: 51dvh;
+  }
+  #atlasCommandPalette .atlas-command-footer {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+}
+@media (max-width: 460px) {
+  #atlasCommandPalette .atlas-command-scopes {
+    padding: 7px 6px;
+    gap: 2px;
+  }
+  #atlasCommandPalette .atlas-command-scopes button {
+    padding: 7px 8px;
+    font-size: 11px;
+  }
+  #atlasCommandPalette .atlas-command-footer {
+    padding: 8px 10px;
+  }
+  #atlasCommandPalette .atlas-command-footer span {
+    font-size: 10px;
+    line-height: 1.4;
+  }
+}

@@ -1,0 +1,128 @@
+/* Source-text presentation. Markup is safely generated at display time; the
+   original extracted strings and selected PDF remain unchanged. */
+.sci-rich {
+  font-variant-numeric: lining-nums;
+  overflow-wrap: break-word;
+  hyphens: none;
+  font-family: inherit;
+  unicode-bidi: plaintext;
+}
+.sci-rich sub,
+.sci-rich sup {
+  font-size: 0.72em;
+  line-height: 0;
+  position: static;
+}
+.sci-rich sup {
+  vertical-align: super;
+}
+.sci-rich sub {
+  vertical-align: sub;
+}
+.sci-unit {
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.source-notation {
+  font-weight: 400;
+  font-style: normal;
+}
+.source-notation .notation-bold {
+  font-weight: 700;
+}
+.source-notation .notation-italic {
+  font-style: italic;
+}
+.source-notation .notation-script {
+  font-family: 'Cambria Math', 'STIX Two Math', 'Times New Roman', serif;
+}
+.source-notation .notation-overbar {
+  text-decoration: overline;
+}
+.sci-rich .science-uncertain {
+  border-bottom: 1px dotted var(--muted);
+}
+.detail-text.sci-rich,
+.problem-statement.sci-rich {
+  line-height: 1.8;
+  white-space: normal;
+}
+.result-snippet.sci-rich {
+  line-height: 1.65;
+}
+.data-table td.sci-rich {
+  line-height: 1.6;
+}
+.equation-detail-preview {
+  overflow-x: auto;
+}
+
+.problem-equations {
+  margin-top: 20px;
+}
+.problem-equations h3 {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.problem-formula {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--panel-2);
+  padding: 12px;
+  margin: 10px 0;
+}
+.problem-formula > strong {
+  display: block;
+  font-size: 11px;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+.problem-formula .equation-catalog-preview {
+  margin: 4px 0 0;
+  overflow-x: auto;
+}
+
+/* Treat source captions and bibliography entries as prose, not monospaced PDF
+   text. Preserve actual blank-line boundaries when available. */
+.source-text {
+  white-space: normal;
+  min-width: 0;
+  max-width: 80ch;
+}
+.source-text p {
+  margin: 0 0 1em;
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+.source-text p:last-child {
+  margin-bottom: 0;
+}
+.source-text--figure,
+.source-text--table {
+  line-height: 1.75;
+}
+.source-text--reference {
+  max-width: 82ch;
+  line-height: 1.72;
+}
+.source-text--reference p {
+  padding-inline-start: 1.2em;
+  text-indent: -1.2em;
+}
+.result-title.sci-rich,
+.detail-header h1.sci-rich {
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+.calc-equation.sci-rich {
+  white-space: normal;
+  line-height: 1.85;
+}
+.calc-equation-line {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  min-width: 0;
+}
+.calc-equation-line + .calc-equation-line {
+  margin-top: 0.3em;
+}

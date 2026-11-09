@@ -1,0 +1,253 @@
+/* Browse is the second level of the shared Atlas navigation sidebar.
+   Only the imported catalog provides its entries; no PDF data ships here. */
+body .workspace .atlas-area {
+  display: flex;
+  flex: 1 1 0;
+  min-width: 0;
+  min-height: 0;
+  position: relative;
+  overflow: hidden;
+}
+body .atlas-area .content {
+  min-width: 0;
+  flex: 1 1 0;
+  overflow: auto;
+}
+body.layout-no-atlas .workspace .atlas-area {
+  display: none;
+}
+/* Menu and Browse are alternate views inside one fixed-width column.
+   Entry lists use a slim visible vertical scrollbar with no horizontal overflow. */
+.sidebar > .catalog-rail {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0;
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+  max-width: 100%;
+  background: var(--panel);
+  border: 0;
+  overflow: hidden;
+}
+.catalog-rail[hidden],
+#mainNav[hidden] {
+  display: none !important;
+}
+.catalog-rail-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 12px 8px;
+  gap: 6px;
+  min-width: 0;
+}
+.catalog-rail-heading strong {
+  flex: 1 1 auto;
+  min-width: 0;
+  text-align: center;
+  color: var(--atlas-side-heading);
+  font-size: var(--atlas-side-heading-size);
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.catalog-rail-heading button {
+  width: auto;
+  height: 30px;
+  min-width: 0;
+  padding: 0 8px;
+  border: 1px solid var(--line);
+  background: var(--panel-2);
+  color: var(--atlas-side-primary);
+  border-radius: var(--atlas-side-radius);
+  font-size: var(--atlas-side-detail-size);
+  font-weight: 650;
+  white-space: nowrap;
+}
+.catalog-rail-heading button:hover {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+.catalog-rail-heading button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+#catalogRailType {
+  width: calc(100% - 24px);
+  max-width: calc(100% - 24px);
+  height: 37px;
+  min-height: 37px;
+  margin: 0 12px 9px;
+  border: 1px solid var(--line);
+  border-radius: var(--atlas-side-radius);
+  padding: 7px 9px;
+  background: var(--panel-2);
+  font-size: var(--atlas-side-text-size);
+  font-weight: 600;
+  color: var(--atlas-side-primary);
+}
+.catalog-rail-search-label {
+  display: block;
+  padding: 0 12px 9px;
+  color: var(--atlas-side-heading);
+  font-size: var(--atlas-side-heading-size);
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.catalog-rail-search-label input {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  margin-top: 6px;
+  padding: 8px 9px;
+  border: 1px solid var(--line);
+  border-radius: var(--atlas-side-radius);
+  background: var(--panel-2);
+  color: var(--text);
+  font-size: var(--atlas-side-text-size);
+  font-weight: 500;
+  letter-spacing: normal;
+  text-transform: none;
+}
+.catalog-rail-search-label input::placeholder {
+  color: var(--atlas-side-secondary);
+  opacity: 1;
+}
+.catalog-rail-list {
+  flex: 1 1 0;
+  min-height: 0;
+  min-width: 0;
+  max-width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+  padding: 5px 9px 12px;
+}
+/* Share one scrollbar style across Explore, Browse, and search results. */
+#atlasCommandResults,
+#content,
+.catalog-rail-list {
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in srgb, var(--atlas-side-secondary) 55%, transparent) transparent;
+  scrollbar-gutter: auto;
+}
+#atlasCommandResults::-webkit-scrollbar,
+#content::-webkit-scrollbar,
+.catalog-rail-list::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.catalog-rail-list::-webkit-scrollbar {
+  height: 0;
+}
+#atlasCommandResults::-webkit-scrollbar-track,
+#content::-webkit-scrollbar-track,
+.catalog-rail-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+#atlasCommandResults::-webkit-scrollbar-thumb,
+#content::-webkit-scrollbar-thumb,
+.catalog-rail-list::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--atlas-side-secondary) 55%, transparent);
+  border-radius: 999px;
+}
+#atlasCommandResults::-webkit-scrollbar-thumb:hover,
+#content::-webkit-scrollbar-thumb:hover,
+.catalog-rail-list::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in srgb, var(--atlas-side-secondary) 80%, transparent);
+}
+#atlasCommandResults::-webkit-scrollbar-corner,
+#content::-webkit-scrollbar-corner,
+.catalog-rail-list::-webkit-scrollbar-corner {
+  background: transparent;
+}
+.catalog-rail-entry {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+  max-width: 100%;
+  width: 100%;
+  overflow: hidden;
+  gap: 4px;
+  margin: 1px 0;
+  padding: 9px 10px;
+  text-align: left;
+  background: transparent;
+  color: var(--atlas-side-primary);
+  border: 1px solid transparent;
+  border-radius: var(--atlas-side-radius);
+  line-height: 1.4;
+}
+.catalog-rail-entry:hover,
+.catalog-rail-entry:focus-visible {
+  background: var(--panel-2);
+  border-color: var(--line);
+}
+.catalog-rail-entry.current {
+  background: var(--accent-soft);
+  border-color: color-mix(in srgb, var(--accent) 20%, var(--line));
+}
+.catalog-rail-entry.current .catalog-entry-number {
+  color: var(--text);
+}
+.catalog-entry-number {
+  display: block;
+  min-width: 0;
+  max-width: 100%;
+  color: var(--atlas-side-primary);
+  font-size: var(--atlas-side-text-size);
+  line-height: 1.4;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+.catalog-entry-description {
+  display: block;
+  min-width: 0;
+  max-width: 100%;
+  color: var(--atlas-side-secondary);
+  font-size: var(--atlas-side-detail-size);
+  line-height: 1.5;
+  font-weight: 400;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+.catalog-rail-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 0 0 auto;
+  gap: 8px;
+  min-width: 0;
+  max-width: 100%;
+  padding: 7px 11px;
+  color: var(--atlas-side-secondary);
+  font-size: var(--atlas-side-detail-size);
+  border-top: 1px solid var(--line);
+  overflow: hidden;
+}
+.catalog-rail-footer button {
+  max-width: 100%;
+  padding: 6px 8px;
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  font-size: var(--atlas-side-detail-size);
+}
+.catalog-rail-empty {
+  font-size: var(--atlas-side-text-size);
+  color: var(--atlas-side-secondary);
+  padding: 14px;
+}
+
+/* Browse suppresses duplicate previous/next cards in the content panel. */
+body.atlas-list-active .atlas-area .content .pager {
+  display: none;
+}

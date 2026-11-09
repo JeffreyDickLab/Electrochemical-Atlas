@@ -1,0 +1,120 @@
+/* Component spacing and interface refinements. */
+.collection-toolbar > input,
+.collection-toolbar > select {
+  flex: 1 1 180px;
+  min-width: 0;
+  max-width: 100%;
+}
+.collection-toolbar > .badge {
+  flex-shrink: 0;
+}
+.unassigned-saved-items select {
+  flex: 1 1 220px;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.atlas-sidebar-text {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  line-height: 1.3;
+  font-size: 12px;
+}
+#mainNav > button[data-view] .atlas-sidebar-text {
+  min-width: 0;
+  width: auto;
+  height: auto;
+  display: block;
+  background: transparent;
+  font-weight: 650;
+  font-size: 12px;
+  line-height: 1.35;
+  flex: 1;
+}
+#sidebar.atlas-sidebar-compact #mainNav {
+  padding: 9px 5px;
+}
+#sidebar.atlas-sidebar-compact .atlas-nav-label {
+  display: none;
+}
+#sidebar.atlas-sidebar-compact #mainNav button[data-view] {
+  justify-content: center;
+  display: flex;
+  padding: 7px 0;
+  gap: 0;
+  min-height: 40px;
+  margin: 2px 0;
+}
+#sidebar.atlas-sidebar-compact #mainNav button[data-view] .atlas-sidebar-text {
+  display: none;
+}
+#sidebar.atlas-sidebar-compact #mainNav button[data-view] > span:first-child {
+  margin: auto;
+  flex-shrink: 0;
+}
+#mainNav button[data-view]:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+.atlas-detail-crumb {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex-wrap: wrap;
+  max-width: 100%;
+  margin-bottom: 11px;
+  font-size: 12px;
+  line-height: 1.35;
+  color: var(--muted);
+}
+.atlas-detail-crumb button {
+  border: 0;
+  padding: 4px 5px;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--accent);
+  font-weight: 750;
+  font-size: 12px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+.atlas-detail-crumb button:hover {
+  background: var(--accent-soft);
+}
+.atlas-detail-crumb > span:last-child {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.note-box textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+.note-box #noteSaveStatus {
+  display: block;
+  color: var(--muted);
+  font-size: 11.5px;
+  line-height: 1.5;
+  margin-top: 8px;
+}
+.reader-toolbar #atlasReaderReturn {
+  display: none;
+}
+body.layout-no-atlas .reader-toolbar #atlasReaderReturn {
+  display: inline-flex;
+  align-items: center;
+}
+
+body.layout-no-book #atlasReaderReturn {
+  display: none;
+}
+@media (max-width: 460px) {
+  .atlas-detail-crumb {
+    font-size: 11px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .atlas-detail-crumb button {
+    transition: none;
+  }
+}

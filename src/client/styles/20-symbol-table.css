@@ -1,0 +1,53 @@
+/* Symbols use the shared collection-card button for the entire preview.
+   Only field layout belongs here; hover and focus follow all catalog cards. */
+#content .symbol-card .result-snippet {
+  display: block;
+}
+
+#content .symbol-card-detail {
+  display: block;
+  margin-top: 8px;
+  min-width: 0;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--muted);
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+#content .symbol-card-field-label {
+  font-weight: 650;
+  color: var(--text);
+}
+
+.notation-definition {
+  display: block;
+  min-width: 0;
+}
+.notation-definition + .notation-definition {
+  border-top: 1px solid var(--line);
+  margin-top: 12px;
+  padding-top: 8px;
+}
+.notation-definition-label {
+  font-weight: 650;
+}
+.notation-detail .notation-definition {
+  margin-block: 12px;
+  line-height: 1.7;
+}
+.notation-detail .notation-definition p {
+  margin: 0 0 8px;
+}
+.notation-section-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px;
+}
+.notation-section-links .page-ref {
+  max-width: 100%;
+  white-space: normal;
+  text-align: left;
+  overflow-wrap: anywhere;
+}

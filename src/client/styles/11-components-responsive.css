@@ -1,0 +1,229 @@
+/* Consistent control typography, focus treatment, and component readability.
+ * User-supplied PDF content is never embedded or stored in this stylesheet. */
+:root {
+  --ui-focus: color-mix(in srgb, var(--accent) 66%, transparent);
+  --ui-hairline: color-mix(in srgb, var(--line) 80%, transparent);
+}
+body {
+  font-kerning: normal;
+  text-rendering: optimizeLegibility;
+}
+button,
+select,
+input,
+textarea {
+  accent-color: var(--accent);
+}
+button:not(:disabled),
+summary,
+[role='button'] {
+  touch-action: manipulation;
+}
+button:disabled {
+  cursor: default;
+  opacity: 0.53;
+}
+:is(button, input, select, textarea, summary, a, [tabindex='0']):focus-visible {
+  outline: 2px solid var(--accent) !important;
+  outline-offset: 2px;
+}
+/* Existing keyboard controls remain intact; hover never replaces focus. */
+:where(
+  .atlas-launch,
+  .atlas-path-shortcut,
+  .collection-card,
+  .result-card,
+  .atlas-recent-button,
+  .atlas-mode,
+  .atlas-menu-button,
+  .atlas-history-button
+):hover {
+  border-color: color-mix(in srgb, var(--accent) 55%, var(--line));
+}
+/* Make the view switch and the advanced controls feel like separate groups. */
+.layout-toolbar {
+  border-bottom: 1px solid var(--ui-hairline);
+}
+.atlas-history-buttons {
+  gap: 6px;
+}
+.layout-toolbar .atlas-history-button,
+.layout-toolbar .atlas-menu-button {
+  min-height: 35px;
+  border-radius: 9px;
+}
+.atlas-view-modes {
+  border-radius: 10px;
+}
+.layout-toolbar .atlas-mode {
+  min-height: 30px;
+}
+/* Keep typographic rhythm consistent from search results to source details. */
+.view-header h1,
+.detail-header h1 {
+  overflow-wrap: break-word;
+}
+.view-header p {
+  line-height: 1.6;
+  max-width: 75ch;
+}
+.result-title,
+.collection-card .result-title {
+  font-weight: 700;
+  line-height: 1.42;
+  letter-spacing: -0.008em;
+}
+.result-snippet {
+  margin-top: 5px;
+  line-height: 1.65;
+}
+.collection-card,
+.result-card {
+  border-radius: 12px;
+  padding: 14px 16px;
+}
+.collection-card:focus-visible,
+.result-card:focus-visible {
+  position: relative;
+  z-index: 1;
+}
+.detail-header {
+  border-radius: 14px;
+}
+.detail-header h1 {
+  max-width: 40ch;
+}
+.detail-card {
+  border-radius: 13px;
+}
+.detail-meta {
+  font-variant-numeric: tabular-nums;
+}
+.detail-text,
+.problem-statement {
+  max-width: 80ch;
+}
+.sci-rich {
+  font-kerning: normal;
+  letter-spacing: normal;
+}
+.sci-rich sub,
+.sci-rich sup {
+  font-family: inherit;
+}
+.problem-statement {
+  line-height: 1.79;
+}
+.problem-parts {
+  gap: 12px;
+}
+.problem-parts li {
+  border-radius: 9px;
+}
+.problem-parts li > div {
+  line-height: 1.75;
+}
+/* Scientific trust: a mathematical preview is an aid to reading, not a facsimile. */
+.equation-detail-preview {
+  border-radius: 10px;
+}
+.equation-provenance {
+  color: var(--muted);
+  font-size: 11.5px;
+  line-height: 1.55;
+  max-width: 78ch;
+  margin: 11px 0 16px;
+  padding-left: 11px;
+  border-left: 2px solid var(--line);
+}
+.equation-provenance strong {
+  color: var(--text);
+  font-weight: 650;
+}
+.equation-context {
+  line-height: 1.62;
+}
+.source-note {
+  line-height: 1.6;
+}
+/* More legible tables and consistent columns, including symbol definitions. */
+#content table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+  font-variant-numeric: tabular-nums;
+}
+#content table th {
+  font-weight: 740;
+  text-align: left;
+  background: var(--panel-2);
+}
+#content table th,
+#content table td {
+  vertical-align: top;
+  border-bottom: 1px solid var(--line);
+  line-height: 1.5;
+}
+#content table tbody tr:last-child td {
+  border-bottom-color: transparent;
+}
+#content table tbody tr:hover {
+  background: color-mix(in srgb, var(--accent-soft) 42%, var(--panel));
+}
+#content .calc-result-row strong {
+  font-variant-numeric: tabular-nums;
+}
+#content .calc-result-row small {
+  font-family: inherit;
+}
+.calc-result-row {
+  gap: 15px;
+}
+.calc-equation {
+  tab-size: 4;
+  line-height: 1.95;
+}
+.calc-convention {
+  border-left-width: 2px;
+}
+/* The optional Browse list is independently scrollable within the shared sidebar. */
+.catalog-rail-entry {
+  scroll-margin-block: 10px;
+}
+.catalog-rail-footer {
+  font-variant-numeric: tabular-nums;
+}
+/* Progress and status elements should remain readable at very narrow panel sizes. */
+#readerPrinted,
+#readerPage {
+  font-variant-numeric: tabular-nums;
+}
+@container (max-width:480px) {
+  .collection-card,
+  .result-card {
+    padding: 12px;
+  }
+  .detail-card {
+    padding: 15px;
+  }
+  .problem-parts {
+    gap: 8px;
+  }
+  .equation-provenance {
+    font-size: 11px;
+  }
+}
+@media (max-width: 799px) {
+  .layout-toolbar .atlas-history-button,
+  .layout-toolbar .atlas-menu-button {
+    min-height: 31px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .collection-card,
+  .result-card,
+  .atlas-launch,
+  .atlas-path-shortcut {
+    transition: none;
+  }
+}

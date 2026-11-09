@@ -1,0 +1,224 @@
+/* Primary PDF import controls, with optional recovery actions. */
+.import-shell {
+  width: min(100%, 550px);
+  padding: clamp(25px, 4vw, 38px);
+}
+.import-shell h1 {
+  margin: 14px 0 7px;
+}
+.import-shell .import-subtitle {
+  margin: 0 0 24px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.import-shell .pdf-dropzone {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 13px;
+  min-height: 86px;
+  padding: 17px 18px;
+  border: 1.5px dashed #9bb8a5;
+  border-radius: 14px;
+  background: #eef5ee;
+  text-align: left;
+  cursor: default;
+}
+.import-shell .pdf-dropzone:hover,
+.import-shell .pdf-dropzone.over,
+.import-shell .pdf-dropzone:focus-within {
+  border-color: #397251;
+  background: #e8f1e9;
+}
+.import-shell .pdf-primary-button {
+  border: 1px solid #285e44;
+  border-radius: 10px;
+  background: #285e44;
+  color: #fff;
+  padding: 13px 21px;
+  font: 750 14px/1.25 system-ui;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background 0.12s,
+    border-color 0.12s;
+}
+.import-shell .pdf-primary-button:hover {
+  background: #1a4e35;
+  border-color: #1a4e35;
+}
+.import-shell .pdf-primary-button:focus-visible,
+.pdf-more-options summary:focus-visible,
+.pdf-more-content button:focus-visible {
+  outline: 3px solid #6ea885;
+  outline-offset: 3px;
+}
+.import-shell .pdf-primary-button:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+.import-shell .pdf-drop-hint {
+  font-size: 13px;
+  color: #51695b;
+}
+.import-shell #sourcePdfFile[hidden] {
+  display: none !important;
+}
+.import-shell .pdf-current {
+  flex-basis: 100%;
+  width: 100%;
+  margin: 0 !important;
+  min-width: 0;
+  font-size: 12px;
+  line-height: 1.45;
+  color: #3f5d4a;
+  overflow-wrap: anywhere;
+}
+.import-shell .pdf-current[hidden] {
+  display: none !important;
+}
+.import-shell .pdf-more-options {
+  margin-top: 13px;
+  border-top: 1px solid #e1e8df;
+  padding-top: 12px;
+  color: #355543;
+  font-size: 13px;
+}
+.import-shell .pdf-more-options[hidden] {
+  display: none !important;
+}
+.import-shell .pdf-more-options > summary {
+  list-style: none;
+  width: max-content;
+  cursor: pointer;
+  color: #325f47;
+  font-weight: 650;
+  line-height: 1.6;
+  user-select: none;
+}
+.import-shell .pdf-more-options > summary::-webkit-details-marker {
+  display: none;
+}
+.import-shell .pdf-more-options > summary:before {
+  content: '▸';
+  margin-right: 8px;
+  color: #507a62;
+  display: inline-block;
+}
+.import-shell .pdf-more-options[open] > summary:before {
+  content: '▾';
+}
+.pdf-more-content {
+  display: grid;
+  gap: 13px;
+  padding: 15px 0 3px;
+}
+.pdf-more-content .portable-source-panel {
+  gap: 12px;
+}
+.pdf-more-content .pdf-secondary-status {
+  display: block;
+  font-size: 12px;
+  color: #4a6956;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+.pdf-more-content .pdf-remember-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.pdf-more-content .pdf-remember-actions button,
+.pdf-more-content > button {
+  background: #fff;
+  color: #29523c;
+  border: 1px solid #b3c5ba;
+  border-radius: 9px;
+  padding: 9px 12px;
+  font: 650 12px/1.4 system-ui;
+  cursor: pointer;
+}
+.pdf-more-content .pdf-remember-actions button:hover,
+.pdf-more-content > button:hover {
+  background: #f1f7f0;
+}
+.pdf-more-content .portable-path-fallback {
+  padding-top: 12px;
+  margin-top: 2px;
+  border-top: 1px solid #dce7dd;
+  color: #395a46;
+}
+.pdf-more-content .portable-path-fallback label {
+  display: block;
+  margin: 0 0 8px;
+  font-size: 12px;
+  font-weight: 650;
+}
+.pdf-more-content .pdf-path-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.pdf-more-content .pdf-path-row input {
+  flex: 1;
+  min-width: 0;
+  padding: 10px 12px;
+  background: #fff;
+  color: #1b3028;
+  border: 1px solid #b3c7b9;
+  border-radius: 9px;
+  font: 12px system-ui;
+}
+.pdf-more-content .pdf-path-row button {
+  background: #fff;
+  color: #285e44;
+  border: 1px solid #b3c7b9;
+  border-radius: 9px;
+  padding: 10px 12px;
+  font: 650 12px/1.4 system-ui;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.pdf-more-content .pdf-saved-options {
+  display: grid;
+  gap: 7px;
+  font-size: 12px;
+}
+.pdf-more-content .pdf-saved-options[hidden] {
+  display: none !important;
+}
+.pdf-more-content .pdf-saved-options small {
+  color: #557060;
+}
+.import-shell .import-progress-area {
+  margin: 16px 0 4px;
+}
+.import-shell .import-error {
+  margin: 14px 0 0;
+  font-size: 12px;
+  line-height: 1.5;
+}
+@media (max-width: 420px) {
+  .import-shell .pdf-dropzone {
+    justify-content: center;
+    text-align: center;
+    gap: 9px;
+  }
+  .import-shell .pdf-primary-button {
+    width: 100%;
+  }
+  .import-shell .pdf-drop-hint {
+    width: 100%;
+  }
+  .pdf-more-content .pdf-path-row {
+    flex-wrap: wrap;
+  }
+  .pdf-more-content .pdf-path-row button {
+    width: 100%;
+  }
+}
+
+.pdf-more-content .pdf-secondary-status:empty {
+  display: none;
+}

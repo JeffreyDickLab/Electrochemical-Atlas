@@ -1,0 +1,1127 @@
+{
+  "source_pdf_sha256": "c8f275c377e9fa981b6b4e69a63aa20b675acb846fe516531837cef93a96fb44",
+  "source_pdf_pages": 1107,
+  "manifest_sha256": "0f994314a2cd307ff69f7ee56b4959cb2001a4944071c2acf1158dada634d94b",
+  "table_count": 52,
+  "page_part_count": 81,
+  "multipage_table_count": 10,
+  "method": "Source PDF title and horizontal-rule coordinates generated conservative proposals. Every part was visually inspected; 11 boundaries were manually corrected and their final renders visually rechecked. No table text or cells were retyped or reconstructed.",
+  "reviewed_initial_sheets": [
+    "regions-sheet-01.png",
+    "regions-sheet-02.png",
+    "regions-sheet-03.png",
+    "regions-sheet-04.png",
+    "regions-sheet-05.png",
+    "regions-sheet-06.png",
+    "regions-sheet-07.png",
+    "regions-sheet-08.png",
+    "regions-sheet-09.png",
+    "regions-sheet-10.png",
+    "regions-sheet-11.png",
+    "regions-sheet-12.png",
+    "regions-sheet-13.png",
+    "regions-sheet-14.png"
+  ],
+  "reviewed_correction_sheets": [
+    "corrections-sheet-01.png",
+    "corrections-sheet-02.png"
+  ],
+  "reviewed_parts": [
+    {
+      "label": "1",
+      "page": 27,
+      "crop": [
+        56.96,
+        298.41,
+        451.51,
+        417.97
+      ],
+      "review": "visually accepted"
+    },
+    {
+      "label": "2",
+      "page": 27,
+      "crop": [
+        56.96,
+        436.56,
+        451.51,
+        630.93
+      ],
+      "review": "visually accepted"
+    },
+    {
+      "label": "2",
+      "page": 28,
+      "crop": [
+        53.03,
+        70.34,
+        447.57,
+        644.21
+      ],
+      "review": "visually accepted"
+    },
+    {
+      "label": "2",
+      "page": 29,
+      "crop": [
+        56.96,
+        68.73,
+        451.51,
+        648.39
+      ],
+      "review": "visually accepted"
+    },
+    {
+      "label": "2",
+      "page": 30,
+      "crop": [
+        53.03,
+        75.83,
+        447.58,
+        638.72
+      ],
+      "review": "visually accepted"
+    },
+    {
+      "label": "2",
+      "page": 31,
+      "crop": [
+        56.96,
+        68.73,
+        451.51,
+        621.77
+      ],
+      "review": "visually accepted"
+    },
+    {
+      "label": "2",
+      "page": 32,
+      "crop": [
+        53.03,
+        68.73,
+        447.57,
+        653.61
+      ],
+      "review": "visually accepted"
+    },
+    {
+      "label": "2",
+      "page": 33,
+      "crop": [
+        56.96,
+        77.28,
+        451.52,
+        635.17
+      ],
+      "review": "visually accepted"
+    },
+    {
+      "label": "2",
+      "page": 34,
+      "crop": [
+        53.03,
+        68.73,
+        447.57,
+        660.5
+      ],
+      "review": "visually accepted"
+    },
+    {
+      "label": "2",
+      "page": 35,
+      "crop": [
+        56.96,
+        68.73,
+        451.51,
+        670.91
+      ],
+      "review": "visually accepted"
+    },
+    {
+      "label": "2",
+      "page": 36,
+      "crop": [
+        53.03,
+        68.73,
+        447.57,
+        644.3
+      ],
+      "review": "visually accepted"
+    },
+    {
+      "label": "2",
+      "page": 37,
+      "crop": [
+        56.96,
+        68.73,
+        451.51,
+        681.64
+      ],
+      "review": "visually accepted"
+    },
+    {
+      "label": "2",
+      "page": 38,
+      "crop": [
+        53.03,
+        68.73,
+        447.58,
+        648.74
+      ],
+      "review": "visually accepted"
+    },
+    {
+      "label": "2",
+      "page": 39,
+      "crop": [
+        56.96,
+        68.73,
+        451.52,
+        679.42
+      ],
+      "review": "visually accepted"
+    },
+    {
+      "label": "2",
+      "page": 40,
+      "crop": [
+        53.03,
+        68.73,
+        447.57,
+        649.89
+      ],
+      "review": "visually accepted"
+    },
+    {
+      "label": "3",
+      "page": 41,
+      "crop": [
+        56.96,
+        73.0,
+        451.51,
+        639.46
+      ],
+      "review": "visually accepted"
+    },
+    {
+      "label": "3",
+      "page": 42,
+      "crop": [
+        53.03,
+        68.73,
+        447.57,
+        649.27
+      ],
+      "review": "visually accepted"
+    },
+    {
+      "label": "3",
+      "page": 43,
+      "crop": [
+        56.96,
+        68.73,
+        451.52,
+        645.13
+      ],
+      "review": "visually accepted"
+    },
+    {
+      "label": "3",
+      "page": 44,
+      "crop": [
+        53.03,
+        68.73,
+        447.57,
+        649.84
+      ],
+      "review": "visually accepted"
+    },
+    {
+      "label": "4",
+      "page": 45,
+      "crop": [
+        56.96,
+        73.07,
+        451.51,
+        639.68
+      ],
+      "review": "visually accepted"
+    },
+    {
+      "label": "4",
+      "page": 46,
+      "crop": [
+        53.03,
+        69.09,
+        447.57,
+        645.46
+      ],
+      "review": "visually accepted"
+    },
+    {
+      "label": "4",
+      "page": 47,
+      "crop": [
+        56.96,
+        68.73,
+        451.51,
+        665.22
+      ],
+      "review": "visually accepted"
+    },
+    {
+      "label": "4",
+      "page": 48,
+      "crop": [
+        53.03,
+        68.73,
+        447.57,
+        663.03
+      ],
+      "review": "visually accepted"
+    },
+    {
+      "label": "4",
+      "page": 49,
+      "crop": [
+        56.96,
+        68.77,
+        451.51,
+        439.46
+      ],
+      "review": "visually accepted"
+    },
+    {
+      "label": "5",
+      "page": 49,
+      "crop": [
+        56.96,
+        450.94,
+        451.51,
+        643.98
+      ],
+      "review": "visually accepted"
+    },
+    {
+      "label": "5",
+      "page": 50,
+      "crop": [
+        53.03,
+        72.08,
+        447.57,
+        642.47
+      ],
+      "review": "visually accepted"
+    },
+    {
+      "label": "5",
+      "page": 51,
+      "crop": [
+        56.96,
+        72.95,
+        451.52,
+        642.32
+      ],
+      "review": "visually accepted"
+    },
+    {
+      "label": "2.1.1",
+      "page": 125,
+      "crop": [
+        56.96,
+        68.93,
+        337.94,
+        288.89
+      ],
+      "review": "visually accepted"
+    },
+    {
+      "label": "2.3.1",
+      "page": 151,
+      "crop": [
+        56.96,
+        446.93,
+        325.98,
+        634.59
+      ],
+      "review": "visually accepted"
+    },
+    {
+      "label": "2.3.2",
+      "page": 152,
+      "crop": [
+        53.03,
+        69.06,
+        298.14,
+        377.51
+      ],
+      "review": "visually accepted"
+    },
+    {
+      "label": "2.3.3",
+      "page": 156,
+      "crop": [
+        53.03,
+        532.22,
+        381.84,
+        622.63
+      ],
+      "review": "visually accepted"
+    },
+    {
+      "label": "2.4.1",
+      "page": 164,
+      "crop": [
+        53.03,
+        68.73,
+        447.57,
+        635.67
+      ],
+      "review": "visually accepted"
+    },
+    {
+      "label": "4.4.1",
+      "page": 250,
+      "crop": [
+        53.03,
+        361.23,
+        357.91,
+        526.03
+      ],
+      "review": "corrected and rechecked"
+    },
+    {
+      "label": "4.4.2",
+      "page": 254,
+      "crop": [
+        53.03,
+        68.93,
+        447.57,
+        219.92
+      ],
+      "review": "corrected and rechecked"
+    },
+    {
+      "label": "5.1.1",
+      "page": 268,
+      "crop": [
+        53.03,
+        514.41,
+        447.58,
+        614.23
+      ],
+      "review": "corrected and rechecked"
+    },
+    {
+      "label": "5.2.1",
+      "page": 279,
+      "crop": [
+        56.96,
+        69.06,
+        451.51,
+        160.3
+      ],
+      "review": "visually accepted"
+    },
+    {
+      "label": "5.4.1",
+      "page": 292,
+      "crop": [
+        53.03,
+        546.81,
+        369.87,
+        653.78
+      ],
+      "review": "visually accepted"
+    },
+    {
+      "label": "5.4.2",
+      "page": 295,
+      "crop": [
+        56.96,
+        68.93,
+        451.51,
+        291.13
+      ],
+      "review": "corrected and rechecked"
+    },
+    {
+      "label": "6.3.1",
+      "page": 344,
+      "crop": [
+        53.03,
+        66.34,
+        381.82,
+        160.38
+      ],
+      "review": "corrected and rechecked"
+    },
+    {
+      "label": "7.2.1",
+      "page": 373,
+      "crop": [
+        56.96,
+        68.87,
+        412.4,
+        395.31
+      ],
+      "review": "visually accepted"
+    },
+    {
+      "label": "7.2.2",
+      "page": 379,
+      "crop": [
+        56.96,
+        598.85,
+        325.98,
+        674.68
+      ],
+      "review": "visually accepted"
+    },
+    {
+      "label": "7.3.1",
+      "page": 384,
+      "crop": [
+        53.02,
+        306.24,
+        447.57,
+        392.54
+      ],
+      "review": "corrected and rechecked"
+    },
+    {
+      "label": "7.4.1",
+      "page": 386,
+      "crop": [
+        53.03,
+        315.77,
+        381.89,
+        656.51
+      ],
+      "review": "visually accepted"
+    },
+    {
+      "label": "7.6.1",
+      "page": 392,
+      "crop": [
+        53.03,
+        69.06,
+        447.57,
+        140.49
+      ],
+      "review": "visually accepted"
+    },
+    {
+      "label": "7.8.1",
+      "page": 398,
+      "crop": [
+        53.03,
+        69.06,
+        322.04,
+        286.34
+      ],
+      "review": "visually accepted"
+    },
+    {
+      "label": "8.4.1",
+      "page": 429,
+      "crop": [
+        56.96,
+        519.93,
+        325.98,
+        665.9
+      ],
+      "review": "visually accepted"
+    },
+    {
+      "label": "8.5.1",
+      "page": 436,
+      "crop": [
+        53.03,
+        68.5,
+        345.95,
+        230.1
+      ],
+      "review": "visually accepted"
+    },
+    {
+      "label": "12.2.1",
+      "page": 555,
+      "crop": [
+        56.96,
+        365.03,
+        451.51,
+        618.6
+      ],
+      "review": "corrected and rechecked"
+    },
+    {
+      "label": "12.2.2",
+      "page": 556,
+      "crop": [
+        53.03,
+        381.56,
+        449.21,
+        656.51
+      ],
+      "review": "visually accepted"
+    },
+    {
+      "label": "12.3.1",
+      "page": 562,
+      "crop": [
+        53.03,
+        68.73,
+        447.57,
+        451.92
+      ],
+      "review": "visually accepted"
+    },
+    {
+      "label": "12.5.1",
+      "page": 574,
+      "crop": [
+        53.03,
+        69.06,
+        357.91,
+        216.03
+      ],
+      "review": "visually accepted"
+    },
+    {
+      "label": "13.2.1",
+      "page": 606,
+      "crop": [
+        53.03,
+        69.06,
+        447.57,
+        701.57
+      ],
+      "review": "visually accepted"
+    },
+    {
+      "label": "13.4.1",
+      "page": 648,
+      "crop": [
+        53.03,
+        69.06,
+        447.57,
+        451.68
+      ],
+      "review": "visually accepted"
+    },
+    {
+      "label": "14.3.1",
+      "page": 668,
+      "crop": [
+        53.03,
+        292.23,
+        298.14,
+        385.24
+      ],
+      "review": "corrected and rechecked"
+    },
+    {
+      "label": "14.3.2",
+      "page": 675,
+      "crop": [
+        56.95,
+        68.93,
+        286.53,
+        341.45
+      ],
+      "review": "visually accepted"
+    },
+    {
+      "label": "14.7.1",
+      "page": 695,
+      "crop": [
+        56.96,
+        132.37,
+        451.51,
+        444.2
+      ],
+      "review": "visually accepted"
+    },
+    {
+      "label": "14.7.2",
+      "page": 696,
+      "crop": [
+        53.03,
+        68.93,
+        447.57,
+        442.14
+      ],
+      "review": "visually accepted"
+    },
+    {
+      "label": "15.2.1",
+      "page": 721,
+      "crop": [
+        56.96,
+        541.08,
+        373.8,
+        656.51
+      ],
+      "review": "visually accepted"
+    },
+    {
+      "label": "15.2.2",
+      "page": 722,
+      "crop": [
+        53.03,
+        68.83,
+        369.87,
+        174.81
+      ],
+      "review": "corrected and rechecked"
+    },
+    {
+      "label": "15.6.1",
+      "page": 769,
+      "crop": [
+        56.96,
+        69.06,
+        451.51,
+        175.75
+      ],
+      "review": "visually accepted"
+    },
+    {
+      "label": "17.5.1",
+      "page": 847,
+      "crop": [
+        56.96,
+        69.06,
+        451.51,
+        349.13
+      ],
+      "review": "visually accepted"
+    },
+    {
+      "label": "18.2.1",
+      "page": 878,
+      "crop": [
+        53.03,
+        225.07,
+        250.31,
+        293.85
+      ],
+      "review": "visually accepted"
+    },
+    {
+      "label": "18.4.1",
+      "page": 886,
+      "crop": [
+        53.03,
+        420.86,
+        393.77,
+        660.13
+      ],
+      "review": "visually accepted"
+    },
+    {
+      "label": "19.3.1",
+      "page": 912,
+      "crop": [
+        53.03,
+        465.91,
+        226.4,
+        592.96
+      ],
+      "review": "corrected and rechecked"
+    },
+    {
+      "label": "19.4.1",
+      "page": 919,
+      "crop": [
+        56.96,
+        340.82,
+        296.09,
+        470.87
+      ],
+      "review": "visually accepted"
+    },
+    {
+      "label": "20.1.1",
+      "page": 943,
+      "crop": [
+        56.96,
+        69.06,
+        373.8,
+        229.92
+      ],
+      "review": "visually accepted"
+    },
+    {
+      "label": "21.4.1",
+      "page": 1005,
+      "crop": [
+        56.96,
+        69.06,
+        451.51,
+        622.51
+      ],
+      "review": "visually accepted"
+    },
+    {
+      "label": "21.4.1",
+      "page": 1006,
+      "crop": [
+        53.03,
+        68.73,
+        447.57,
+        521.05
+      ],
+      "review": "visually accepted"
+    },
+    {
+      "label": "21.8.1",
+      "page": 1013,
+      "crop": [
+        56.96,
+        315.42,
+        451.51,
+        636.36
+      ],
+      "review": "visually accepted"
+    },
+    {
+      "label": "21.8.1",
+      "page": 1014,
+      "crop": [
+        53.03,
+        68.73,
+        447.57,
+        528.03
+      ],
+      "review": "visually accepted"
+    },
+    {
+      "label": "21.8.2",
+      "page": 1015,
+      "crop": [
+        56.96,
+        187.52,
+        451.52,
+        608.46
+      ],
+      "review": "visually accepted"
+    },
+    {
+      "label": "21.8.2",
+      "page": 1016,
+      "crop": [
+        53.03,
+        68.73,
+        447.57,
+        519.06
+      ],
+      "review": "visually accepted"
+    },
+    {
+      "label": "A.1.1",
+      "page": 1025,
+      "crop": [
+        56.96,
+        69.06,
+        349.89,
+        328.6
+      ],
+      "review": "visually accepted"
+    },
+    {
+      "label": "C.1",
+      "page": 1063,
+      "crop": [
+        56.96,
+        229.95,
+        452.15,
+        645.67
+      ],
+      "review": "corrected and rechecked"
+    },
+    {
+      "label": "C.1",
+      "page": 1064,
+      "crop": [
+        53.03,
+        68.73,
+        448.21,
+        618.2
+      ],
+      "review": "visually accepted"
+    },
+    {
+      "label": "C.1",
+      "page": 1065,
+      "crop": [
+        56.96,
+        68.73,
+        452.15,
+        619.88
+      ],
+      "review": "visually accepted"
+    },
+    {
+      "label": "C.2",
+      "page": 1066,
+      "crop": [
+        53.03,
+        67.12,
+        447.57,
+        555.65
+      ],
+      "review": "visually accepted"
+    },
+    {
+      "label": "C.3",
+      "page": 1067,
+      "crop": [
+        56.96,
+        68.31,
+        451.51,
+        651.91
+      ],
+      "review": "visually accepted"
+    },
+    {
+      "label": "C.3",
+      "page": 1068,
+      "crop": [
+        53.03,
+        69.86,
+        447.57,
+        454.62
+      ],
+      "review": "visually accepted"
+    },
+    {
+      "label": "C.4",
+      "page": 1068,
+      "crop": [
+        53.03,
+        464.79,
+        447.57,
+        656.64
+      ],
+      "review": "visually accepted"
+    },
+    {
+      "label": "C.4",
+      "page": 1069,
+      "crop": [
+        56.96,
+        68.73,
+        451.51,
+        277.46
+      ],
+      "review": "visually accepted"
+    }
+  ],
+  "manual_corrections": [
+    {
+      "label": "4.4.1",
+      "page": 250,
+      "before": [
+        53.03,
+        361.23,
+        447.58,
+        590.47
+      ],
+      "after": [
+        53.03,
+        361.23,
+        357.91,
+        526.03
+      ],
+      "reason": "Remove following body paragraph and Equation 4.4.2; preserve notes (a)-(c)."
+    },
+    {
+      "label": "4.4.2",
+      "page": 254,
+      "before": [
+        53.03,
+        68.93,
+        447.57,
+        523.45
+      ],
+      "after": [
+        53.03,
+        68.93,
+        447.57,
+        219.92
+      ],
+      "reason": "Remove Figure 4.4.5 and its caption; preserve notes (a)-(c)."
+    },
+    {
+      "label": "5.1.1",
+      "page": 268,
+      "before": [
+        53.03,
+        514.41,
+        447.58,
+        658.45
+      ],
+      "after": [
+        53.03,
+        514.41,
+        447.58,
+        614.23
+      ],
+      "reason": "Remove ordinary numbered page footnote 5; preserve table notes (a)-(b)."
+    },
+    {
+      "label": "5.4.2",
+      "page": 295,
+      "before": [
+        56.96,
+        68.93,
+        451.51,
+        440.9
+      ],
+      "after": [
+        56.96,
+        68.93,
+        451.51,
+        291.13
+      ],
+      "reason": "Remove Figure 5.4.3 and its side caption; preserve notes (a)-(c)."
+    },
+    {
+      "label": "6.3.1",
+      "page": 344,
+      "before": [
+        53.03,
+        66.34,
+        381.82,
+        195.46
+      ],
+      "after": [
+        53.03,
+        66.34,
+        381.82,
+        160.38
+      ],
+      "reason": "Stop after bottom rule, before following subsection (b)."
+    },
+    {
+      "label": "7.3.1",
+      "page": 384,
+      "before": [
+        53.02,
+        306.24,
+        447.57,
+        416.84
+      ],
+      "after": [
+        53.02,
+        306.24,
+        447.57,
+        392.54
+      ],
+      "reason": "Remove subsection (a) and partial body prose; preserve table note and credit."
+    },
+    {
+      "label": "12.2.1",
+      "page": 555,
+      "before": [
+        56.96,
+        365.03,
+        451.51,
+        661.44
+      ],
+      "after": [
+        56.96,
+        365.03,
+        451.51,
+        618.6
+      ],
+      "reason": "Remove ordinary numbered page footnote 5; preserve table notes (a)-(b)."
+    },
+    {
+      "label": "14.3.1",
+      "page": 668,
+      "before": [
+        53.03,
+        292.23,
+        298.14,
+        417.64
+      ],
+      "after": [
+        53.03,
+        292.23,
+        298.14,
+        385.24
+      ],
+      "reason": "Remove subsection (b) and partial body prose; preserve notes (a)-(b)."
+    },
+    {
+      "label": "15.2.2",
+      "page": 722,
+      "before": [
+        53.03,
+        68.83,
+        443.41,
+        410.37
+      ],
+      "after": [
+        53.03,
+        68.83,
+        369.87,
+        174.81
+      ],
+      "reason": "Remove Figure 15.2.2 and its caption; preserve note (a)."
+    },
+    {
+      "label": "19.3.1",
+      "page": 912,
+      "before": [
+        53.03,
+        465.91,
+        446.68,
+        658.45
+      ],
+      "after": [
+        53.03,
+        465.91,
+        226.4,
+        592.96
+      ],
+      "reason": "Stop after bottom rule; remove ordinary numbered page footnote 2."
+    },
+    {
+      "label": "C.1",
+      "page": 1063,
+      "before": [
+        56.96,
+        229.95,
+        452.15,
+        696.19
+      ],
+      "after": [
+        56.96,
+        229.95,
+        452.15,
+        645.67
+      ],
+      "reason": "Remove publisher footer; preserve continued marker and all first-page rows."
+    }
+  ],
+  "coverage": {
+    "catalog_label_mismatches": [],
+    "catalog_start_page_mismatches": [],
+    "out_of_page_regions": [],
+    "partially_intersected_text_spans": []
+  },
+  "known_limitations": [],
+  "notes": [
+    "Printed table titles and table-specific footnotes are intentionally included.",
+    "Printed Continued labels are retained where present.",
+    "Ordinary numbered page footnotes, body paragraphs, following figures, headers and publisher footer are omitted.",
+    "Table 13.2.1 reaches y701.57 to preserve all seven mathematical footnotes.",
+    "Tables 1/2 on page27,4/5 on page49,C.3/C.4 on page1068 are separated at their actual printed boundaries."
+  ],
+  "review_date": "2026-11-06",
+  "runtime_verification": "See tests/integration/table-previews.mjs; source review and runtime checks are separate."
+}
