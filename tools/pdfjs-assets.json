@@ -1,0 +1,9 @@
+{
+  "modules": ["pdf.mjs", "pdf.worker.mjs", "LICENSE"],
+  "codecs": [
+    "jbig2.wasm",
+    "jbig2_nowasm_fallback.js",
+    "LICENSE_JBIG2",
+    "LICENSE_PDFJS_JBIG2"
+  ]
+}

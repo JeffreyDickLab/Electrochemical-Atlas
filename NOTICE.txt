@@ -1,0 +1,15 @@
+Electrochemical Atlas — software attribution and notices
+
+Copyright © 2026 Azaria A. Wagner and Jeffrey E. Dick.
+Electrochemical Atlas project authors: Azaria A. Wagner and Jeffrey E. Dick.
+
+The original Electrochemical Atlas software is licensed under the MIT License;
+see LICENSE for the full license and its required copyright/permission notice.
+
+The MIT License applies to software to which these authors can grant rights;
+it does not relicense or include the reference textbook or third-party code.
+PDF.js retains its own Apache-2.0 license. See THIRD_PARTY_NOTICES.md and
+licenses/PDFJS-Apache-2.0.txt for the relevant third-party notices.
+
+The application is provided without warranty. Verify scientific equations,
+calculations, and source references before relying on them.

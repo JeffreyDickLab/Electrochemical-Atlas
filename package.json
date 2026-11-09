@@ -1,0 +1,36 @@
+{
+  "name": "electrochemical-atlas",
+  "private": true,
+  "version": "6.30",
+  "description": "Local-first, MIT-licensed open-source electrochemical study software.",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "build": "node tools/build.mjs",
+    "build:source": "node tools/build.mjs --source-only",
+    "check": "node tools/check.mjs",
+    "test": "node --test tests/unit/*.test.cjs",
+    "test:all": "npm run build && npm run check && npm test",
+    "package:source": "python3 tools/package.py --mode source",
+    "package:offline": "python3 tools/package.py --mode offline",
+    "release": "node tools/release.mjs",
+    "test:package": "python3 -m unittest discover -s tests/integration -p \"test_package.py\"",
+    "package:portable": "python3 tools/package.py --mode portable",
+    "package:windows": "python3 tools/package.py --mode windows",
+    "test:browser": "python3 tools/run_browser_tests.py",
+    "format": "node tools/format.mjs",
+    "format:check": "node tools/format.mjs --check"
+  },
+  "dependencies": {
+    "pdfjs-dist": "6.4.299"
+  },
+  "license": "MIT",
+  "contributors": [
+    "Azaria A. Wagner",
+    "Jeffrey E. Dick"
+  ],
+  "devDependencies": {
+    "prettier": "3.6.2"
+  }
+}
