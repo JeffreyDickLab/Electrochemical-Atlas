@@ -846,29 +846,28 @@
       <div class="result-list">${slice.map((item, i) => collectionCard(name, item, C[name].indexOf(item))).join('') || '<div class="empty">No matching entries.</div>'}</div>
       ${paginationHTML(state.collectionPage, pages)}`;
 
-    $('#collectionFilter').addEventListener(
+    const filterInput = $('#collectionFilter');
+    filterInput.addEventListener(
       'input',
-      debounce(e => {
-        // Re-render the filtered list without stealing the cursor or jumping
-        // back to the top after every character.
-        const position = e.target.selectionStart;
+      debounce(() => {
+        if (!filterInput.isConnected) return;
+        const restoreFocus = document.activeElement === filterInput;
+        const { selectionStart, selectionEnd, selectionDirection } = filterInput;
         const scroll = content.scrollTop;
-        state.collectionFilter = e.target.value;
+        state.collectionFilter = filterInput.value;
         state.collectionPage = 0;
         renderCollection(name);
         content.scrollTop = scroll;
-        requestAnimationFrame(() => {
-          const el = $('#collectionFilter');
-          if (!el) return;
-          el.focus();
-          el.setSelectionRange(
-            Math.min(position, el.value.length),
-            Math.min(position, el.value.length)
-          );
-        });
+        if (restoreFocus) {
+          // Restore the selection before the next keyboard event can run.
+          const replacement = $('#collectionFilter');
+          replacement.focus({ preventScroll: true });
+          replacement.setSelectionRange(selectionStart, selectionEnd, selectionDirection);
+        }
       }, 120)
     );
     $('#collectionChapter').addEventListener('change', e => {
+      state.collectionFilter = filterInput.value;
       state.collectionChapter = e.target.value;
       state.collectionPage = 0;
       renderCollection(name);
