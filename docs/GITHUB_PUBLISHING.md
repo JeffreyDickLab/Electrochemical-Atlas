@@ -35,11 +35,11 @@ gh repo create Electrochemical-Atlas --private --source . --remote origin --push
 
 **Important:** The repository source ZIP includes the Windows `.bat` launcher as source, but intentionally excludes `runtime/atlas-windows-amd64.exe`. It is *not* a runnable Windows download. Direct Windows users to a portable or offline **Release asset**, which includes that executable.
 
-GitHub Actions builds an offline release when you push a version tag that matches `package.json`. The Go launcher's version and the npm lockfile must match as well. After reviewing the commit and completing the release checks, push the tag. The current version is `6.31`.
+GitHub Actions builds an offline release when you push a version tag that matches `package.json`. The Go launcher's version and the npm lockfile must match as well. After reviewing the commit and completing the release checks, push the tag. The current version is `6.33`.
 
 ```sh
-git tag -a v6.31 -m "Electrochemical Atlas v6.31"
-git push origin refs/tags/v6.31
+git tag -a v6.33 -m "Electrochemical Atlas v6.33"
+git push origin refs/tags/v6.33
 ```
 
 The three jobs build and test independently. The first successful job creates the release for the tag, and each successful job uploads its own ZIP as soon as it finishes.
