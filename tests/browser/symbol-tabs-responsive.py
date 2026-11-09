@@ -62,7 +62,9 @@ def state(page):
 def main():
     with sync_playwright() as pw:
         browser = launch_chromium(pw)
-        for width in (270, 300, 340, 390, 480, 580, 700, 960):
+        sizes = [(width, False) for width in (270, 300, 340, 390, 480, 580, 700, 960)]
+        sizes.insert(0, (270, True))
+        for width, wider_labels in sizes:
             for theme in ('dark', 'light'):
                 page=browser.new_page(viewport={'width':max(width+40,400),'height':740})
                 errors=[]
@@ -71,6 +73,9 @@ def main():
                 <style>{STYLE}</style></head><body style="overflow:auto;padding:12px">
                 <main id="content" class="content" style="width:{width}px;max-width:100%;height:650px;overflow:auto;">
                 </main></body></html>''')
+                if wider_labels:
+                    # Exercise long words that exceed one tab with a wider fallback font.
+                    page.add_style_tag(content='.symbol-tab-label { font-family: monospace; }')
                 page.add_script_tag(content=PREPARE + '\n' + SYMBOLS_CODE + '\nrenderSymbols();')
                 initial=state(page)
                 assert initial['count']==3,(width,initial)
@@ -95,10 +100,12 @@ def main():
                     assert status['scrollWidth']<=status['clientWidth']+1,(width,tab,status)
                     assert page.locator('button[aria-pressed="true"]').inner_text().startswith(label)
                     assert page.locator('.symbol-cards > button.collection-card[data-symbol-entry]').count()>=1
-                if width in (270, 390, 580, 960) and theme=='dark':
+                if width in (270, 390, 580, 960) and theme=='dark' and not wider_labels:
                     page.screenshot(path=screenshot_path(f'Atlas_Symbol_Tabs_{width}.png'))
                 assert not errors,(width,theme,errors)
-                print(f'{width}px / {theme}: three tabs in one grid row, no horizontal scrolling, labels fully visible')
+                font = 'monospace' if wider_labels else 'system font'
+                print(f'{width}px / {theme} / {font}: three tabs in one grid row, '
+                      'no horizontal scrolling, labels fully visible')
                 page.close()
         browser.close()
 
