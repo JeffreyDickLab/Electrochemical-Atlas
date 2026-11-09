@@ -11,3 +11,8 @@ This attribution concerns the Atlas software; it does not claim authorship or
 ownership of the textbook, PDF.js, or other independently licensed material.
 The respective third-party notices are maintained in
 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) and `licenses/`.
+
+Before publishing, the maintainers should confirm that they have the right to
+license all original project contributions under MIT, including any relevant
+institutional or employment-related rights. Attribution does not itself transfer
+ownership of code.
